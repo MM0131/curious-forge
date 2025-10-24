@@ -12,22 +12,29 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <BlueprintCard v-for="bp in filtered" :key="bp.id" :blueprint="bp" />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <RouterLink
+          v-for="blueprint in filtered"
+          :key="blueprint.id"
+          :to="`/blueprints/${blueprint.id}`"
+          class="bg-slate-800 rounded-2xl overflow-hidden hover:bg-slate-700 transition-colors"
+        >
+          <BlueprintCard :blueprint="blueprint" />
+        </RouterLink>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted } from '#imports'
 import BlueprintCard from '~/components/BlueprintCard.vue'
 import { useBlueprints } from '~/composables/useBlueprints'
 
 const q = ref('')
 const category = ref('')
 const { list, load } = useBlueprints()
-const categories = ['Chemistry','Physics','Engineering']
+const categories = ['Chemistry', 'Physics', 'Engineering', 'Energy', 'Biology', 'Geology']
 
 onMounted(() => load())
 

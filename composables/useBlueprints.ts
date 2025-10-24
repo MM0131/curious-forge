@@ -1,7 +1,8 @@
-import { ref } from 'vue'
+import { ref } from '#imports'
+import type { Blueprint } from '~/types/blueprint'
 
 export function useBlueprints() {
-  const list = ref<any[]>([])
+  const list = ref<Blueprint[]>([])
   const loading = ref(false)
 
   async function load() {
@@ -9,7 +10,8 @@ export function useBlueprints() {
     try {
       const res = await fetch('/assets/data/blueprints.json')
       list.value = await res.json()
-    } catch (e) {
+    } catch (e: unknown) {
+      console.error('Failed to load blueprints:', e)
       list.value = []
     } finally {
       loading.value = false
