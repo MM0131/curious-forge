@@ -1,47 +1,36 @@
 <template>
-  <section class="py-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex items-center justify-between mb-6">
-        <h1 class="text-2xl font-bold">คลังพิมพ์เขียว</h1>
-        <div class="flex gap-3">
-          <input v-model="q" placeholder="ค้นหาโปรเจกต์" class="bg-white/3 rounded-lg p-2 text-slate-100" />
-          <select v-model="category" class="bg-white/3 rounded-lg p-2 text-slate-100">
-            <option value="">ทั้งหมด</option>
-            <option v-for="c in categories" :key="c">{{ c }}</option>
-          </select>
-        </div>
-      </div>
+  <ClientOnly>
+    <BlueprintLibrary />
+    <template #fallback>
+      <section class="py-14">
+        <h1 class="text-3xl font-extrabold mb-8">คลังพิมพ์เขียว</h1>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <RouterLink
-          v-for="blueprint in filtered"
-          :key="blueprint.id"
-          :to="`/blueprints/${blueprint.id}`"
-          class="bg-slate-800 rounded-2xl overflow-hidden hover:bg-slate-700 transition-colors"
-        >
-          <BlueprintCard :blueprint="blueprint" />
-        </RouterLink>
-      </div>
-    </div>
-  </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div v-for="bp in allBlueprints" :key="bp.id" class="card hover:bg-white/7 transition">
+            <img v-if="bp.image" :src="bp.image" :alt="bp.title" class="w-full h-44 object-cover rounded-xl mb-4" />
+            <h3 class="text-lg font-semibold leading-snug">{{ bp.title }}</h3>
+            <p class="mt-1 text-sm text-slate-300 line-clamp-2">{{ bp.purpose }}</p>
+            <div class="mt-4 flex items-center gap-3 text-xs text-slate-300">
+              <span class="px-2 py-1 rounded-lg bg-white/5 border border-white/10">{{ bp.time }}</span>
+              <span class="px-2 py-1 rounded-lg bg-white/5 border border-white/10">{{ (bp.materials?.length || 0) }} วัสดุ</span>
+              <span class="px-2 py-1 rounded-lg bg-emerald-600/15 border border-emerald-500/20 text-emerald-200">{{ bp.difficulty }}</span>
+            </div>
+            <div class="mt-5">
+              <NuxtLink :to="`/blueprints/${bp.id}`" class="btn-primary inline-flex items-center gap-2">
+                ดูรายละเอียด
+                <span class="-mr-1">👁️</span>
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+      </section>
+    </template>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from '#imports'
-import BlueprintCard from '~/components/BlueprintCard.vue'
-import { useBlueprints } from '~/composables/useBlueprints'
-
-const q = ref('')
-const category = ref('')
-const { list, load } = useBlueprints()
-const categories = ['Chemistry', 'Physics', 'Engineering', 'Energy', 'Biology', 'Geology']
-
-onMounted(() => load())
-
-const filtered = computed(() => {
-  let res = list.value
-  if (q.value) res = res.filter(b => b.title.toLowerCase().includes(q.value.toLowerCase()))
-  if (category.value) res = res.filter(b => b.category === category.value)
-  return res
-})
+import type { Blueprint } from '~/types/blueprint'
+import blueprintsData from '@/assets/data/blueprints.json'
+// Fallback SSR list
+const allBlueprints = (blueprintsData as Blueprint[])
 </script>

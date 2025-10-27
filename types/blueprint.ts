@@ -8,4 +8,8 @@ export interface Blueprint {
   steps: string[]
   purpose: string
   warnings: string
+  description?: string
+  sciencePrinciple?: string
+  funFacts?: string[]
+  image?: string
 }

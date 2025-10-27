@@ -1,7 +1,6 @@
 
 // nuxt.config.ts
 import { defineNuxtConfig } from 'nuxt/config'
-import type { NuxtConfig } from '@nuxt/schema'
 
 // Add PWA module type
 declare module '@nuxt/schema' {
@@ -104,5 +103,13 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       ],
     },
+    pageTransition: { 
+      name: 'page', 
+      mode: 'out-in' 
+    },
+    layoutTransition: { 
+      name: 'layout', 
+      mode: 'out-in' 
+    }
   },
 })

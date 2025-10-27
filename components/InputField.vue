@@ -1,17 +1,14 @@
 <template>
-  <div class="flex flex-col">
-    <label class="text-sm text-slate-300 mb-1" :for="id">{{ label }}</label>
-    <input :id="id" :type="type" :value="modelValue" @input="onInput" class="bg-white/3 border border-white/8 rounded-lg p-2 text-slate-100" />
+  <div class="space-y-2">
+    <label v-if="label" :for="id" class="text-sm text-slate-300">{{ label }}</label>
+    <input
+      :id="id"
+      v-bind="$attrs"
+      class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-violet-500 text-slate-100 placeholder-slate-400 caret-violet-400"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ label: string; modelValue: string; type?: string; id?: string }>()
-const emit = defineEmits(['update:modelValue'])
-
-const id = props.id || `input-${Math.random().toString(36).slice(2,8)}`
-function onInput(e: Event) {
-  const val = (e.target as HTMLInputElement).value
-  emit('update:modelValue', val)
-}
+defineProps<{ id?: string; label?: string }>();
 </script>
