@@ -99,7 +99,7 @@
       >
         <button
           class="absolute top-3 right-3 z-10 rounded-lg border border-white/10 bg-black/30 backdrop-blur px-2 py-1 text-xs hover:bg-black/50"
-          @click.stop="toggleSave(bp.id)"
+          @click.stop="trackToggleSave(bp.id)"
           :aria-pressed="isSaved(bp.id)"
           :title="isSaved(bp.id) ? 'ลบออกจากที่บันทึก' : 'บันทึกโปรเจกต์'"
         >
@@ -137,10 +137,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import type { Blueprint } from '~/types/blueprint'
 import blueprintsData from '@/assets/data/blueprints.json'
 import { useSaved } from '~/composables/useSaved'
+import { useAnalytics } from '~/composables/useAnalytics'
 
 const isDev = import.meta.env.DEV
 const q = ref('')
@@ -153,6 +154,7 @@ const allBlueprints = blueprintsData as Blueprint[]
 
 // saved state
 const { isSaved, toggle: toggleSave } = useSaved()
+const { track } = useAnalytics()
 
 const filteredBlueprints = computed<Blueprint[]>(() => {
   const query = q.value.trim().toLowerCase()
@@ -223,9 +225,26 @@ function resetFilters() {
   cat.value = ''
   difficulty.value = ''
   sortBy.value = 'default'
+  track('filters_reset')
 }
 
 onMounted(() => {
   console.log('📄 BlueprintLibrary mounted (client-only)')
 })
+
+// Analytics watches
+watch(q, (val, old) => {
+  if (val !== old) track('search', { q: String(val || '').slice(0, 64), len: (val || '').length })
+})
+watch([cat, difficulty, sortBy], ([c, d, s], [pc, pd, ps]) => {
+  if (c !== pc) track('filter_category', { cat: String(c || '') })
+  if (d !== pd) track('filter_difficulty', { difficulty: String(d || '') })
+  if (s !== ps) track('sort_change', { sortBy: String(s || '') })
+})
+
+function trackToggleSave(id: string) {
+  const saved = isSaved(id)
+  track(saved ? 'unsave' : 'save', { id })
+  toggleSave(id)
+}
 </script>

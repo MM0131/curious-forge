@@ -117,6 +117,8 @@ import Toast from '~/components/Toast.vue'
 import Modal from '~/components/Modal.vue'
 import LoadingSpinner from '~/components/LoadingSpinner.vue'
 import { useSaved } from '~/composables/useSaved'
+import { useAnalytics } from '~/composables/useAnalytics'
+import { useRuntimeConfig } from '#app'
 
 const route = useRoute()
 const blueprints = blueprintsData as Blueprint[]
@@ -131,6 +133,8 @@ const bp = computed(() => blueprints.find(x => x.id === currentId.value))
 
 const { isSaved: _isSaved, toggle, save } = useSaved()
 const isSaved = computed(() => (bp.value ? _isSaved(bp.value.id) : false))
+const { track } = useAnalytics()
+const config = useRuntimeConfig()
 
 const toast = reactive({
   show: false,
@@ -154,6 +158,7 @@ function showToast(type: 'success' | 'error' | 'warning' | 'info', message: stri
 
 function toggleSave() {
   if (!bp.value) return
+  track(isSaved.value ? 'unsave' : 'save', { id: bp.value.id })
   toggle(bp.value.id)
   if (_isSaved(bp.value.id)) showToast('success', 'บันทึกโปรเจกต์เรียบร้อยแล้ว! 🎉')
   else showToast('info', 'ลบออกจากรายการบันทึกแล้ว')
@@ -166,17 +171,20 @@ function shareBlueprint() {
       text: bp.value.description || bp.value.purpose,
       url: globalThis.window.location.href
     }).then(() => {
+      track('share', { id: bp.value!.id, method: 'web-share' })
       showToast('success', 'แชร์เรียบร้อย!')
     }).catch(() => {
       showShareModal.value = true
     })
   } else {
+    if (bp.value) track('share', { id: bp.value.id, method: 'modal' })
     showShareModal.value = true
   }
 }
 
 function copyShareUrl() {
   navigator.clipboard.writeText(shareUrl.value).then(() => {
+    if (bp.value) track('copy_link', { id: bp.value.id })
     showToast('success', 'คัดลอก URL เรียบร้อย! 📋')
     showShareModal.value = false
   }).catch(() => {
@@ -186,13 +194,29 @@ function copyShareUrl() {
 
 function printBlueprint() {
   if (globalThis.window !== undefined) {
+    if (bp.value) track('print', { id: bp.value.id })
     globalThis.window.print()
   }
 }
 
+// SEO: dynamic meta including OG/Twitter
+const siteUrl = computed(() => (config.public as any).siteUrl as string)
+const ogImage = computed(() => {
+  const img = bp.value?.image || '/favicon.png'
+  try {
+    return new URL(img, siteUrl.value).toString()
+  } catch {
+    return img
+  }
+})
+
 useSeoMeta({
   title: () => bp.value?.title || 'Blueprint Detail',
-  description: () => bp.value?.description || bp.value?.purpose
+  ogTitle: () => bp.value?.title || 'Blueprint Detail',
+  description: () => bp.value?.description || bp.value?.purpose || 'Blueprint description',
+  ogDescription: () => bp.value?.description || bp.value?.purpose || 'Blueprint description',
+  ogImage: () => ogImage.value,
+  twitterCard: () => 'summary_large_image'
 })
 </script>
 

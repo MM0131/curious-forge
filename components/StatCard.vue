@@ -1,10 +1,10 @@
 <template>
-  <div class="card text-center p-4">
-    <div class="text-2xl font-bold">{{ value }}</div>
-    <div class="text-sm text-slate-300">{{ label }}</div>
+  <div class="card flex flex-col items-center text-center w-full">
+    <div class="text-4xl font-extrabold tracking-tight">{{ value }}</div>
+    <div class="mt-2 text-slate-300 text-sm">{{ label }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{ label: string; value: string | number }>()
+defineProps<{ value: number | string; label: string }>();
 </script>

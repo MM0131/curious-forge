@@ -1,24 +1,39 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-[radial-gradient(ellipse_at_top_left,_var(--bg-start),_var(--bg-end))] text-slate-100">
-    <nav class="flex items-center justify-between p-4 max-w-6xl mx-auto w-full">
-      <NuxtLink to="/" class="flex items-center gap-3">
-        <img src="/assets/images/logo.svg" alt="logo" class="h-8" />
-      </NuxtLink>
-      <div class="flex items-center gap-4">
-        <NuxtLink to="/library" class="text-sm hover:underline">Library</NuxtLink>
-        <NuxtLink to="/submit" class="text-sm">Submit</NuxtLink>
-        <NuxtLink to="/profile" class="text-sm">Profile</NuxtLink>
-      </div>
-    </nav>
+  <div class="min-h-screen flex flex-col text-slate-100">
+    <OfflineBanner />
+    <!-- Top bar -->
+    <header class="w-full">
+      <nav class="container mx-auto flex items-center justify-between py-6 px-4">
+        <NuxtLink to="/" class="px-3 py-1 rounded-lg bg-violet-700/30 hover:bg-violet-600/40 transition">
+          <span class="font-semibold tracking-wide">Curious Forge</span>
+        </NuxtLink>
 
-    <main class="flex-1 max-w-6xl mx-auto w-full px-4">
+        <div class="flex items-center gap-6 text-sm">
+          <NuxtLink class="hover:opacity-80" to="/library">Library</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/submit">Submit</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/profile">Profile</NuxtLink>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page body -->
+    <main class="flex-1 container mx-auto px-4">
       <slot />
     </main>
 
-    <AppFooter />
+    <!-- Footer -->
+    <footer class="border-t border-white/10">
+      <div class="container mx-auto px-4 py-6 flex items-center justify-between text-slate-300 text-sm">
+        <div>© The Curious Forge • ทีมทดลอง</div>
+        <div class="flex gap-6">
+          <NuxtLink class="hover:opacity-80" to="/about">About</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/contact">Contact</NuxtLink>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
 <script setup lang="ts">
-import AppFooter from '~/components/AppFooter.vue'
+import OfflineBanner from '~/components/OfflineBanner.client.vue'
 </script>

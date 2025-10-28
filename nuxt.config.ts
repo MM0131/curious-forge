@@ -33,6 +33,14 @@ export default defineNuxtConfig({
   // 🔧 วันที่สำหรับ compatibility ของ Nitro (ตามที่ระบบเตือน)
   compatibilityDate: '2025-10-24',
 
+  // Runtime config for SEO/Analytics
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+      plausibleDomain: process.env.PLAUSIBLE_DOMAIN || ''
+    }
+  },
+
   // TypeScript
   typescript: {
     strict: true,
@@ -73,7 +81,38 @@ export default defineNuxtConfig({
           ]
         },
         workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp}']
+          globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp}'],
+          // Runtime caching for an offline-first experience
+          runtimeCaching: [
+            {
+              // Cache images (SVG/PNG/JPG/WebP) with Cache First
+              urlPattern: ({ request }: any) => request?.destination === 'image',
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'images-cache',
+                expiration: { maxEntries: 300, maxAgeSeconds: 60 * 60 * 24 * 30 },
+                cacheableResponse: { statuses: [0, 200] }
+              }
+            },
+            {
+              // Cache JSON data served from public assets
+              urlPattern: ({ url }: any) => url?.pathname?.startsWith('/assets/data/'),
+              handler: 'StaleWhileRevalidate',
+              options: {
+                cacheName: 'data-cache',
+                cacheableResponse: { statuses: [0, 200] }
+              }
+            },
+            {
+              // Cache navigations to enable offline page visits
+              urlPattern: ({ request }: any) => request?.mode === 'navigate',
+              handler: 'NetworkFirst',
+              options: {
+                cacheName: 'pages-cache',
+                networkTimeoutSeconds: 3
+              }
+            }
+          ]
         }
       }]
   ],
@@ -102,6 +141,15 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       ],
+      script: [
+        // Plausible Analytics (set PLAUSIBLE_DOMAIN env for production)
+        {
+          src: 'https://plausible.io/js/script.js',
+          defer: true,
+          // @ts-ignore - allow custom attributes
+          'data-domain': process.env.PLAUSIBLE_DOMAIN || 'localhost'
+        } as any
+      ]
     },
     pageTransition: { 
       name: 'page', 
