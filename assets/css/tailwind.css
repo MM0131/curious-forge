@@ -68,11 +68,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 🎯 Focus styles */
+/* 🎯 Focus styles: use shadow ring that respects border-radius */
 :focus-visible {
-  outline: 2px solid rgba(99, 102, 241, 0.5);
-  outline-offset: 2px;
-  border-radius: 0.375rem;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.45);
 }
 
 /* 📱 Better touch targets */
