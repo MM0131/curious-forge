@@ -8,6 +8,12 @@
             <h1 class="text-3xl font-bold">{{ bp.title }}</h1>
             <p class="text-sm text-slate-300 mt-2">{{ bp.category }} • {{ bp.difficulty }} • {{ bp.time }}</p>
             <p v-if="bp.description" class="mt-4 text-base text-slate-200">{{ bp.description }}</p>
+
+            <!-- Video Section (if available) -->
+            <div v-if="bp.videoUrl" class="mt-6">
+              <VideoEmbed :video-url="bp.videoUrl" :title="bp.title" />
+            </div>
+
             <div class="mt-6 flex gap-3 flex-wrap">
               <button class="btn-primary" @click="printBlueprint">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -67,6 +73,19 @@
           <h2 class="font-semibold text-rose-300">คำเตือน</h2>
           <p class="text-slate-300">{{ bp.warnings }}</p>
         </section>
+
+        <!-- Giscus Comments Section -->
+        <section class="mt-8">
+          <h2 class="text-2xl font-bold mb-4">💬 แสดงความคิดเห็น</h2>
+          <GiscusComments
+            repo="MM0131/curious-forge"
+            repo-id="R_kgDONgaPAg"
+            category="General"
+            category-id="DIC_kwDONgaPAs4Clb2G"
+            mapping="pathname"
+            theme="dark"
+          />
+        </section>
       </div>
       <div v-else>
         <LoadingSpinner size="lg" text="กำลังโหลดข้อมูล..." />
@@ -116,6 +135,8 @@ import blueprintsData from '@/assets/data/blueprints.json'
 import Toast from '~/components/Toast.vue'
 import Modal from '~/components/Modal.vue'
 import LoadingSpinner from '~/components/LoadingSpinner.vue'
+import GiscusComments from '~/components/GiscusComments.client.vue'
+import VideoEmbed from '~/components/VideoEmbed.vue'
 import { useSaved } from '~/composables/useSaved'
 import { useAnalytics } from '~/composables/useAnalytics'
 import { useRuntimeConfig } from '#app'

@@ -12,4 +12,5 @@ export interface Blueprint {
   sciencePrinciple?: string
   funFacts?: string[]
   image?: string
+  videoUrl?: string  // YouTube or Vimeo URL (optional)
 }
