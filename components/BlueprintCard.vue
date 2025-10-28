@@ -15,7 +15,6 @@
     <div class="mt-5">
       <NuxtLink :to="to" class="btn-primary inline-flex items-center gap-2 group">
         ดูรายละเอียด
-        <span class="transition-transform group-hover:translate-x-1">👁️</span>
       </NuxtLink>
     </div>
   </div>

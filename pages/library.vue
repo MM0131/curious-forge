@@ -16,10 +16,9 @@
               <span class="px-2 py-1 rounded-lg bg-emerald-600/15 border border-emerald-500/20 text-emerald-200">{{ bp.difficulty }}</span>
             </div>
             <div class="mt-5">
-              <NuxtLink :to="`/blueprints/${bp.id}`" class="btn-primary inline-flex items-center gap-2">
-                ดูรายละเอียด
-                <span class="-mr-1">👁️</span>
-              </NuxtLink>
+                <NuxtLink :to="`/blueprints/${bp.id}`" class="btn-primary inline-flex items-center gap-2">
+                  {{ t('library.card.viewDetails') }}
+                </NuxtLink>
             </div>
           </div>
         </div>
@@ -31,6 +30,7 @@
 <script setup lang="ts">
 import type { Blueprint } from '~/types/blueprint'
 import blueprintsData from '@/assets/data/blueprints.json'
+const { t } = useI18n()
 // Fallback SSR list
 const allBlueprints = (blueprintsData as Blueprint[])
 </script>

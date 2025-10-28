@@ -1,8 +1,11 @@
 {
   "nav": {
+    "home": "Home",
     "library": "Library",
     "submit": "Submit",
-    "profile": "Profile"
+    "profile": "Profile",
+    "contact": "Contact",
+    "about": "About"
   },
   "home": {
     "tagline": "Hands-On Science",
@@ -13,34 +16,34 @@
   },
   "library": {
     "title": "Blueprint Library",
-    "searchPlaceholder": "🔍 Search projects like volcano, battery, camera...",
+    "searchPlaceholder": "Search projects (e.g., volcano, battery, camera)",
     "resultsCount": "projects",
-    "filtered": "(filtered)",
-    "resetFilters": "Reset Filters",
+    "filtered": "filtered",
+    "resetFilters": "Reset filters",
     "noResults": "No blueprints found",
     "filter": {
       "category": {
-        "all": "📚 All Categories",
-        "chemistry": "🧪 Chemistry",
-        "physics": "⚛️ Physics",
-        "biology": "🧬 Biology",
-        "energy": "⚡ Energy",
-        "geology": "🌍 Geology",
-        "engineering": "⚙️ Engineering"
+        "all": "All categories",
+        "chemistry": "Chemistry",
+        "physics": "Physics",
+        "biology": "Biology",
+        "energy": "Energy",
+        "geology": "Geology",
+        "engineering": "Engineering"
       },
       "difficulty": {
-        "all": "🎯 All Difficulty Levels",
-        "easy": "😊 Easy",
-        "medium": "🤔 Medium",
-        "hard": "🔥 Hard"
+        "all": "All difficulty levels",
+        "easy": "Easy",
+        "medium": "Medium",
+        "hard": "Hard"
       }
     },
     "sort": {
-      "nameAZ": "🔤 Sort by Name (A-Z)",
-      "timeAsc": "⏱️ Time: Low → High",
-      "timeDesc": "⏱️ Time: High → Low",
-      "difficultyAsc": "📈 Easy → Hard",
-      "difficultyDesc": "📉 Hard → Easy"
+      "nameAZ": "Name (A–Z)",
+      "timeAsc": "Time: Low to High",
+      "timeDesc": "Time: High to Low",
+      "difficultyAsc": "Difficulty: Easy to Hard",
+      "difficultyDesc": "Difficulty: Hard to Easy"
     },
     "card": {
       "materials": "materials",
@@ -51,7 +54,7 @@
     }
   },
   "detail": {
-    "loading": "Loading data...",
+    "loading": "Loading data",
     "actions": {
       "print": "Print",
       "share": "Share",
@@ -63,9 +66,9 @@
       "principle": "Science Principle",
       "materials": "Materials",
       "steps": "Steps",
-      "funFacts": "Fun Facts",
+  "funFacts": "Fun Facts",
       "warnings": "Warnings",
-      "comments": "💬 Comments"
+      "comments": "Comments"
     },
     "share": {
       "title": "Share Project",
@@ -73,10 +76,10 @@
       "close": "Close"
     },
     "toast": {
-      "saved": "Project saved successfully! 🎉",
+      "saved": "Project saved successfully",
       "unsaved": "Removed from saved list",
       "shareSuccess": "Shared successfully!",
-      "linkCopied": "URL copied successfully! 📋",
+      "linkCopied": "URL copied successfully",
       "copyError": "Cannot copy URL"
     }
   },
@@ -97,19 +100,19 @@
     "title": "Submit Your Idea",
     "form": {
       "name": "Name",
-      "namePlaceholder": "e.g. John Doe",
+      "namePlaceholder": "e.g., John Doe",
       "email": "Email",
     "emailPlaceholder": "you{'@'}example.com",
       "projectTitle": "Project Title",
-      "projectTitlePlaceholder": "e.g. DIY Camera Obscura",
+      "projectTitlePlaceholder": "e.g., DIY Camera Obscura",
       "category": "Category",
       "difficulty": "Difficulty",
-      "selectOption": "— Select —",
+      "selectOption": "Select an option",
       "steps": "Steps",
-      "stepsPlaceholder": "Describe the steps one by one...",
+      "stepsPlaceholder": "Describe each step clearly",
       "materials": "Materials",
-      "materialsPlaceholder": "e.g. Cardboard, hot glue, popsicle sticks, string...",
-      "submitButton": "Submit My Idea",
+      "materialsPlaceholder": "e.g., cardboard, hot glue, popsicle sticks, string",
+      "submitButton": "Submit my idea",
       "errorMessage": "Please fill in all required fields"
     },
     "validation": {
@@ -117,11 +120,67 @@
       "emailInvalid": "Invalid email",
       "titleRequired": "Project title is required"
     },
-    "successMessage": "Idea submitted successfully! Thank you! 🎉"
+    "successMessage": "Idea submitted successfully. Thank you!"
   },
   "footer": {
     "copyright": "© The Curious Forge • Experiment Team",
     "about": "About",
     "contact": "Contact"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to help and listen to your feedback",
+    "banner": {
+      "title": "We'd love to hear from you!",
+      "description": "Whether it's a question, suggestion, or new idea, we're always ready to listen"
+    },
+    "email": {
+      "title": "Email",
+      "general": "General Contact",
+      "ideas": "Submit Ideas",
+      "partnership": "Partnership"
+    },
+    "phone": {
+      "title": "Phone",
+      "hours": "Business Hours 9:00-17:00",
+      "domestic": "Main Office",
+      "education": "Education Department"
+    },
+    "address": {
+      "title": "Address",
+      "subtitle": "Office"
+    },
+    "form": {
+      "title": "Send us a message",
+      "subtitle": "We'll respond within 24 hours",
+      "name": "Your Name",
+      "namePlaceholder": "Full Name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "topic": "Topic",
+      "topicPlaceholder": "What would you like to contact us about",
+      "message": "Message",
+      "messagePlaceholder": "Write your message here...",
+      "submit": "Send Message",
+      "reset": "Clear Form",
+      "validation": "Please fill in all required fields",
+      "success": "Message sent successfully. Thank you for contacting us!"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Quick answers to common questions",
+      "q1": {
+        "question": "Are the projects safe?",
+        "answer": "All projects have been safety-reviewed, but adult supervision and protective equipment are recommended"
+      },
+      "q2": {
+        "question": "Can I submit new project ideas?",
+        "answer": "Absolutely! Use the Submit page or contact us directly at ideas@curiousforge.edu"
+      },
+      "q3": {
+        "question": "Do you organize workshops?",
+        "answer": "We plan to organize workshops in the future. Stay tuned via our page or social media"
+      }
+    }
   }
 }

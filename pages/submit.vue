@@ -10,7 +10,7 @@
           :value="form.name"
           :placeholder="t('submit.form.namePlaceholder')"
           @input="(e: Event) => form.name = (e.target as HTMLInputElement).value"
-          :aria-invalid="!!nameError"
+          :error="nameError as any"
         />
         <InputField
           id="email"
@@ -19,7 +19,7 @@
           :value="form.email"
           :placeholder="t('submit.form.emailPlaceholder')"
           @input="(e: Event) => form.email = (e.target as HTMLInputElement).value"
-          :aria-invalid="!!emailError"
+          :error="emailError as any"
         />
         <InputField
           id="projectTitle"
@@ -27,7 +27,7 @@
           :value="form.title"
           :placeholder="t('submit.form.projectTitlePlaceholder')"
           @input="(e: Event) => form.title = (e.target as HTMLInputElement).value"
-          :aria-invalid="!!titleError"
+          :error="titleError as any"
         />
 
         <div class="grid md:grid-cols-2 gap-4">
@@ -83,7 +83,7 @@
         </div>
 
         <div class="pt-2">
-          <button :disabled="!isValid" type="submit" class="btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed">{{ t('submit.form.submitButton') }}</button>
+          <button type="submit" class="btn-primary w-full">{{ t('submit.form.submitButton') }}</button>
         </div>
 
         <p v-if="firstAttempt && !isValid" class="text-rose-300 text-sm">{{ t('submit.form.errorMessage') }}</p>
@@ -136,7 +136,10 @@ const titleError = computed(() => {
 })
 
 const isValid = computed(() => {
-  return form.name.trim() && /.+@.+\..+/.test(form.email) && form.title.trim()
+  const nameOk = form.name.trim().length > 0
+  const emailOk = /.+@.+\..+/.test(form.email)
+  const titleOk = form.title.trim().length > 0
+  return nameOk && emailOk && titleOk
 })
 
 const toast = reactive({ show: false, type: 'success' as 'success'|'error'|'warning'|'info', message: '' })
@@ -148,7 +151,18 @@ function showToast(type: 'success'|'error'|'warning'|'info', message: string) {
 
 function onSubmit() {
   firstAttempt.value = true
-  if (!isValid.value) return
+  if (!isValid.value) {
+    showToast('warning', t('submit.form.errorMessage'))
+    // focus first invalid field for better UX
+    if (!form.name.trim()) {
+      document.getElementById('name')?.focus()
+    } else if (!/.+@.+\..+/.test(form.email)) {
+      document.getElementById('email')?.focus()
+    } else if (!form.title.trim()) {
+      document.getElementById('projectTitle')?.focus()
+    }
+    return
+  }
 
   // จำลองการส่งข้อมูลสำเร็จ
   showToast('success', t('submit.successMessage'))

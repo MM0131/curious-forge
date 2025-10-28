@@ -118,7 +118,6 @@
         <div class="mt-5">
           <NuxtLink :to="`/blueprints/${bp.id}`" class="btn-primary inline-flex items-center gap-2">
             {{ t('library.card.viewDetails') }}
-            <span class="-mr-1">👁️</span>
           </NuxtLink>
         </div>
       </div>

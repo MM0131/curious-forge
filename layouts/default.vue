@@ -9,9 +9,11 @@
         </NuxtLink>
 
         <div class="flex items-center gap-6 text-sm">
+          <NuxtLink class="hover:opacity-80" to="/">{{ t('nav.home') }}</NuxtLink>
           <NuxtLink class="hover:opacity-80" to="/library">{{ t('nav.library') }}</NuxtLink>
-          <NuxtLink class="hover:opacity-80" to="/submit">{{ t('nav.submit') }}</NuxtLink>
           <NuxtLink class="hover:opacity-80" to="/profile">{{ t('nav.profile') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/submit">{{ t('nav.submit') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/contact">{{ t('nav.contact') }}</NuxtLink>
           <LanguageSwitcher />
         </div>
       </nav>

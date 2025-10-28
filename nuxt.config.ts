@@ -121,19 +121,17 @@ export default defineNuxtConfig({
   // 🌍 i18n Configuration
   i18n: {
     locales: [
-      {
-        code: 'th',
-        name: 'ไทย',
-        file: 'th.json'
-      },
-      {
-        code: 'en',
-        name: 'English',
-        file: 'en.json'
-      }
+      { code: 'th', name: 'ไทย', iso: 'th-TH' },
+      { code: 'en', name: 'English', iso: 'en-US' }
     ],
-    langDir: 'locales/',
-    defaultLocale: 'th'
+    defaultLocale: 'th',
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      fallbackLocale: 'th'
+    }
   },
 
     // 🛠️ Vite config

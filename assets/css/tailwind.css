@@ -21,8 +21,10 @@ body {
 
 /* ปุ่มหลัก */
 .btn-primary {
-  @apply bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold py-2 px-5 rounded-xl
-         shadow hover:shadow-lg transition glow-hover;
+  /* ใช้โทนม่วงเดียวกันทั้งเว็บ และแก้ disabled ไม่ให้ซีดจนดูเพี้ยนสี */
+  @apply bg-gradient-to-r from-violet-600 via-violet-600 to-fuchsia-600 text-white font-semibold py-2 px-5 rounded-xl
+         shadow hover:shadow-lg transition glow-hover
+         disabled:cursor-not-allowed disabled:brightness-90 disabled:saturate-50;
 }
 
 /* ปุ่มรอง (เส้นขาวโปร่ง) */
