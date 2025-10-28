@@ -18,6 +18,7 @@
     "vue-tsc": "^3.1.1"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^10.1.2",
     "@vite-pwa/nuxt": "^0.1.1",
     "vue": "^3.5.22"
   }

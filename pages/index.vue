@@ -5,15 +5,19 @@
         Curious Forge
       </h1>
 
-      <p class="mt-6 text-3xl md:text-4xl font-extrabold">วิทยาศาสตร์ด้วยมือ</p>
-      <p class="mt-3 text-slate-300">ทดลอง ทำความเข้าใจ และสร้างด้วยตัวเอง</p>
+      <p class="mt-6 text-3xl md:text-4xl font-extrabold">{{ t('home.tagline') }}</p>
+      <p class="mt-3 text-slate-300">{{ t('home.subtitle') }}</p>
 
       <div class="mt-8 flex items-center justify-center gap-4">
-        <NuxtLink to="/library" class="btn-primary">เริ่มสำรวจ</NuxtLink>
-        <NuxtLink to="/submit" class="btn-ghost">ส่งไอเดีย</NuxtLink>
+        <NuxtLink to="/library" class="btn-primary">{{ t('home.explore') }}</NuxtLink>
+        <NuxtLink to="/submit" class="btn-ghost">{{ t('home.submitIdea') }}</NuxtLink>
       </div>
 
-      <h2 class="mt-14 text-xl font-semibold">แนะนำโปรเจกต์</h2>
+      <h2 class="mt-14 text-xl font-semibold">{{ t('home.featuredProjects') }}</h2>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { t } = useI18n()
+</script>

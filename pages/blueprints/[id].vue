@@ -19,64 +19,64 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
                 </svg>
-                พิมพ์
+                {{ t('detail.actions.print') }}
               </button>
               <button class="btn-primary bg-white/6" @click="shareBlueprint">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                 </svg>
-                แชร์
+                {{ t('detail.actions.share') }}
               </button>
               <button :class="['btn-primary', isSaved ? '' : 'bg-white/6']" @click="toggleSave">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path v-if="!isSaved" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                   <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                {{ isSaved ? 'บันทึกแล้ว' : 'บันทึกโปรเจกต์' }}
+                {{ isSaved ? t('detail.actions.saved') : t('detail.actions.save') }}
               </button>
             </div>
           </div>
         </div>
 
         <section class="mt-6 card">
-          <h2 class="font-semibold">วัตถุประสงค์</h2>
+          <h2 class="font-semibold">{{ t('detail.sections.purpose') }}</h2>
           <p class="text-slate-300 mt-2">{{ bp.purpose }}</p>
         </section>
 
         <section v-if="bp.sciencePrinciple" class="mt-4 card">
-          <h2 class="font-semibold">หลักการวิทยาศาสตร์</h2>
+          <h2 class="font-semibold">{{ t('detail.sections.principle') }}</h2>
           <p class="text-slate-300 mt-2">{{ bp.sciencePrinciple }}</p>
         </section>
 
         <section class="mt-4 card">
-          <h2 class="font-semibold">วัสดุ</h2>
+          <h2 class="font-semibold">{{ t('detail.sections.materials') }}</h2>
           <ul class="list-disc list-inside text-slate-300">
             <li v-for="m in bp.materials" :key="m">{{ m }}</li>
           </ul>
         </section>
 
         <section class="mt-4 card">
-          <h2 class="font-semibold">ขั้นตอน</h2>
+          <h2 class="font-semibold">{{ t('detail.sections.steps') }}</h2>
           <ol class="list-decimal list-inside text-slate-300">
             <li v-for="s in bp.steps" :key="s">{{ s }}</li>
           </ol>
         </section>
 
         <section v-if="bp.funFacts && bp.funFacts.length" class="mt-4 card bg-indigo-900/20 border-indigo-700/20">
-          <h2 class="font-semibold text-indigo-300">เกร็ดความรู้</h2>
+          <h2 class="font-semibold text-indigo-300">{{ t('detail.sections.funFacts') }}</h2>
           <ul class="list-disc list-inside text-slate-300">
             <li v-for="fact in bp.funFacts" :key="fact">{{ fact }}</li>
           </ul>
         </section>
 
         <section class="mt-4 card bg-rose-900/20 border-rose-700/20">
-          <h2 class="font-semibold text-rose-300">คำเตือน</h2>
+          <h2 class="font-semibold text-rose-300">{{ t('detail.sections.warnings') }}</h2>
           <p class="text-slate-300">{{ bp.warnings }}</p>
         </section>
 
         <!-- Giscus Comments Section -->
         <section class="mt-8">
-          <h2 class="text-2xl font-bold mb-4">💬 แสดงความคิดเห็น</h2>
+          <h2 class="text-2xl font-bold mb-4">{{ t('detail.sections.comments') }}</h2>
           <GiscusComments
             repo="MM0131/curious-forge"
             repo-id="R_kgDONgaPAg"
@@ -88,7 +88,7 @@
         </section>
       </div>
       <div v-else>
-        <LoadingSpinner size="lg" text="กำลังโหลดข้อมูล..." />
+        <LoadingSpinner size="lg" :text="t('detail.loading')" />
       </div>
     </div>
     
@@ -101,11 +101,11 @@
     
     <Modal v-model="showShareModal">
       <template #header>
-        <h3 class="text-xl font-bold">แชร์โปรเจกต์</h3>
+        <h3 class="text-xl font-bold">{{ t('detail.share.title') }}</h3>
       </template>
       <template #body>
         <div class="space-y-4">
-          <p class="text-slate-300">แชร์โปรเจกต์นี้ให้เพื่อนของคุณ:</p>
+          <p class="text-slate-300">{{ t('detail.share.description') }}</p>
           <div class="flex gap-2">
             <input 
               :value="shareUrl" 
@@ -121,7 +121,7 @@
         </div>
       </template>
       <template #footer>
-        <button @click="showShareModal = false" class="btn-primary bg-white/6">ปิด</button>
+        <button @click="showShareModal = false" class="btn-primary bg-white/6">{{ t('detail.share.close') }}</button>
       </template>
     </Modal>
   </section>
@@ -141,6 +141,7 @@ import { useSaved } from '~/composables/useSaved'
 import { useAnalytics } from '~/composables/useAnalytics'
 import { useRuntimeConfig } from '#app'
 
+const { t } = useI18n()
 const route = useRoute()
 const blueprints = blueprintsData as Blueprint[]
 
@@ -181,8 +182,8 @@ function toggleSave() {
   if (!bp.value) return
   track(isSaved.value ? 'unsave' : 'save', { id: bp.value.id })
   toggle(bp.value.id)
-  if (_isSaved(bp.value.id)) showToast('success', 'บันทึกโปรเจกต์เรียบร้อยแล้ว! 🎉')
-  else showToast('info', 'ลบออกจากรายการบันทึกแล้ว')
+  if (_isSaved(bp.value.id)) showToast('success', t('detail.toast.saved'))
+  else showToast('info', t('detail.toast.unsaved'))
 }
 
 function shareBlueprint() {
@@ -193,7 +194,7 @@ function shareBlueprint() {
       url: globalThis.window.location.href
     }).then(() => {
       track('share', { id: bp.value!.id, method: 'web-share' })
-      showToast('success', 'แชร์เรียบร้อย!')
+      showToast('success', t('detail.toast.shareSuccess'))
     }).catch(() => {
       showShareModal.value = true
     })
@@ -206,10 +207,10 @@ function shareBlueprint() {
 function copyShareUrl() {
   navigator.clipboard.writeText(shareUrl.value).then(() => {
     if (bp.value) track('copy_link', { id: bp.value.id })
-    showToast('success', 'คัดลอก URL เรียบร้อย! 📋')
+    showToast('success', t('detail.toast.linkCopied'))
     showShareModal.value = false
   }).catch(() => {
-    showToast('error', 'ไม่สามารถคัดลอก URL ได้')
+    showToast('error', t('detail.toast.copyError'))
   })
 }
 

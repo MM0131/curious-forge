@@ -64,6 +64,7 @@ export default defineNuxtConfig({
   // ⚙️ โมดูลที่ใช้
   modules: [
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/i18n',
       ['@vite-pwa/nuxt', {
         registerType: 'autoUpdate',
         manifest: {
@@ -116,6 +117,24 @@ export default defineNuxtConfig({
         }
       }]
   ],
+
+  // 🌍 i18n Configuration
+  i18n: {
+    locales: [
+      {
+        code: 'th',
+        name: 'ไทย',
+        file: 'th.json'
+      },
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.json'
+      }
+    ],
+    langDir: 'locales/',
+    defaultLocale: 'th'
+  },
 
     // 🛠️ Vite config
     vite: {

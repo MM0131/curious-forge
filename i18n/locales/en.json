@@ -1,0 +1,127 @@
+{
+  "nav": {
+    "library": "Library",
+    "submit": "Submit",
+    "profile": "Profile"
+  },
+  "home": {
+    "tagline": "Hands-On Science",
+    "subtitle": "Experiment, understand, and build it yourself",
+    "explore": "Start Exploring",
+    "submitIdea": "Submit Idea",
+    "featuredProjects": "Featured Projects"
+  },
+  "library": {
+    "title": "Blueprint Library",
+    "searchPlaceholder": "🔍 Search projects like volcano, battery, camera...",
+    "resultsCount": "projects",
+    "filtered": "(filtered)",
+    "resetFilters": "Reset Filters",
+    "noResults": "No blueprints found",
+    "filter": {
+      "category": {
+        "all": "📚 All Categories",
+        "chemistry": "🧪 Chemistry",
+        "physics": "⚛️ Physics",
+        "biology": "🧬 Biology",
+        "energy": "⚡ Energy",
+        "geology": "🌍 Geology",
+        "engineering": "⚙️ Engineering"
+      },
+      "difficulty": {
+        "all": "🎯 All Difficulty Levels",
+        "easy": "😊 Easy",
+        "medium": "🤔 Medium",
+        "hard": "🔥 Hard"
+      }
+    },
+    "sort": {
+      "nameAZ": "🔤 Sort by Name (A-Z)",
+      "timeAsc": "⏱️ Time: Low → High",
+      "timeDesc": "⏱️ Time: High → Low",
+      "difficultyAsc": "📈 Easy → Hard",
+      "difficultyDesc": "📉 Hard → Easy"
+    },
+    "card": {
+      "materials": "materials",
+      "viewDetails": "View Details",
+      "save": "Save",
+      "saved": "Saved",
+      "unsave": "Remove from saved"
+    }
+  },
+  "detail": {
+    "loading": "Loading data...",
+    "actions": {
+      "print": "Print",
+      "share": "Share",
+      "save": "Save Project",
+      "saved": "Saved"
+    },
+    "sections": {
+      "purpose": "Purpose",
+      "principle": "Science Principle",
+      "materials": "Materials",
+      "steps": "Steps",
+      "funFacts": "Fun Facts",
+      "warnings": "Warnings",
+      "comments": "💬 Comments"
+    },
+    "share": {
+      "title": "Share Project",
+      "description": "Share this project with your friends:",
+      "close": "Close"
+    },
+    "toast": {
+      "saved": "Project saved successfully! 🎉",
+      "unsaved": "Removed from saved list",
+      "shareSuccess": "Shared successfully!",
+      "linkCopied": "URL copied successfully! 📋",
+      "copyError": "Cannot copy URL"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "stats": {
+      "viewed": "Viewed",
+      "saved": "Saved",
+      "contributed": "Contributed"
+    },
+    "savedProjects": "Saved Projects",
+      "noSaved": "No saved projects yet",
+      "noSavedAction": "Explore the blueprint library and save projects you like",
+    "remove": "Remove",
+      "removeLabel": "Remove from saved list"
+  },
+  "submit": {
+    "title": "Submit Your Idea",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "e.g. John Doe",
+      "email": "Email",
+    "emailPlaceholder": "you{'@'}example.com",
+      "projectTitle": "Project Title",
+      "projectTitlePlaceholder": "e.g. DIY Camera Obscura",
+      "category": "Category",
+      "difficulty": "Difficulty",
+      "selectOption": "— Select —",
+      "steps": "Steps",
+      "stepsPlaceholder": "Describe the steps one by one...",
+      "materials": "Materials",
+      "materialsPlaceholder": "e.g. Cardboard, hot glue, popsicle sticks, string...",
+      "submitButton": "Submit My Idea",
+      "errorMessage": "Please fill in all required fields"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailInvalid": "Invalid email",
+      "titleRequired": "Project title is required"
+    },
+    "successMessage": "Idea submitted successfully! Thank you! 🎉"
+  },
+  "footer": {
+    "copyright": "© The Curious Forge • Experiment Team",
+    "about": "About",
+    "contact": "Contact"
+  }
+}

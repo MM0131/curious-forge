@@ -1,92 +1,92 @@
 <template>
   <section class="py-14">
     <div class="max-w-3xl mx-auto card">
-      <h1 class="text-2xl font-extrabold mb-6">ส่งไอเดียของคุณ</h1>
+      <h1 class="text-2xl font-extrabold mb-6">{{ t('submit.title') }}</h1>
 
       <form class="space-y-5" @submit.prevent="onSubmit">
         <InputField
           id="name"
-          label="ชื่อ"
+          :label="t('submit.form.name')"
           :value="form.name"
-          placeholder="เช่น สมชาย ใจดี"
+          :placeholder="t('submit.form.namePlaceholder')"
           @input="(e: Event) => form.name = (e.target as HTMLInputElement).value"
-          :aria-invalid="!!errors.name"
+          :aria-invalid="!!nameError"
         />
         <InputField
           id="email"
-          label="อีเมล"
+          :label="t('submit.form.email')"
           type="email"
           :value="form.email"
-          placeholder="you@example.com"
+          :placeholder="t('submit.form.emailPlaceholder')"
           @input="(e: Event) => form.email = (e.target as HTMLInputElement).value"
-          :aria-invalid="!!errors.email"
+          :aria-invalid="!!emailError"
         />
         <InputField
           id="projectTitle"
-          label="ชื่อโปรเจกต์"
+          :label="t('submit.form.projectTitle')"
           :value="form.title"
-          placeholder="เช่น กล้องออบสคูราแบบ DIY"
+          :placeholder="t('submit.form.projectTitlePlaceholder')"
           @input="(e: Event) => form.title = (e.target as HTMLInputElement).value"
-          :aria-invalid="!!errors.title"
+          :aria-invalid="!!titleError"
         />
 
         <div class="grid md:grid-cols-2 gap-4">
           <SelectField
             id="category"
-            label="หมวดหมู่"
+            :label="t('submit.form.category')"
             :value="form.category"
             @change="(e: Event) => form.category = (e.target as HTMLSelectElement).value"
           >
-            <option value="">— เลือก —</option>
-            <option value="Physics">ฟิสิกส์</option>
-            <option value="Chemistry">เคมี</option>
-            <option value="Biology">ชีววิทยา</option>
-            <option value="Energy">พลังงาน</option>
-            <option value="Geology">ธรณีวิทยา</option>
-            <option value="Engineering">วิศวกรรม</option>
+            <option value="">{{ t('submit.form.selectOption') }}</option>
+            <option value="Physics">{{ t('library.filter.category.physics') }}</option>
+            <option value="Chemistry">{{ t('library.filter.category.chemistry') }}</option>
+            <option value="Biology">{{ t('library.filter.category.biology') }}</option>
+            <option value="Energy">{{ t('library.filter.category.energy') }}</option>
+            <option value="Geology">{{ t('library.filter.category.geology') }}</option>
+            <option value="Engineering">{{ t('library.filter.category.engineering') }}</option>
           </SelectField>
           <SelectField
             id="difficulty"
-            label="ความยาก"
+            :label="t('submit.form.difficulty')"
             :value="form.difficulty"
             @change="(e: Event) => form.difficulty = (e.target as HTMLSelectElement).value"
           >
-            <option value="">— เลือก —</option>
-            <option value="Easy">ง่าย</option>
-            <option value="Medium">กลาง</option>
-            <option value="Hard">ยาก</option>
+            <option value="">{{ t('submit.form.selectOption') }}</option>
+            <option value="Easy">{{ t('library.filter.difficulty.easy') }}</option>
+            <option value="Medium">{{ t('library.filter.difficulty.medium') }}</option>
+            <option value="Hard">{{ t('library.filter.difficulty.hard') }}</option>
           </SelectField>
         </div>
 
         <div class="space-y-2">
-          <label for="steps" class="text-sm text-slate-300">ขั้นตอน</label>
+          <label for="steps" class="text-sm text-slate-300">{{ t('submit.form.steps') }}</label>
           <textarea
             id="steps"
             rows="4"
             :value="form.steps"
             @input="(e: Event) => form.steps = (e.target as HTMLTextAreaElement).value"
-            placeholder="อธิบายขั้นตอนการทำทีละข้อ..."
+            :placeholder="t('submit.form.stepsPlaceholder')"
             class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-violet-500 text-slate-100 placeholder-slate-400 caret-violet-400"
           />
         </div>
 
         <div class="space-y-2">
-          <label for="materials" class="text-sm text-slate-300">วัสดุ</label>
+          <label for="materials" class="text-sm text-slate-300">{{ t('submit.form.materials') }}</label>
           <textarea
             id="materials"
             rows="3"
             :value="form.materials"
             @input="(e: Event) => form.materials = (e.target as HTMLTextAreaElement).value"
-            placeholder="เช่น กระดาษแข็ง, กาวร้อน, ไม้ไอศกรีม, เชือก..."
+            :placeholder="t('submit.form.materialsPlaceholder')"
             class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-violet-500 text-slate-100 placeholder-slate-400 caret-violet-400"
           />
         </div>
 
         <div class="pt-2">
-          <button :disabled="!isValid" type="submit" class="btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed">ส่งไอเดียของฉัน</button>
+          <button :disabled="!isValid" type="submit" class="btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed">{{ t('submit.form.submitButton') }}</button>
         </div>
 
-        <p v-if="firstAttempt && !isValid" class="text-rose-300 text-sm">กรุณากรอกข้อมูลที่จำเป็นให้ครบถ้วน</p>
+        <p v-if="firstAttempt && !isValid" class="text-rose-300 text-sm">{{ t('submit.form.errorMessage') }}</p>
       </form>
     </div>
 
@@ -105,6 +105,8 @@ import InputField from '~/components/InputField.vue'
 import SelectField from '~/components/SelectField.vue'
 import Toast from '~/components/Toast.vue'
 
+const { t } = useI18n()
+
 const form = reactive({
   name: '',
   email: '',
@@ -115,19 +117,26 @@ const form = reactive({
   materials: ''
 })
 
-const errors = reactive<{ [k: string]: string | null }>({
-  name: null,
-  email: null,
-  title: null
-})
-
 const firstAttempt = ref(false)
 
+// Separate validation computed properties
+const nameError = computed(() => {
+  if (!firstAttempt.value) return null
+  return form.name.trim() ? null : t('submit.validation.nameRequired')
+})
+
+const emailError = computed(() => {
+  if (!firstAttempt.value) return null
+  return /.+@.+\..+/.test(form.email) ? null : t('submit.validation.emailInvalid')
+})
+
+const titleError = computed(() => {
+  if (!firstAttempt.value) return null
+  return form.title.trim() ? null : t('submit.validation.titleRequired')
+})
+
 const isValid = computed(() => {
-  errors.name = form.name.trim() ? null : 'ต้องกรอกชื่อ'
-  errors.email = /.+@.+\..+/.test(form.email) ? null : 'อีเมลไม่ถูกต้อง'
-  errors.title = form.title.trim() ? null : 'ต้องกรอกชื่อโปรเจกต์'
-  return !errors.name && !errors.email && !errors.title
+  return form.name.trim() && /.+@.+\..+/.test(form.email) && form.title.trim()
 })
 
 const toast = reactive({ show: false, type: 'success' as 'success'|'error'|'warning'|'info', message: '' })
@@ -142,7 +151,7 @@ function onSubmit() {
   if (!isValid.value) return
 
   // จำลองการส่งข้อมูลสำเร็จ
-  showToast('success', 'ส่งไอเดียสำเร็จ ขอบคุณมาก! 🎉')
+  showToast('success', t('submit.successMessage'))
   Object.assign(form, { name: '', email: '', title: '', category: '', difficulty: '', steps: '', materials: '' })
   firstAttempt.value = false
 }

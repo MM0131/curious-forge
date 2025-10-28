@@ -9,9 +9,10 @@
         </NuxtLink>
 
         <div class="flex items-center gap-6 text-sm">
-          <NuxtLink class="hover:opacity-80" to="/library">Library</NuxtLink>
-          <NuxtLink class="hover:opacity-80" to="/submit">Submit</NuxtLink>
-          <NuxtLink class="hover:opacity-80" to="/profile">Profile</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/library">{{ t('nav.library') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/submit">{{ t('nav.submit') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/profile">{{ t('nav.profile') }}</NuxtLink>
+          <LanguageSwitcher />
         </div>
       </nav>
     </header>
@@ -24,10 +25,10 @@
     <!-- Footer -->
     <footer class="border-t border-white/10">
       <div class="container mx-auto px-4 py-6 flex items-center justify-between text-slate-300 text-sm">
-        <div>© The Curious Forge • ทีมทดลอง</div>
+        <div>{{ t('footer.copyright') }}</div>
         <div class="flex gap-6">
-          <NuxtLink class="hover:opacity-80" to="/about">About</NuxtLink>
-          <NuxtLink class="hover:opacity-80" to="/contact">Contact</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/about">{{ t('footer.about') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/contact">{{ t('footer.contact') }}</NuxtLink>
         </div>
       </div>
     </footer>
@@ -36,4 +37,7 @@
 
 <script setup lang="ts">
 import OfflineBanner from '~/components/OfflineBanner.client.vue'
+import LanguageSwitcher from '~/components/LanguageSwitcher.vue'
+
+const { t } = useI18n()
 </script>
