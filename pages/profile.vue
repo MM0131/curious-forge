@@ -11,22 +11,23 @@
 
       <h2 class="mt-10 text-xl font-semibold">{{ t('profile.savedProjects') }}</h2>
 
-      <div v-if="savedBlueprints.length === 0" class="mt-6 card text-center py-12">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-slate-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-        </svg>
-        <p class="text-slate-400 text-lg mb-2">{{ t('profile.noSaved') }}</p>
-        <p class="text-slate-500 text-sm mb-4">{{ t('profile.noSavedAction') }}</p>
-        <NuxtLink to="/library" class="btn-primary inline-flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+      <ClientOnly>
+        <div v-if="savedBlueprints.length === 0" class="mt-6 card text-center py-12">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-slate-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
           </svg>
-          {{ t('nav.library') }}
-        </NuxtLink>
-      </div>
+          <p class="text-slate-400 text-lg mb-2">{{ t('profile.noSaved') }}</p>
+          <p class="text-slate-500 text-sm mb-4">{{ t('profile.noSavedAction') }}</p>
+          <NuxtLink to="/library" class="btn-primary inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+            </svg>
+            {{ t('nav.library') }}
+          </NuxtLink>
+        </div>
 
-      <div v-else class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div v-for="bp in savedBlueprints" :key="bp.id" class="relative group">
+        <div v-else class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div v-for="bp in savedBlueprints" :key="bp.id" class="relative group">
           <NuxtLink :to="`/blueprints/${bp.id}`" class="block">
             <div class="card hover:bg-white/7 transition">
               <img v-if="bp.image" :src="bp.image" :alt="bp.title" class="w-full h-44 object-cover rounded-xl mb-4" />
@@ -50,20 +51,21 @@
             </svg>
             {{ t('profile.remove') }}
           </button>
+          </div>
         </div>
-      </div>
+      </ClientOnly>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import StatCard from '~/components/StatCard.vue'
-import type { Blueprint } from '~/types/blueprint'
-import blueprintsData from '@/assets/data/blueprints.json'
 import { useSaved } from '~/composables/useSaved'
+import { useBlueprints } from '~/composables/useBlueprints'
+import { onMounted } from 'vue'
 
 const { t } = useI18n()
-const all = blueprintsData as Blueprint[]
+const { load } = useBlueprints()
 const { savedIds, savedBlueprints, count: savedCount, remove } = useSaved()
 
 // ยังไม่มีการเก็บสถิติจริงสำหรับ 2 ค่าแรก/สุดท้าย จึงใส่ 0 ไว้ก่อน
@@ -73,4 +75,9 @@ const contributeCount = 0
 function removeSaved(id: string) {
   remove(id)
 }
+
+onMounted(() => {
+  // Ensure blueprints are loaded so saved list can map from DB
+  load()
+})
 </script>

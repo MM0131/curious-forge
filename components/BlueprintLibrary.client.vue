@@ -1,6 +1,6 @@
 <template>
   <section class="py-14">
-    <h1 class="text-3xl font-extrabold mb-8">{{ t('library.title') }}</h1>
+    <h1 class="text-3xl font-extrabold mb-8">คลังพิมพ์เขียว</h1>
 
     <!-- Search & Filter Section -->
     <div class="mb-10 space-y-4">
@@ -14,7 +14,7 @@
         <input
           v-model="q"
           type="text"
-          :placeholder="t('library.searchPlaceholder')"
+          placeholder="🔍 ค้นหาโปรเจกต์ เช่น ภูเขาไฟ, แบตเตอรี่, กล้อง..."
           class="w-full rounded-xl bg-white/5 border border-white/10 pl-12 pr-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition"
         />
         <button
@@ -35,13 +35,13 @@
           v-model="cat"
           class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 transition"
         >
-          <option value="">{{ t('library.filter.category.all') }}</option>
-          <option value="Chemistry">{{ t('library.filter.category.chemistry') }}</option>
-          <option value="Physics">{{ t('library.filter.category.physics') }}</option>
-          <option value="Biology">{{ t('library.filter.category.biology') }}</option>
-          <option value="Energy">{{ t('library.filter.category.energy') }}</option>
-          <option value="Geology">{{ t('library.filter.category.geology') }}</option>
-          <option value="Engineering">{{ t('library.filter.category.engineering') }}</option>
+          <option value="">📚 หมวดหมู่ทั้งหมด</option>
+          <option value="Chemistry">🧪 เคมี</option>
+          <option value="Physics">⚛️ ฟิสิกส์</option>
+          <option value="Biology">🧬 ชีววิทยา</option>
+          <option value="Energy">⚡ พลังงาน</option>
+          <option value="Geology">🌍 ธรณีวิทยา</option>
+          <option value="Engineering">⚙️ วิศวกรรม</option>
         </select>
 
         <!-- Difficulty Filter -->
@@ -49,10 +49,10 @@
           v-model="difficulty"
           class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 transition"
         >
-          <option value="">{{ t('library.filter.difficulty.all') }}</option>
-          <option value="Easy">{{ t('library.filter.difficulty.easy') }}</option>
-          <option value="Medium">{{ t('library.filter.difficulty.medium') }}</option>
-          <option value="Hard">{{ t('library.filter.difficulty.hard') }}</option>
+          <option value="">🎯 ระดับความยากทั้งหมด</option>
+          <option value="Easy">😊 ง่าย</option>
+          <option value="Medium">🤔 ปานกลาง</option>
+          <option value="Hard">🔥 ยาก</option>
         </select>
 
         <!-- Sort Options -->
@@ -60,19 +60,19 @@
           v-model="sortBy"
           class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 transition"
         >
-          <option value="default">{{ t('library.sort.nameAZ') }}</option>
-          <option value="timeAsc">{{ t('library.sort.timeAsc') }}</option>
-          <option value="timeDesc">{{ t('library.sort.timeDesc') }}</option>
-          <option value="difficultyAsc">{{ t('library.sort.difficultyAsc') }}</option>
-          <option value="difficultyDesc">{{ t('library.sort.difficultyDesc') }}</option>
+          <option value="default">🔤 เรียงตามชื่อ (ก-ฮ)</option>
+          <option value="timeAsc">⏱️ เวลาน้อย → มาก</option>
+          <option value="timeDesc">⏱️ เวลามาก → น้อย</option>
+          <option value="difficultyAsc">📈 ง่าย → ยาก</option>
+          <option value="difficultyDesc">📉 ยาก → ง่าย</option>
         </select>
       </div>
 
       <!-- Results Summary -->
       <div class="flex items-center justify-between text-sm text-slate-400">
         <p>
-          <span class="text-violet-400 font-semibold">{{ filteredBlueprints.length }}</span> {{ t('library.resultsCount') }}
-          <span v-if="q || cat || difficulty"> {{ t('library.filtered') }}</span>
+          <span class="text-violet-400 font-semibold">{{ filteredBlueprints.length }}</span> โปรเจกต์
+          <span v-if="q || cat || difficulty"> (กรองแล้ว)</span>
         </p>
         <button
           v-if="q || cat || difficulty || sortBy !== 'default'"
@@ -82,13 +82,13 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
           </svg>
-          {{ t('library.resetFilters') }}
+          รีเซ็ตตัวกรอง
         </button>
       </div>
     </div>
 
     <div v-if="filteredBlueprints.length === 0" class="text-center py-12">
-      <p class="text-xl text-slate-400">{{ t('library.noResults') }}</p>
+      <p class="text-xl text-slate-400">ไม่พบพิมพ์เขียว</p>
     </div>
 
     <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -99,11 +99,11 @@
       >
         <button
           class="absolute top-3 right-3 z-10 rounded-lg border border-white/10 bg-black/30 backdrop-blur px-2 py-1 text-xs hover:bg-black/50"
-          @click.stop="trackToggleSave(bp.id)"
+          @click.stop="onToggle(bp.id)"
           :aria-pressed="isSaved(bp.id)"
-          :title="isSaved(bp.id) ? t('library.card.unsave') : t('library.card.save')"
+          :title="isSaved(bp.id) ? 'ลบออกจากที่บันทึก' : 'บันทึกโปรเจกต์'"
         >
-          {{ isSaved(bp.id) ? t('library.card.saved') : t('library.card.save') }}
+          {{ isSaved(bp.id) ? 'บันทึกแล้ว' : 'บันทึก' }}
         </button>
         <img v-if="bp.image" :src="bp.image" :alt="bp.title" class="w-full h-44 object-cover rounded-xl mb-4" />
         <h3 class="text-lg font-semibold leading-snug">{{ bp.title }}</h3>
@@ -111,13 +111,14 @@
 
         <div class="mt-4 flex items-center gap-3 text-xs text-slate-300">
           <span class="px-2 py-1 rounded-lg bg-white/5 border border-white/10">{{ bp.time }}</span>
-          <span class="px-2 py-1 rounded-lg bg-white/5 border border-white/10">{{ (bp.materials?.length || 0) }} {{ t('library.card.materials') }}</span>
+          <span class="px-2 py-1 rounded-lg bg-white/5 border border-white/10">{{ (bp.materials?.length || 0) }} วัสดุ</span>
           <span class="px-2 py-1 rounded-lg bg-emerald-600/15 border border-emerald-500/20 text-emerald-200">{{ bp.difficulty }}</span>
         </div>
 
         <div class="mt-5">
           <NuxtLink :to="`/blueprints/${bp.id}`" class="btn-primary inline-flex items-center gap-2">
-            {{ t('library.card.viewDetails') }}
+            ดูรายละเอียด
+            <span class="-mr-1">👁️</span>
           </NuxtLink>
         </div>
       </div>
@@ -136,13 +137,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import type { Blueprint } from '~/types/blueprint'
 import blueprintsData from '@/assets/data/blueprints.json'
 import { useSaved } from '~/composables/useSaved'
-import { useAnalytics } from '~/composables/useAnalytics'
+import { useAuth } from '~/composables/useAuth'
+import { useRouter } from 'vue-router'
 
-const { t } = useI18n()
 const isDev = import.meta.env.DEV
 const q = ref('')
 const cat = ref('')
@@ -153,8 +154,18 @@ const n = ref(0)
 const allBlueprints = blueprintsData as Blueprint[]
 
 // saved state
-const { isSaved, toggle: toggleSave } = useSaved()
-const { track } = useAnalytics()
+const { isSaved, toggle } = useSaved()
+const { isAuthenticated } = useAuth()
+const router = useRouter()
+
+async function onToggle(id: string) {
+  if (!isAuthenticated.value) {
+    const path = `/login?redirect=${encodeURIComponent('/library')}`
+    router.push(path)
+    return
+  }
+  await toggle(id)
+}
 
 const filteredBlueprints = computed<Blueprint[]>(() => {
   const query = q.value.trim().toLowerCase()
@@ -225,26 +236,9 @@ function resetFilters() {
   cat.value = ''
   difficulty.value = ''
   sortBy.value = 'default'
-  track('filters_reset')
 }
 
 onMounted(() => {
   console.log('📄 BlueprintLibrary mounted (client-only)')
 })
-
-// Analytics watches
-watch(q, (val, old) => {
-  if (val !== old) track('search', { q: String(val || '').slice(0, 64), len: (val || '').length })
-})
-watch([cat, difficulty, sortBy], ([c, d, s], [pc, pd, ps]) => {
-  if (c !== pc) track('filter_category', { cat: String(c || '') })
-  if (d !== pd) track('filter_difficulty', { difficulty: String(d || '') })
-  if (s !== ps) track('sort_change', { sortBy: String(s || '') })
-})
-
-function trackToggleSave(id: string) {
-  const saved = isSaved(id)
-  track(saved ? 'unsave' : 'save', { id })
-  toggleSave(id)
-}
 </script>
