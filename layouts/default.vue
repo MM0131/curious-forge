@@ -15,6 +15,24 @@
           <NuxtLink class="hover:opacity-80" to="/submit">{{ t('nav.submit') }}</NuxtLink>
           <NuxtLink class="hover:opacity-80" to="/contact">{{ t('nav.contact') }}</NuxtLink>
           <LanguageSwitcher />
+          
+            <!-- Auth Button -->
+            <div v-if="isAuthenticated" class="flex items-center gap-3">
+              <span class="text-slate-400 text-xs">{{ user?.email }}</span>
+              <button 
+                @click="handleSignOut"
+                class="px-3 py-1.5 bg-slate-700/50 hover:bg-slate-600/50 rounded-lg text-xs transition"
+              >
+                {{ t('auth.signOut') }}
+              </button>
+            </div>
+            <NuxtLink 
+              v-else
+              to="/login" 
+              class="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg text-xs font-semibold transition"
+            >
+              {{ t('auth.signIn') }}
+            </NuxtLink>
         </div>
       </nav>
     </header>
@@ -42,4 +60,11 @@ import OfflineBanner from '~/components/OfflineBanner.client.vue'
 import LanguageSwitcher from '~/components/LanguageSwitcher.vue'
 
 const { t } = useI18n()
+const { user, isAuthenticated, signOut } = useAuth()
+const router = useRouter()
+
+const handleSignOut = async () => {
+  await signOut()
+  router.push('/')
+}
 </script>

@@ -182,5 +182,27 @@
         "answer": "เรามีแผนจัดเวิร์กช็อปในอนาคต ติดตามข่าวสารได้ที่หน้าหรือโซเชียลมีเดีย"
       }
     }
+  },
+  "auth": {
+    "signIn": "เข้าสู่ระบบ",
+    "signUp": "สมัครสมาชิก",
+    "signOut": "ออกจากระบบ",
+    "email": "อีเมล",
+    "password": "รหัสผ่าน",
+    "displayName": "ชื่อที่แสดง",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "ใส่รหัสผ่าน",
+    "displayNamePlaceholder": "ชื่อของคุณ",
+    "createAccount": "สร้างบัญชีใหม่",
+    "welcomeBack": "ยินดีต้อนรับกลับมา!",
+    "loading": "กำลังโหลด...",
+    "orContinueWith": "หรือดำเนินการต่อด้วย",
+    "continueWithGoogle": "ดำเนินการต่อด้วย Google",
+    "continueWithGitHub": "ดำเนินการต่อด้วย GitHub",
+    "alreadyHaveAccount": "มีบัญชีอยู่แล้ว?",
+    "dontHaveAccount": "ยังไม่มีบัญชี?",
+    "forgotPassword": "ลืมรหัสผ่าน?",
+    "resetPassword": "รีเซ็ตรหัสผ่าน",
+    "sendResetLink": "ส่งลิงก์รีเซ็ต"
   }
 }

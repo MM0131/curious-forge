@@ -182,5 +182,27 @@
         "answer": "We plan to organize workshops in the future. Stay tuned via our page or social media"
       }
     }
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "displayName": "Display Name",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "Enter your password",
+    "displayNamePlaceholder": "Your name",
+    "createAccount": "Create a new account",
+    "welcomeBack": "Welcome back!",
+    "loading": "Loading...",
+    "orContinueWith": "Or continue with",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithGitHub": "Continue with GitHub",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "forgotPassword": "Forgot password?",
+    "resetPassword": "Reset Password",
+    "sendResetLink": "Send reset link"
   }
 }
