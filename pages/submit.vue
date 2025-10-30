@@ -164,9 +164,28 @@ function onSubmit() {
     return
   }
 
-  // จำลองการส่งข้อมูลสำเร็จ
-  showToast('success', t('submit.successMessage'))
-  Object.assign(form, { name: '', email: '', title: '', category: '', difficulty: '', steps: '', materials: '' })
-  firstAttempt.value = false
+  // ส่งข้อมูลไปยัง API จริง
+  const payload = {
+    title: form.title,
+    description: form.steps || form.title,
+    category: form.category || 'general',
+    difficulty: form.difficulty || 'beginner',
+    materials: form.materials ? form.materials.split('\n').map(s => s.trim()).filter(Boolean) : [],
+    submitter_name: form.name,
+    submitter_email: form.email
+  }
+
+  ;(async () => {
+    try {
+      await $fetch('/api/submit', { method: 'POST', body: payload })
+      // success
+      showToast('success', t('submit.successMessage'))
+      Object.assign(form, { name: '', email: '', title: '', category: '', difficulty: '', steps: '', materials: '' })
+      firstAttempt.value = false
+    } catch (err: any) {
+      console.error('Submit error', err)
+      showToast('error', err?.message || t('submit.form.serverError') || 'Failed to submit')
+    }
+  })()
 }
 </script>
