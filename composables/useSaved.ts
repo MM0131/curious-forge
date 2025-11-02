@@ -1,6 +1,6 @@
 import { computed, watch, onMounted, ref } from 'vue'
 import type { Blueprint } from '~/types/blueprint'
-import blueprintsData from '@/assets/data/blueprints.json'
+import blueprintsData from '@/assets/data/blueprints.en'
 
 // A small helper to detect Supabase configuration presence
 function isSupabaseConfigured() {

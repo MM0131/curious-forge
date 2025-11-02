@@ -1,31 +1,31 @@
 <template>
   <section class="py-14">
     <div class="max-w-3xl mx-auto card">
-      <h1 class="text-2xl font-extrabold mb-6">{{ t('submit.title') }}</h1>
+  <h1 class="text-2xl font-extrabold mb-6">{{ translateOr('submit.title', 'Submit your project') }}</h1>
 
       <form class="space-y-5" @submit.prevent="onSubmit">
         <InputField
           id="name"
-          :label="t('submit.form.name')"
+          :label="translateOr('submit.form.name', 'Your name')"
           :value="form.name"
-          :placeholder="t('submit.form.namePlaceholder')"
+          :placeholder="translateOr('submit.form.namePlaceholder', 'Full name')"
           @input="(e: Event) => form.name = (e.target as HTMLInputElement).value"
           :error="nameError as any"
         />
         <InputField
           id="email"
-          :label="t('submit.form.email')"
+          :label="translateOr('submit.form.email', 'Email')"
           type="email"
           :value="form.email"
-          :placeholder="t('submit.form.emailPlaceholder')"
+          :placeholder="translateOr('submit.form.emailPlaceholder', 'name@example.com')"
           @input="(e: Event) => form.email = (e.target as HTMLInputElement).value"
           :error="emailError as any"
         />
         <InputField
           id="projectTitle"
-          :label="t('submit.form.projectTitle')"
+          :label="translateOr('submit.form.projectTitle', 'Project title')"
           :value="form.title"
-          :placeholder="t('submit.form.projectTitlePlaceholder')"
+          :placeholder="translateOr('submit.form.projectTitlePlaceholder', 'Short, descriptive title')"
           @input="(e: Event) => form.title = (e.target as HTMLInputElement).value"
           :error="titleError as any"
         />
@@ -33,60 +33,60 @@
         <div class="grid md:grid-cols-2 gap-4">
           <SelectField
             id="category"
-            :label="t('submit.form.category')"
+            :label="translateOr('submit.form.category', 'Category')"
             :value="form.category"
             @change="(e: Event) => form.category = (e.target as HTMLSelectElement).value"
           >
-            <option value="">{{ t('submit.form.selectOption') }}</option>
-            <option value="Physics">{{ t('library.filter.category.physics') }}</option>
-            <option value="Chemistry">{{ t('library.filter.category.chemistry') }}</option>
-            <option value="Biology">{{ t('library.filter.category.biology') }}</option>
-            <option value="Energy">{{ t('library.filter.category.energy') }}</option>
-            <option value="Geology">{{ t('library.filter.category.geology') }}</option>
-            <option value="Engineering">{{ t('library.filter.category.engineering') }}</option>
+            <option value="">{{ translateOr('submit.form.selectOption', 'Select...') }}</option>
+            <option value="Physics">{{ translateOr('library.filter.category.physics', 'Physics') }}</option>
+            <option value="Chemistry">{{ translateOr('library.filter.category.chemistry', 'Chemistry') }}</option>
+            <option value="Biology">{{ translateOr('library.filter.category.biology', 'Biology') }}</option>
+            <option value="Energy">{{ translateOr('library.filter.category.energy', 'Energy') }}</option>
+            <option value="Geology">{{ translateOr('library.filter.category.geology', 'Geology') }}</option>
+            <option value="Engineering">{{ translateOr('library.filter.category.engineering', 'Engineering') }}</option>
           </SelectField>
           <SelectField
             id="difficulty"
-            :label="t('submit.form.difficulty')"
+            :label="translateOr('submit.form.difficulty', 'Difficulty')"
             :value="form.difficulty"
             @change="(e: Event) => form.difficulty = (e.target as HTMLSelectElement).value"
           >
-            <option value="">{{ t('submit.form.selectOption') }}</option>
-            <option value="Easy">{{ t('library.filter.difficulty.easy') }}</option>
-            <option value="Medium">{{ t('library.filter.difficulty.medium') }}</option>
-            <option value="Hard">{{ t('library.filter.difficulty.hard') }}</option>
+            <option value="">{{ translateOr('submit.form.selectOption', 'Select...') }}</option>
+            <option value="Easy">{{ translateOr('library.filter.difficulty.easy', 'Easy') }}</option>
+            <option value="Medium">{{ translateOr('library.filter.difficulty.medium', 'Medium') }}</option>
+            <option value="Hard">{{ translateOr('library.filter.difficulty.hard', 'Hard') }}</option>
           </SelectField>
         </div>
 
         <div class="space-y-2">
-          <label for="steps" class="text-sm text-slate-300">{{ t('submit.form.steps') }}</label>
+          <label for="steps" class="text-sm text-slate-300">{{ translateOr('submit.form.steps', 'Steps / Instructions') }}</label>
           <textarea
             id="steps"
             rows="4"
             :value="form.steps"
             @input="(e: Event) => form.steps = (e.target as HTMLTextAreaElement).value"
-            :placeholder="t('submit.form.stepsPlaceholder')"
+            :placeholder="translateOr('submit.form.stepsPlaceholder', 'Write step-by-step instructions')"
             class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-violet-500 text-slate-100 placeholder-slate-400 caret-violet-400"
           />
         </div>
 
         <div class="space-y-2">
-          <label for="materials" class="text-sm text-slate-300">{{ t('submit.form.materials') }}</label>
+          <label for="materials" class="text-sm text-slate-300">{{ translateOr('submit.form.materials', 'Materials') }}</label>
           <textarea
             id="materials"
             rows="3"
             :value="form.materials"
             @input="(e: Event) => form.materials = (e.target as HTMLTextAreaElement).value"
-            :placeholder="t('submit.form.materialsPlaceholder')"
+            :placeholder="translateOr('submit.form.materialsPlaceholder', 'List materials, one per line')"
             class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-violet-500 text-slate-100 placeholder-slate-400 caret-violet-400"
           />
         </div>
 
         <div class="pt-2">
-          <button type="submit" class="btn-primary w-full">{{ t('submit.form.submitButton') }}</button>
+          <button type="submit" class="btn-primary w-full">{{ translateOr('submit.form.submitButton', 'Submit') }}</button>
         </div>
 
-        <p v-if="firstAttempt && !isValid" class="text-rose-300 text-sm">{{ t('submit.form.errorMessage') }}</p>
+  <p v-if="firstAttempt && !isValid" class="text-rose-300 text-sm">{{ translateOr('submit.form.errorMessage', 'Please fill required fields') }}</p>
       </form>
     </div>
 
@@ -106,6 +106,11 @@ import SelectField from '~/components/SelectField.vue'
 import Toast from '~/components/Toast.vue'
 
 const { t } = useI18n()
+// Helper to avoid showing raw i18n keys in UI when translations are missing
+const translateOr = (key: string, fallback: string) => {
+  const v = t(key)
+  return v === key ? fallback : v
+}
 
 const form = reactive({
   name: '',
@@ -152,7 +157,7 @@ function showToast(type: 'success'|'error'|'warning'|'info', message: string) {
 function onSubmit() {
   firstAttempt.value = true
   if (!isValid.value) {
-    showToast('warning', t('submit.form.errorMessage'))
+  showToast('warning', translateOr('submit.form.errorMessage', 'Please fill required fields'))
     // focus first invalid field for better UX
     if (!form.name.trim()) {
       document.getElementById('name')?.focus()
@@ -178,8 +183,8 @@ function onSubmit() {
   ;(async () => {
     try {
       await $fetch('/api/submit', { method: 'POST', body: payload })
-      // success
-      showToast('success', t('submit.successMessage'))
+  // success
+  showToast('success', translateOr('submit.successMessage', 'Thanks — your submission was received'))
       Object.assign(form, { name: '', email: '', title: '', category: '', difficulty: '', steps: '', materials: '' })
       firstAttempt.value = false
     } catch (err: any) {

@@ -8,21 +8,21 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
         </div>
-        <h1 class="text-4xl font-extrabold mb-4">เกี่ยวกับเรา</h1>
-        <p class="text-xl text-slate-300">วิทยาศาสตร์คิดสร้างสรรค์ สำคัญ</p>
+  <h1 class="text-4xl font-extrabold mb-4">About Us</h1>
+  <p class="text-xl text-slate-300">Hands-on science matters</p>
       </div>
 
       <!-- Mission -->
       <div class="card mb-8">
         <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
           <span class="text-3xl">🎯</span>
-          พันธกิจของเรา
+          Our mission
         </h2>
         <p class="text-slate-300 leading-relaxed mb-4">
-          The Curious Forge คือ แพลตฟอร์มการเรียนรู้วิทยาศาสตร์และการสร้างสรรค์ที่มุ่งเน้นให้ทุกคนสามารถเข้าถึงความรู้และพัฒนาทักษะผ่านการทำโปรเจกต์จริง
+          The Curious Forge is a hands-on science and maker learning platform focused on giving everyone access to knowledge and skills through real projects.
         </p>
         <p class="text-slate-300 leading-relaxed">
-          เราเชื่อว่าการเรียนรู้ที่ดีที่สุดเกิดจากการลงมือทำ ทดลอง และค้นพบด้วยตัวเอง เราจึงรวบรวมพิมพ์เขียวโปรเจกต์วิทยาศาสตร์ที่น่าสนใจและทำได้จริง เพื่อให้ทุกคนได้สัมผัสกับความมหัศจรรย์ของวิทยาศาสตร์
+          We believe the best learning happens by doing, experimenting and discovering. We collect practical, engaging blueprint projects so everyone can experience the wonder of science.
         </p>
       </div>
 
@@ -30,18 +30,18 @@
       <div class="grid md:grid-cols-3 gap-6 mb-8">
         <div class="card text-center">
           <div class="text-4xl mb-3">💡</div>
-          <h3 class="font-semibold text-lg mb-2">สร้างสรรค์</h3>
-          <p class="text-sm text-slate-400">ส่งเสริมความคิดสร้างสรรค์และนวัตกรรม</p>
+          <h3 class="font-semibold text-lg mb-2">Create</h3>
+          <p class="text-sm text-slate-400">Encourage creativity and innovation</p>
         </div>
         <div class="card text-center">
           <div class="text-4xl mb-3">🤝</div>
-          <h3 class="font-semibold text-lg mb-2">แบ่งปัน</h3>
-          <p class="text-sm text-slate-400">เปิดกว้างสำหรับทุกคนที่อยากเรียนรู้</p>
+          <h3 class="font-semibold text-lg mb-2">Share</h3>
+          <p class="text-sm text-slate-400">Open to anyone who wants to learn</p>
         </div>
         <div class="card text-center">
           <div class="text-4xl mb-3">🚀</div>
-          <h3 class="font-semibold text-lg mb-2">พัฒนา</h3>
-          <p class="text-sm text-slate-400">พัฒนาทักษะและความรู้อย่างต่อเนื่อง</p>
+          <h3 class="font-semibold text-lg mb-2">Grow</h3>
+          <p class="text-sm text-slate-400">Continuously develop skills and knowledge</p>
         </div>
       </div>
 
@@ -49,30 +49,30 @@
       <div class="card bg-gradient-to-br from-violet-900/20 to-indigo-900/20 border-violet-700/20">
         <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
           <span class="text-3xl">📖</span>
-          เรื่องราวของเรา
+          Our story
         </h2>
         <div class="space-y-4 text-slate-300 leading-relaxed">
           <p>
-            The Curious Forge เริ่มต้นจากความหลงใหลในวิทยาศาสตร์และการทดลอง โดยกลุ่มผู้ที่เชื่อว่าวิทยาศาสตร์ไม่ควรเป็นเรื่องยากหรือน่าเบื่อ แต่ควรเป็นเรื่องสนุกและท้าทายที่ทุกคนสามารถเข้าถึงได้
+            The Curious Forge began from a passion for science and experimentation, built by people who believe science shouldn't be intimidating or boring — it should be fun and accessible to everyone.
           </p>
           <p>
-            เราได้รวบรวมโปรเจกต์วิทยาศาสตร์และวิศวกรรมที่น่าสนใจจากทั่วโลก ตั้งแต่การสร้างแบตเตอรี่จากมะนาวไปจนถึงการสร้างกล้องโทรทรรศน์ เพื่อให้ทุกคนได้สัมผัสประสบการณ์การเรียนรู้ที่แท้จริง
+            We collect interesting science and engineering projects from around the world — from lemon batteries to DIY telescopes — so learners can gain real, hands-on experience.
           </p>
           <p>
-            วันนี้ The Curious Forge ได้กลายเป็นชุมชนของนักสำรวจ นักประดิษฐ์ และผู้ที่รักการเรียนรู้หลายพันคน ร่วมกันแบ่งปันความรู้ ประสบการณ์ และแรงบันดาลใจให้กันและกัน
+            Today, The Curious Forge is a community of explorers, makers and lifelong learners sharing knowledge, experience and inspiration.
           </p>
         </div>
       </div>
 
       <!-- CTA -->
       <div class="mt-8 text-center">
-        <h3 class="text-xl font-semibold mb-4">พร้อมเริ่มต้นการผจญภัยทางวิทยาศาสตร์แล้วหรือยัง?</h3>
+  <h3 class="text-xl font-semibold mb-4">Ready to start your science adventure?</h3>
         <div class="flex gap-4 justify-center flex-wrap">
           <NuxtLink to="/library" class="btn-primary">
-            เรียกดูโปรเจกต์
+            Browse projects
           </NuxtLink>
           <NuxtLink to="/submit" class="btn-primary bg-white/6">
-            ส่งไอเดียของคุณ
+            Submit your idea
           </NuxtLink>
         </div>
       </div>
@@ -82,8 +82,8 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'เกี่ยวกับเรา - The Curious Forge',
-  description: 'แพลตฟอร์มการเรียนรู้วิทยาศาสตร์และการสร้างสรรค์ที่มุ่งเน้นให้ทุกคนสามารถเข้าถึงความรู้และพัฒนาทักษะผ่านการทำโปรเจกต์จริง'
+  title: 'About — The Curious Forge',
+  description: 'The Curious Forge is a hands-on science and maker learning platform focused on giving everyone access to knowledge and skills through real projects.'
 })
 </script>
 

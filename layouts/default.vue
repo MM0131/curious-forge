@@ -9,12 +9,11 @@
         </NuxtLink>
 
         <div class="flex items-center gap-6 text-sm">
-          <NuxtLink class="hover:opacity-80" to="/">{{ t('nav.home') }}</NuxtLink>
-          <NuxtLink class="hover:opacity-80" to="/library">{{ t('nav.library') }}</NuxtLink>
-          <NuxtLink class="hover:opacity-80" to="/profile">{{ t('nav.profile') }}</NuxtLink>
-          <NuxtLink class="hover:opacity-80" to="/submit">{{ t('nav.submit') }}</NuxtLink>
-          <NuxtLink class="hover:opacity-80" to="/contact">{{ t('nav.contact') }}</NuxtLink>
-          <LanguageSwitcher />
+          <NuxtLink class="hover:opacity-80" to="/">{{ translateOr('nav.home', 'Home') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/library">{{ translateOr('nav.library', 'Library') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/profile">{{ translateOr('nav.profile', 'Profile') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/submit">{{ translateOr('nav.submit', 'Submit') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/contact">{{ translateOr('nav.contact', 'Contact') }}</NuxtLink>
           
             <!-- Auth Button -->
             <div v-if="isAuthenticated" class="flex items-center gap-3">
@@ -23,7 +22,7 @@
                 @click="handleSignOut"
                 class="px-3 py-1.5 bg-slate-700/50 hover:bg-slate-600/50 rounded-lg text-xs transition"
               >
-                {{ t('auth.signOut') }}
+                {{ translateOr('auth.signOut', 'Sign out') }}
               </button>
             </div>
             <NuxtLink 
@@ -31,7 +30,7 @@
               to="/login" 
               class="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg text-xs font-semibold transition"
             >
-              {{ t('auth.signIn') }}
+              {{ translateOr('auth.signIn', 'Sign in') }}
             </NuxtLink>
         </div>
       </nav>
@@ -45,10 +44,10 @@
     <!-- Footer -->
     <footer class="border-t border-white/10">
       <div class="container mx-auto px-4 py-6 flex items-center justify-between text-slate-300 text-sm">
-        <div>{{ t('footer.copyright') }}</div>
+        <div>{{ translateOr('footer.copyright', '© Curious Forge') }}</div>
         <div class="flex gap-6">
-          <NuxtLink class="hover:opacity-80" to="/about">{{ t('footer.about') }}</NuxtLink>
-          <NuxtLink class="hover:opacity-80" to="/contact">{{ t('footer.contact') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/about">{{ translateOr('footer.about', 'About') }}</NuxtLink>
+          <NuxtLink class="hover:opacity-80" to="/contact">{{ translateOr('footer.contact', 'Contact') }}</NuxtLink>
         </div>
       </div>
     </footer>
@@ -57,9 +56,13 @@
 
 <script setup lang="ts">
 import OfflineBanner from '~/components/OfflineBanner.client.vue'
-import LanguageSwitcher from '~/components/LanguageSwitcher.vue'
 
 const { t } = useI18n()
+// Helper: return translation if available, otherwise a readable fallback
+const translateOr = (key: string, fallback: string) => {
+  const v = t(key)
+  return v === key ? fallback : v
+}
 const { user, isAuthenticated, signOut } = useAuth()
 const router = useRouter()
 

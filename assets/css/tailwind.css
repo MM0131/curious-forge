@@ -14,6 +14,18 @@ body {
   @apply bg-[linear-gradient(180deg,var(--bg-start),var(--bg-end))] text-slate-100 font-sans;
 }
 
+/* Ensure a full-frame, fixed background so sections won't appear to "cut" the gradient
+   even when content uses translucent cards or other overlays. This places a fixed
+   gradient layer behind the app that covers the entire viewport. */
+#__nuxt::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+  background-attachment: fixed;
+}
+
 /* การ์ดพื้นฐาน */
 .card {
   @apply rounded-2xl bg-white/5 border border-white/10 shadow-md p-6;

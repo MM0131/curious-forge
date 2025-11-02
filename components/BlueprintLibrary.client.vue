@@ -1,6 +1,6 @@
 <template>
   <section class="py-14">
-    <h1 class="text-3xl font-extrabold mb-8">คลังพิมพ์เขียว</h1>
+    <h1 class="text-3xl font-extrabold mb-8">Blueprint Library</h1>
 
     <!-- Search & Filter Section -->
     <div class="mb-10 space-y-4">
@@ -14,7 +14,7 @@
         <input
           v-model="q"
           type="text"
-          placeholder="🔍 ค้นหาโปรเจกต์ เช่น ภูเขาไฟ, แบตเตอรี่, กล้อง..."
+          placeholder="🔍 Search projects — e.g. volcano, battery, camera..."
           class="w-full rounded-xl bg-white/5 border border-white/10 pl-12 pr-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition"
         />
         <button
@@ -35,13 +35,13 @@
           v-model="cat"
           class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 transition"
         >
-          <option value="">📚 หมวดหมู่ทั้งหมด</option>
-          <option value="Chemistry">🧪 เคมี</option>
-          <option value="Physics">⚛️ ฟิสิกส์</option>
-          <option value="Biology">🧬 ชีววิทยา</option>
-          <option value="Energy">⚡ พลังงาน</option>
-          <option value="Geology">🌍 ธรณีวิทยา</option>
-          <option value="Engineering">⚙️ วิศวกรรม</option>
+          <option value="">📚 All categories</option>
+          <option value="Chemistry">🧪 Chemistry</option>
+          <option value="Physics">⚛️ Physics</option>
+          <option value="Biology">🧬 Biology</option>
+          <option value="Energy">⚡ Energy</option>
+          <option value="Geology">🌍 Geology</option>
+          <option value="Engineering">⚙️ Engineering</option>
         </select>
 
         <!-- Difficulty Filter -->
@@ -49,10 +49,10 @@
           v-model="difficulty"
           class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 transition"
         >
-          <option value="">🎯 ระดับความยากทั้งหมด</option>
-          <option value="Easy">😊 ง่าย</option>
-          <option value="Medium">🤔 ปานกลาง</option>
-          <option value="Hard">🔥 ยาก</option>
+          <option value="">🎯 All difficulty levels</option>
+          <option value="Easy">😊 Easy</option>
+          <option value="Medium">🤔 Medium</option>
+          <option value="Hard">🔥 Hard</option>
         </select>
 
         <!-- Sort Options -->
@@ -60,21 +60,21 @@
           v-model="sortBy"
           class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 transition"
         >
-          <option value="default">🔤 เรียงตามชื่อ (ก-ฮ)</option>
-          <option value="timeAsc">⏱️ เวลาน้อย → มาก</option>
-          <option value="timeDesc">⏱️ เวลามาก → น้อย</option>
-          <option value="difficultyAsc">📈 ง่าย → ยาก</option>
-          <option value="difficultyDesc">📉 ยาก → ง่าย</option>
+          <option value="default">🔤 Sort: Name (A–Z)</option>
+          <option value="timeAsc">⏱️ Time: short → long</option>
+          <option value="timeDesc">⏱️ Time: long → short</option>
+          <option value="difficultyAsc">📈 Difficulty: easy → hard</option>
+          <option value="difficultyDesc">📉 Difficulty: hard → easy</option>
         </select>
       </div>
 
       <!-- Results Summary -->
       <div class="flex items-center justify-between text-sm text-slate-400">
         <p>
-          <span class="text-violet-400 font-semibold">{{ filteredBlueprints.length }}</span> โปรเจกต์
-          <span v-if="q || cat || difficulty"> (กรองแล้ว)</span>
+          <span class="text-violet-400 font-semibold">{{ filteredBlueprints.length }}</span> projects
+          <span v-if="q || cat || difficulty"> (filtered)</span>
         </p>
-        <button
+          <button
           v-if="q || cat || difficulty || sortBy !== 'default'"
           @click="resetFilters"
           class="text-violet-400 hover:text-violet-300 transition flex items-center gap-1"
@@ -82,44 +82,51 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
           </svg>
-          รีเซ็ตตัวกรอง
+          Reset filters
         </button>
       </div>
     </div>
 
     <div v-if="filteredBlueprints.length === 0" class="text-center py-12">
-      <p class="text-xl text-slate-400">ไม่พบพิมพ์เขียว</p>
+      <p class="text-xl text-slate-400">No blueprints found</p>
     </div>
 
-    <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div
-        v-for="bp in filteredBlueprints"
-        :key="bp.id"
-        class="card hover:bg-white/7 transition relative"
-      >
+    <div v-else>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          v-for="bp in pagedBlueprints"
+          :key="bp.id"
+          class="relative"
+        >
         <button
           class="absolute top-3 right-3 z-10 rounded-lg border border-white/10 bg-black/30 backdrop-blur px-2 py-1 text-xs hover:bg-black/50"
           @click.stop="onToggle(bp.id)"
           :aria-pressed="isSaved(bp.id)"
-          :title="isSaved(bp.id) ? 'ลบออกจากที่บันทึก' : 'บันทึกโปรเจกต์'"
+          :title="isSaved(bp.id) ? 'Remove from saved' : 'Save project'"
         >
-          {{ isSaved(bp.id) ? 'บันทึกแล้ว' : 'บันทึก' }}
+          {{ isSaved(bp.id) ? 'Saved' : 'Save' }}
         </button>
-        <img v-if="bp.image" :src="bp.image" :alt="bp.title" class="w-full h-44 object-cover rounded-xl mb-4" />
-        <h3 class="text-lg font-semibold leading-snug">{{ bp.title }}</h3>
-        <p class="mt-1 text-sm text-slate-300 line-clamp-2">{{ bp.purpose }}</p>
 
-        <div class="mt-4 flex items-center gap-3 text-xs text-slate-300">
-          <span class="px-2 py-1 rounded-lg bg-white/5 border border-white/10">{{ bp.time }}</span>
-          <span class="px-2 py-1 rounded-lg bg-white/5 border border-white/10">{{ (bp.materials?.length || 0) }} วัสดุ</span>
-          <span class="px-2 py-1 rounded-lg bg-emerald-600/15 border border-emerald-500/20 text-emerald-200">{{ bp.difficulty }}</span>
-        </div>
+        <!-- Use the reusable BlueprintCard component for consistent layout -->
+        <BlueprintCard
+          :title="englishTitle(bp.title)"
+          :subtitle="englishPurpose(bp.purpose)"
+          :time="bp.time || '—'"
+          :people="(bp.materials?.length || 0) + ' materials'"
+          :level="bp.difficulty || 'Unknown'"
+          :cover="imageFor(bp)"
+          :to="`/blueprints/${bp.id}`"
+        />
+      </div>
+      </div>
 
-        <div class="mt-5">
-          <NuxtLink :to="`/blueprints/${bp.id}`" class="btn-primary inline-flex items-center gap-2">
-            ดูรายละเอียด
-            <span class="-mr-1">👁️</span>
-          </NuxtLink>
+      <!-- Pagination controls -->
+      <div class="mt-8 flex items-center justify-between">
+        <div class="text-sm text-slate-400">Showing <span class="font-semibold text-slate-200">{{ startItem }}–{{ endItem }}</span> of <span class="font-semibold text-violet-400">{{ filteredBlueprints.length }}</span></div>
+        <div class="flex items-center gap-2">
+          <button class="px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10" :disabled="page === 1" @click="prevPage">Prev</button>
+          <div class="text-sm text-slate-300">Page <span class="font-mono px-2">{{ page }}</span> of {{ totalPages }}</div>
+          <button class="px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10" :disabled="page === totalPages" @click="nextPage">Next</button>
         </div>
       </div>
     </div>
@@ -137,9 +144,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import BlueprintCard from '~/components/BlueprintCard.vue'
 import type { Blueprint } from '~/types/blueprint'
-import blueprintsData from '@/assets/data/blueprints.json'
+import blueprintsData from '@/assets/data/blueprints.en'
 import { useSaved } from '~/composables/useSaved'
 import { useAuth } from '~/composables/useAuth'
 import { useRouter } from 'vue-router'
@@ -151,7 +160,28 @@ const difficulty = ref('')
 const sortBy = ref('default')
 const n = ref(0)
 
+// Pagination
+const page = ref(1)
+const pageSize = ref(6) // 3 cols x 2 rows per page to avoid overflowing frame
+
 const allBlueprints = blueprintsData as Blueprint[]
+
+// Helpers to prefer English names/purposes when present in parentheses
+const englishTitle = (title?: string) => {
+  if (!title) return ''
+  const m = title.match(/\(([^)]+)\)/)
+  if (m && m[1]) return m[1].trim()
+  return title
+}
+
+const englishPurpose = (purpose?: string) => {
+  if (!purpose) return ''
+  const m = purpose.match(/\(([^)]+)\)/)
+  if (m && m[1]) return m[1].trim()
+  const ascii = purpose.match(/[A-Za-z0-9 ,.'"-]{4,}/)
+  if (ascii) return ascii[0].trim()
+  return purpose
+}
 
 // saved state
 const { isSaved, toggle } = useSaved()
@@ -203,12 +233,49 @@ const filteredBlueprints = computed<Blueprint[]>(() => {
   } else if (sortBy.value === 'difficultyDesc') {
     result.sort((a, b) => getDifficultyValue(b.difficulty) - getDifficultyValue(a.difficulty))
   } else {
-    // Default: sort by title
-    result.sort((a, b) => a.title.localeCompare(b.title, 'th'))
+    // Default: sort by English title when available, fall back to original
+    result.sort((a, b) => englishTitle(a.title).localeCompare(englishTitle(b.title), 'en'))
   }
 
   return result
 })
+
+// When filters change, reset to first page
+watch([q, cat, difficulty, sortBy, () => filteredBlueprints.value.length], () => {
+  page.value = 1
+})
+
+const totalPages = computed(() => Math.max(1, Math.ceil(filteredBlueprints.value.length / pageSize.value)))
+
+const pagedBlueprints = computed(() => {
+  const start = (page.value - 1) * pageSize.value
+  return filteredBlueprints.value.slice(start, start + pageSize.value)
+})
+
+const startItem = computed(() => filteredBlueprints.value.length === 0 ? 0 : (page.value - 1) * pageSize.value + 1)
+const endItem = computed(() => Math.min(filteredBlueprints.value.length, page.value * pageSize.value))
+
+function prevPage() {
+  if (page.value > 1) page.value--
+}
+
+function nextPage() {
+  if (page.value < totalPages.value) page.value++
+}
+
+// Return the image URL to use for a blueprint. Add a cache-busting query for lemon-battery
+const imageFor = (bp: Blueprint) => {
+  if (!bp || !bp.image) return undefined
+  try {
+    if (bp.id === 'lemon-battery') {
+      // prefer explicit cache-busted path if not already present
+      return bp.image.includes('?') ? bp.image : `${bp.image}?v=2`
+    }
+    return bp.image
+  } catch (e) {
+    return bp.image
+  }
+}
 
 // Helper function to parse time string to minutes
 function parseTime(timeStr: string): number {
@@ -240,5 +307,26 @@ function resetFilters() {
 
 onMounted(() => {
   console.log('📄 BlueprintLibrary mounted (client-only)')
+  // Debug: log the image path for lemon-battery to help diagnose missing thumbnail
+  try {
+    const lemon = allBlueprints.find(b => b.id === 'lemon-battery')
+    if (lemon) {
+      console.log('DEBUG: lemon-battery image=', lemon.image, 'raw=', JSON.stringify(lemon.image))
+    } else {
+      console.log('DEBUG: lemon-battery not found in allBlueprints')
+    }
+  } catch (e) {
+    console.error('DEBUG: error checking lemon-battery image', e)
+  }
+  // If a ?page= query param is present, respect it on mount so SSR links work
+  try {
+    const route = useRoute()
+    const p = Number(route.query.page)
+    if (p && Number.isFinite(p) && p >= 1) {
+      page.value = Math.min(p, totalPages.value)
+    }
+  } catch (e) {
+    // ignore if router unavailable
+  }
 })
 </script>

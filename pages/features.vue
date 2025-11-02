@@ -1,7 +1,7 @@
 <template>
   <section class="py-12">
     <div class="max-w-5xl mx-auto">
-      <h1 class="text-3xl font-bold text-center mb-8">ฟีเจอร์เด่นของ The Curious Forge</h1>
+  <h1 class="text-3xl font-bold text-center mb-8">Key features of The Curious Forge</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <FeatureCard
           v-for="feature in features"
@@ -17,18 +17,18 @@
 
 <script setup lang="ts">
 const features = [
-  { icon: '🧪', title: 'ทดลองจริง', desc: 'เรียนรู้ผ่านการปฏิบัติจริงด้วยวัสดุหาได้ง่าย' },
-  { icon: '📚', title: 'คลังโปรเจกต์วิทยาศาสตร์', desc: 'รวมโปรเจกต์และพิมพ์เขียวหลากหลายหมวดหมู่' },
-  { icon: '🔍', title: 'ระบบค้นหาและกรอง', desc: 'ค้นหาและกรองโปรเจกต์ตามหมวดหมู่/ความยาก/แท็ก' },
-  { icon: '👤', title: 'โปรไฟล์ผู้ใช้', desc: 'จัดการข้อมูลและโปรเจกต์ของคุณ' },
-  { icon: '�', title: 'ส่งไอเดียใหม่', desc: 'เสนอไอเดียหรือโปรเจกต์ใหม่ร่วมกับทีมงาน' },
-  { icon: '�', title: 'แจ้งเตือน', desc: 'รับข่าวสารและอัปเดตโปรเจกต์ใหม่' },
-  { icon: '✉️', title: 'ติดต่อทีมงาน', desc: 'สอบถามหรือแจ้งปัญหาได้สะดวก' },
-  { icon: '📤', title: 'แชร์โปรเจกต์', desc: 'แชร์โปรเจกต์ให้เพื่อนหรือบนโซเชียลมีเดีย' },
-  { icon: '�️', title: 'พิมพ์โปรเจกต์', desc: 'พิมพ์รายละเอียดโปรเจกต์เพื่อใช้งานจริง' },
-  { icon: '�', title: 'รายละเอียดโปรเจกต์', desc: 'แสดงข้อมูลครบถ้วน เช่น วัสดุ ขั้นตอน จุดประสงค์ ฯลฯ' },
-  { icon: '🏷️', title: 'ระบบหมวดหมู่และแท็ก', desc: 'จัดหมวดหมู่และแท็กโปรเจกต์เพื่อค้นหาได้ง่าย' },
-  { icon: '⏱️', title: 'ระบบความยากและระยะเวลา', desc: 'เลือกโปรเจกต์ตามระดับความยากและเวลาที่ใช้' },
-  { icon: '👥', title: 'จำนวนผู้ทำ', desc: 'แนะนำจำนวนผู้ร่วมทำแต่ละโปรเจกต์' },
+  { icon: '🧪', title: 'Hands-on experiments', desc: 'Learn by doing with easy-to-find materials' },
+  { icon: '📚', title: 'Blueprint library', desc: 'A diverse collection of project blueprints' },
+  { icon: '🔍', title: 'Search & filters', desc: 'Search and filter projects by category / difficulty / tags' },
+  { icon: '👤', title: 'User profiles', desc: 'Manage your projects and data' },
+  { icon: '💡', title: 'Submit ideas', desc: 'Share new project ideas with the team' },
+  { icon: '🔔', title: 'Notifications', desc: 'Receive news and project updates' },
+  { icon: '✉️', title: 'Contact the team', desc: 'Get support or report issues' },
+  { icon: '📤', title: 'Share projects', desc: 'Share projects with friends or on social media' },
+  { icon: '🖨️', title: 'Printable projects', desc: 'Print project details for hands-on use' },
+  { icon: '📄', title: 'Detailed project pages', desc: 'Full details including materials, steps, purpose, etc.' },
+  { icon: '🏷️', title: 'Categories & tags', desc: 'Organize projects with categories and tags for easy discovery' },
+  { icon: '⏱️', title: 'Difficulty & time', desc: 'Choose projects by difficulty and estimated time' },
+  { icon: '👥', title: 'Recommended participants', desc: 'Suggested number of collaborators per project' },
 ]
 </script>
