@@ -1,4 +1,5 @@
 import { ref } from '#imports'
+import blueprintsEn from '@/assets/data/blueprints.en'
 import type { Blueprint } from '~/types/blueprint'
 
 type DbBlueprint = {
@@ -59,8 +60,8 @@ export function useBlueprints() {
 
         list.value = mapped
       } else {
-        const res = await fetch('/assets/data/blueprints.json')
-        list.value = await res.json()
+        // Use the English-first local module as a fallback instead of fetching the raw JSON
+        list.value = blueprintsEn
       }
     } catch (e: unknown) {
       console.error('Failed to load blueprints:', e)

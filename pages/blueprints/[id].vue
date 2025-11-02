@@ -6,70 +6,70 @@
           <img v-if="bp.image" :src="bp.image" alt="" class="w-64 h-64 object-contain rounded-xl shadow mb-4 md:mb-0" />
           <div class="flex-1">
             <h1 class="text-3xl font-bold">{{ bp.title }}</h1>
-            <p class="text-sm text-slate-300 mt-2">{{ bp.category }} • {{ bp.difficulty }} • {{ bp.time }}</p>
+            <p class="text-sm text-slate-300 mt-2">{{ bp.category }} • {{ bp.difficulty }} • {{ displayTime }}</p>
             <p v-if="bp.description" class="mt-4 text-base text-slate-200">{{ bp.description }}</p>
             <div class="mt-6 flex gap-3 flex-wrap">
               <button class="btn-primary" @click="printBlueprint">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
                 </svg>
-                พิมพ์
+                Print
               </button>
               <button class="btn-primary bg-white/6" @click="shareBlueprint">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                 </svg>
-                แชร์
+                Share
               </button>
               <button :class="['btn-primary', isSaved ? '' : 'bg-white/6']" @click="toggleSave">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path v-if="!isSaved" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                   <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                {{ isSaved ? 'บันทึกแล้ว' : 'บันทึกโปรเจกต์' }}
+                {{ isSaved ? 'Saved' : 'Save Project' }}
               </button>
             </div>
           </div>
         </div>
 
         <section class="mt-6 card">
-          <h2 class="font-semibold">วัตถุประสงค์</h2>
+          <h2 class="font-semibold">Purpose</h2>
           <p class="text-slate-300 mt-2">{{ bp.purpose }}</p>
         </section>
 
         <section v-if="bp.sciencePrinciple" class="mt-4 card">
-          <h2 class="font-semibold">หลักการวิทยาศาสตร์</h2>
+          <h2 class="font-semibold">Science principle</h2>
           <p class="text-slate-300 mt-2">{{ bp.sciencePrinciple }}</p>
         </section>
 
         <section class="mt-4 card">
-          <h2 class="font-semibold">วัสดุ</h2>
+          <h2 class="font-semibold">Materials</h2>
           <ul class="list-disc list-inside text-slate-300">
             <li v-for="m in bp.materials" :key="m">{{ m }}</li>
           </ul>
         </section>
 
         <section class="mt-4 card">
-          <h2 class="font-semibold">ขั้นตอน</h2>
+          <h2 class="font-semibold">Steps</h2>
           <ol class="list-decimal list-inside text-slate-300">
             <li v-for="s in bp.steps" :key="s">{{ s }}</li>
           </ol>
         </section>
 
         <section v-if="bp.funFacts && bp.funFacts.length" class="mt-4 card bg-indigo-900/20 border-indigo-700/20">
-          <h2 class="font-semibold text-indigo-300">เกร็ดความรู้</h2>
+          <h2 class="font-semibold text-indigo-300">Fun facts</h2>
           <ul class="list-disc list-inside text-slate-300">
             <li v-for="fact in bp.funFacts" :key="fact">{{ fact }}</li>
           </ul>
         </section>
 
         <section class="mt-4 card bg-rose-900/20 border-rose-700/20">
-          <h2 class="font-semibold text-rose-300">คำเตือน</h2>
+          <h2 class="font-semibold text-rose-300">Warnings</h2>
           <p class="text-slate-300">{{ bp.warnings }}</p>
         </section>
       </div>
       <div v-else>
-        <LoadingSpinner size="lg" text="กำลังโหลดข้อมูล..." />
+        <LoadingSpinner size="lg" text="Loading..." />
       </div>
     </div>
     
@@ -82,11 +82,11 @@
     
     <Modal v-model="showShareModal">
       <template #header>
-        <h3 class="text-xl font-bold">แชร์โปรเจกต์</h3>
+        <h3 class="text-xl font-bold">Share Project</h3>
       </template>
       <template #body>
         <div class="space-y-4">
-          <p class="text-slate-300">แชร์โปรเจกต์นี้ให้เพื่อนของคุณ:</p>
+          <p class="text-slate-300">Share this project with your friends:</p>
           <div class="flex gap-2">
             <input 
               :value="shareUrl" 
@@ -102,7 +102,7 @@
         </div>
       </template>
       <template #footer>
-        <button @click="showShareModal = false" class="btn-primary bg-white/6">ปิด</button>
+        <button @click="showShareModal = false" class="btn-primary bg-white/6">Close</button>
       </template>
     </Modal>
   </section>
@@ -112,12 +112,16 @@
 import { useRoute, useRouter } from 'vue-router'
 import { computed, ref, reactive } from 'vue'
 import type { Blueprint } from '~/types/blueprint'
-import blueprintsData from '@/assets/data/blueprints.json'
+// Use the English-mapped dataset which overlays any full English entries and
+// includes additional aliases (e.g. `analog-weather-station`) so route slugs
+// resolve correctly regardless of the user's locale.
+import blueprintsData from '@/assets/data/blueprints.en'
 import Toast from '~/components/Toast.vue'
 import Modal from '~/components/Modal.vue'
 import LoadingSpinner from '~/components/LoadingSpinner.vue'
 import { useSaved } from '~/composables/useSaved'
 import { useAuth } from '~/composables/useAuth'
+import formatTimeEnglish from '~/utils/formatTime'
 
 const route = useRoute()
 const blueprints = blueprintsData as Blueprint[]
@@ -128,12 +132,34 @@ const currentId = computed(() => {
   return Array.isArray(raw) ? raw[0] : String(raw)
 })
 
-const bp = computed(() => blueprints.find(x => x.id === currentId.value))
+const bp = computed<Blueprint | undefined>(() => {
+  const id = currentId.value
+  if (!id) return undefined
+  // exact match
+  let found = blueprints.find(x => x.id === id)
+  if (found) return found
+  // common prefix removal (e.g., 'analog-weather-station' -> 'weather-station')
+  const alt = id.replace(/^analog[-_]/, '').replace(/^the[-_]/, '')
+  found = blueprints.find(x => x.id === alt)
+  if (found) return found
+  // id contained in blueprint id
+  found = blueprints.find(x => x.id && x.id.includes(id))
+  if (found) return found
+  // slugify title and compare
+  const slug = (s?: string) => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  found = blueprints.find(x => slug(x.title) === id || slug(x.title).includes(id))
+  if (found) return found
+  return undefined
+})
 
 const { isSaved: _isSaved, toggle, save } = useSaved()
 const { isAuthenticated } = useAuth()
 const router = useRouter()
 const isSaved = computed(() => (bp.value ? _isSaved(bp.value.id) : false))
+
+const displayTime = computed(() => {
+  return bp.value && bp.value.time ? formatTimeEnglish(bp.value.time) : ''
+})
 
 const toast = reactive({
   show: false,
@@ -159,7 +185,7 @@ async function toggleSave() {
   if (!bp.value) return
   // Require login for persistent save
   if (!isAuthenticated.value) {
-    showToast('info', 'กรุณาเข้าสู่ระบบเพื่อบันทึกโปรเจกต์')
+    showToast('info', 'Please sign in to save this project')
     // Redirect to login with return path
     const redirectTarget = `/blueprints/${bp.value.id}`
     const path = `/login?redirect=${encodeURIComponent(redirectTarget)}`
@@ -167,8 +193,8 @@ async function toggleSave() {
     return
   }
   await toggle(bp.value.id)
-  if (_isSaved(bp.value.id)) showToast('success', 'บันทึกโปรเจกต์เรียบร้อยแล้ว! 🎉')
-  else showToast('info', 'ลบออกจากรายการบันทึกแล้ว')
+  if (_isSaved(bp.value.id)) showToast('success', 'Project saved! 🎉')
+  else showToast('info', 'Removed from saved projects')
 }
 
 function shareBlueprint() {
@@ -178,7 +204,7 @@ function shareBlueprint() {
       text: bp.value.description || bp.value.purpose,
       url: globalThis.window.location.href
     }).then(() => {
-      showToast('success', 'แชร์เรียบร้อย!')
+        showToast('success', 'Shared!')
     }).catch(() => {
       showShareModal.value = true
     })
@@ -189,10 +215,10 @@ function shareBlueprint() {
 
 function copyShareUrl() {
   navigator.clipboard.writeText(shareUrl.value).then(() => {
-    showToast('success', 'คัดลอก URL เรียบร้อย! 📋')
+    showToast('success', 'Copied URL 📋')
     showShareModal.value = false
   }).catch(() => {
-    showToast('error', 'ไม่สามารถคัดลอก URL ได้')
+    showToast('error', 'Could not copy URL')
   })
 }
 

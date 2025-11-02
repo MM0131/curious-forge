@@ -1,0 +1,1159 @@
+[
+  {
+    "id": "volcano",
+    "title": "ภูเขาไฟจำลอง",
+    "category": "Chemistry",
+    "difficulty": "Easy",
+    "time": "30 นาที",
+    "materials": [
+      "เบคกิ้งโซดา",
+      "น้ำส้มสายชู",
+      "สีผสมอาหาร",
+      "โคลส"
+    ],
+    "steps": [
+      "เตรียมฐาน",
+      "ผสมส่วนผสม",
+      "จุดปฏิกิริยา และสังเกต"
+    ],
+    "purpose": "สอนการเกิดปฏิกิริยาเคมีระหว่างกรด-เบส",
+    "description": "สร้างภูเขาไฟจำลองที่ปะทุด้วยเบคกิ้งโซดาและน้ำส้มสายชู เหมาะสำหรับเด็กที่อยากเรียนรู้เคมีในชีวิตประจำวัน การทดลองนี้จะแสดงให้เห็นปฏิกิริยาระหว่างกรดและเบส ซึ่งปล่อยก๊าซคาร์บอนไดออกไซด์ทำให้เกิดฟองและล้นออกมาเหมือนลาวาจากภูเขาไฟ",
+    "sciencePrinciple": "เมื่อกรด (น้ำส้มสายชู) ทำปฏิกิริยากับเบส (เบคกิ้งโซดา) จะเกิดปฏิกิริยาเคมีที่ปล่อยก๊าซคาร์บอนไดออกไซด์ (CO₂) ทำให้เกิดฟองและฟู ปฏิกิริยานี้คือ: NaHCO₃ + CH₃COOH → CO₂ + H₂O + CH₃COONa",
+    "funFacts": [
+      "ภูเขาไฟจริงปะทุจากหินหนืดหลอมละลายที่เรียกว่าแมกมา ไม่ใช่จากปฏิกิริยาเคมี",
+      "สีผสมอาหารทำให้ดูสมจริงขึ้น โดยสีแดงหรือส้มจะคล้ายลาวา"
+    ],
+    "warnings": "ไม่รับประทานวัสดุ หลีกเลี่ยงตา",
+    "image": "/assets/images/volcano.svg"
+  },
+  {
+    "id": "lava-lamp",
+    "title": "เครื่องลาวาโฮมเมด",
+    "category": "Physics",
+    "difficulty": "Medium",
+    "time": "45 นาที",
+    "materials": [
+      "น้ำ",
+      "น้ำมัน",
+      "เกลือ",
+      "น้ำยาล้างจาน",
+      "สีผสมอาหาร"
+    ],
+    "steps": [
+      "เติมน้ำและน้ำมัน",
+      "เพิ่มสี",
+      "สร้างฟองด้วยเกลือ"
+    ],
+    "purpose": "สอนหลักการความหนาแน่นและการไม่ละลายกันของของเหลว",
+    "description": "สร้างโคมลาวาสุดเจ๋งด้วยวัสดุในครัว! ดูฟองสีสันสวยงามลอยขึ้นลงในขวด การทดลองนี้สาธิตความแตกต่างของความหนาแน่นระหว่างน้ำและน้ำมัน และแสดงให้เห็นว่าของเหลวบางชนิดไม่สามารถละลายรวมกันได้",
+    "sciencePrinciple": "น้ำมีความหนาแน่นมากกว่าน้ำมัน ทำให้น้ำจมลงข้างล่าง เมื่อใส่เกลือ มันจะดึงน้ำที่มีสีลงไปด้านล่าง และเมื่อเกลือละลาย น้ำก็จะลอยกลับขึ้นมาใหม่ เกิดเป็นการเคลื่อนไหวสวยงามแบบลาวาโคม",
+    "funFacts": [
+      "โคมลาวาจริงถูกประดิษฐ์ในปี 1963 โดยนักบัญชีชาวอังกฤษ",
+      "ถ้าใช้ไฟฉายส่องจากด้านล่าง จะทำให้ดูสวยงามยิ่งขึ้น"
+    ],
+    "warnings": "เก็บให้พ้นมือเด็กเล็ก",
+    "image": "/assets/images/lava-lamp.svg"
+  },
+  {
+    "id": "bridge",
+    "title": "สะพานจากไม้ไอติม",
+    "category": "Engineering",
+    "difficulty": "Hard",
+    "time": "120 นาที",
+    "materials": [
+      "ไม้ไอติม",
+      "กาว",
+      "เชือก"
+    ],
+    "steps": [
+      "ออกแบบ",
+      "ก่อสร้าง",
+      "ทดสอบน้ำหนัก"
+    ],
+    "purpose": "สอนการออกแบบโครงสร้างและแรง",
+    "description": "ท้าทายทักษะวิศวกรรมของคุณด้วยการสร้างสะพานจากไม้ไอติม! ออกแบบโครงสร้างที่แข็งแรงที่สุดและทดสอบว่ารับน้ำหนักได้เท่าไร โครงการนี้จะสอนหลักการแรง โมเมนต์ และการกระจายน้ำหนักในโครงสร้างวิศวกรรม",
+    "sciencePrinciple": "สะพานต้องรับแรงกด แรงดึง และแรงบิด รูปแบบสามเหลี่ยมช่วยกระจายน้ำหนักและเพิ่มความแข็งแรง สะพานแบบ Truss ใช้หลักการนี้ในการก่อสร้างสะพานจริง",
+    "funFacts": [
+      "สะพานโกลเด้นเกตในซานฟรานซิสโกใช้เหล็กกว่า 80,000 ไมล์ในการสร้าง",
+      "สะพานไม้ไอติมบางอันสามารถรับน้ำหนักได้มากกว่า 100 กก."
+    ],
+    "warnings": "ใช้กาวด้วยความระมัดระวัง",
+    "image": "/assets/images/bridge.svg"
+  },
+  {
+    "id": "solar-still",
+    "title": "Solar Still",
+    "category": "Energy",
+    "difficulty": "Easy",
+    "time": "2-4 ชั่วโมง",
+    "materials": [
+      "Dark-colored bowl",
+      "Short cup",
+      "Clear plastic wrap",
+      "Small rock"
+    ],
+    "steps": [
+      "Place the cup in the center of the bowl",
+      "Pour unclean water into the bowl without filling the cup",
+      "Cover tightly with plastic wrap and place a small rock over the cup so the plastic dips toward it",
+      "Place the still in direct sun and wait for condensation to form and drip into the cup"
+    ],
+    "purpose": "Turn contaminated water into pure drinking water using only sunlight",
+    "description": "A simple solar still uses evaporation and condensation to separate clean water from impurities. Heat from the sun evaporates water, vapor condenses on a cool surface, and droplets collect in a clean container.",
+    "sciencePrinciple": "Evaporation and condensation: sunlight heats water causing vapor to form; the vapor condenses on a cooler surface and collects as purified water.",
+    "funFacts": [
+      "A solar still can be a crucial survival technique"
+    ],
+    "warnings": "Production is slow; do not assume water is safe without proper testing in non-emergency settings",
+    "image": "/assets/images/solar-still.svg"
+  },
+  {
+    "id": "microbial-fuel-cell",
+    "title": "Microbial Fuel Cell (MFC)",
+    "category": "Biology",
+    "difficulty": "Medium",
+    "time": "5-7 วัน (เพื่อให้จุลินทรีย์ทำงาน)",
+    "materials": [
+      "Two jars",
+      "Pond mud",
+      "Copper plate",
+      "Zinc plate",
+      "Wires",
+      "LED or multimeter"
+    ],
+    "steps": [
+      "Assemble jars with mud and electrodes",
+      "Wait several days for microbial activity to establish",
+      "Measure voltage or light an LED"
+    ],
+    "purpose": "Generate electricity from microbes in soil",
+    "description": "Bacteria in mud break down organic matter and release electrons that can be captured as a small electrical current between two electrodes.",
+    "sciencePrinciple": "Microbial metabolism can produce electron flow in anaerobic conditions, harvestable as current in an electrode setup.",
+    "funFacts": [
+      "Researchers explore MFCs for wastewater energy recovery"
+    ],
+    "warnings": "Handle environmental samples carefully and wash hands afterward",
+    "image": "/assets/images/microbial-fuel-cell.svg"
+  },
+  {
+    "id": "seismograph",
+    "title": "เครื่องวัดแผ่นดินไหวอย่างง่าย (Seismograph)",
+    "category": "Geology",
+    "difficulty": "Medium",
+    "time": "30-60 นาที (ไม่รวมการตั้งค่าทดสอบ)",
+    "materials": [
+      "กล่องกระดาษแข็ง",
+      "ตุ้มน้ำหนัก (น็อตหรือหิน)",
+      "เชือก",
+      "ปากกาเมจิก",
+      "กระดาษม้วน"
+    ],
+    "steps": [
+      "ตัดกล่องเพื่อทำโครงเครื่องเปิด",
+      "แขวนตุ้มน้ำหนักด้วยเชือกกับด้านบนของโครง",
+      "ติดปากกากับตุ้มน้ำหนักให้ปลายปากกาชี้ลง",
+      "วางกระดาษไว้ใต้ปากกาและดึงให้เคลื่อนที่ช้าๆ",
+      "บันทึกการเขย่าและวิเคราะห์รูปแบบเส้นที่ได้"
+    ],
+    "purpose": "บันทึกรูปแบบการสั่นสะเทือนของพื้นดินโดยใช้หลักความเฉื่อย",
+    "warnings": "ติดตั้งให้มั่นคงและไม่ใช้แรงเกินที่อุปกรณ์รับได้",
+    "image": "/assets/images/seismograph.svg"
+  },
+  {
+    "id": "casein-plastic",
+    "title": "Casein Plastic",
+    "category": "Chemistry",
+    "difficulty": "Easy",
+    "time": "1-3 วัน (รวมการตกแต่งและการแห้ง)",
+    "materials": [
+      "Milk",
+      "Vinegar",
+      "Pot",
+      "Strainer",
+      "Mold (cookie cutter)"
+    ],
+    "steps": [
+      "Heat milk gently",
+      "Add vinegar until curds form",
+      "Strain curds and press into a mold",
+      "Dry the formed piece until hard"
+    ],
+    "purpose": "Turn milk protein into a biodegradable plastic-like material",
+    "warnings": "Handle hot liquids carefully",
+    "image": "/assets/images/casein-plastic.svg",
+    "description": "Heat milk and add acid to precipitate casein, then press and dry the curds to form a hard, moldable material.",
+    "sciencePrinciple": "Acid-induced protein coagulation: casein proteins link into long chains when acid is added, forming a polymeric solid.",
+    "funFacts": [
+      "Casein plastics were used historically for buttons and small objects"
+    ]
+  },
+  {
+    "id": "zeer-pot",
+    "title": "Zeer Pot (Evaporative Cooler)",
+    "category": "Thermodynamics",
+    "difficulty": "Easy",
+    "time": "30-60 นาที (เตรียม) + การใช้งานต่อเนื่อง",
+    "materials": [
+      "Two unglazed terracotta pots",
+      "Sand",
+      "Water",
+      "Burlap or towel"
+    ],
+    "steps": [
+      "Place smaller pot inside larger pot",
+      "Fill gap with wet sand",
+      "Cover with wet cloth and place in ventilated area"
+    ],
+    "purpose": "Keep food cool and extend freshness without electricity",
+    "warnings": "Keep sand moist; not effective in very humid climates",
+    "image": "/assets/images/zeer-pot.svg",
+    "description": "Two unglazed pots with wet sand between them use evaporative cooling to lower the inner pot's temperature.",
+    "sciencePrinciple": "Evaporative cooling: evaporation requires energy removal from the surroundings, lowering temperature.",
+    "funFacts": [
+      "Zeer pots are a simple, low-tech refrigeration method"
+    ]
+  },
+  {
+    "id": "water-rocket",
+    "title": "Water Bottle Rocket",
+    "category": "Physics",
+    "difficulty": "Medium",
+    "time": "30-60 นาที",
+    "materials": [
+      "PET bottle",
+      "Cardboard for fins",
+      "Cork or rubber stopper",
+      "Bicycle pump with needle"
+    ],
+    "steps": [
+      "Attach fins and a nozzle",
+      "Partially fill bottle with water",
+      "Seal and pressurize, then release safely"
+    ],
+    "purpose": "Launch a rocket using pressurized air and water",
+    "warnings": "Use safety distance and wear eye protection; never launch toward people",
+    "image": "/assets/images/water-rocket.svg",
+    "description": "A pressurized bottle ejects water and air downward, propelling the bottle upward by reaction force.",
+    "sciencePrinciple": "Newton's third law: action (ejecting water) produces an equal and opposite reaction (rocket thrust).",
+    "funFacts": [
+      "Water rockets can reach dozens of meters depending on pressure and design"
+    ]
+  },
+  {
+    "id": "herb-bug-spray",
+    "title": "Herb Bug Spray",
+    "category": "Biology",
+    "difficulty": "Easy",
+    "time": "2-4 วัน (แช่สมุนไพร)",
+    "materials": [
+      "Lemongrass, mint, basil or other pungent herbs",
+      "Hot water",
+      "Rubbing alcohol or vodka",
+      "Spray bottle"
+    ],
+    "steps": [
+      "Steep herbs in hot water or alcohol",
+      "Strain and dilute as needed",
+      "Put into a spray bottle and test on a small area"
+    ],
+    "purpose": "Make a safe insect repellent from plants",
+    "warnings": "Patch test on skin first; avoid spraying near eyes or wounds",
+    "image": "/assets/images/herb-bug-spray.svg",
+    "description": "Infuse aromatic herbs in alcohol or hot water to extract essential oils and strain into a spray bottle.",
+    "sciencePrinciple": "Many plants produce essential oils that repel insects; extraction concentrates these compounds.",
+    "funFacts": [
+      "Natural repellents can be effective and safe for many outdoor uses"
+    ]
+  },
+  {
+    "id": "backyard-foundry",
+    "title": "Backyard Foundry",
+    "category": "Material Science",
+    "difficulty": "Hard",
+    "time": "4-6 ชั่วโมง",
+    "materials": [
+      "Steel bucket",
+      "Refractory cement",
+      "Steel pipe",
+      "Hairdryer for forced air",
+      "Graphite crucible",
+      "Charcoal",
+      "Sand"
+    ],
+    "steps": [
+      "Build insulated furnace",
+      "Melt aluminum scrap in a crucible",
+      "Pour into prepared sand molds (with extreme caution)"
+    ],
+    "purpose": "Melt and cast scrap aluminum into new shapes",
+    "description": "A small foundry uses forced-air charcoal combustion to reach aluminum's melting point for casting into molds.",
+    "sciencePrinciple": "Apply enough thermal energy to exceed the material's melting point and pour into a mold to cast shapes.",
+    "funFacts": [
+      "Foundry work is an ancient craft used for tools and art"
+    ],
+    "warnings": "Requires strict safety gear and precautions; molten metal is extremely dangerous",
+    "image": "/assets/images/backyard-foundry.svg"
+  },
+  {
+    "id": "stirling-engine",
+    "title": "Stirling Engine",
+    "category": "Thermodynamics",
+    "difficulty": "Hard",
+    "time": "6-8 ชั่วโมง",
+    "materials": [
+      "Two soda cans",
+      "Balloon",
+      "Wire",
+      "Ball bearings",
+      "Steel wool",
+      "Epoxy glue",
+      "Candle or cup of hot water"
+    ],
+    "steps": [
+      "Construct displacer and power pistons",
+      "Seal the system and build a crank mechanism",
+      "Apply heat to create motion and tune timing"
+    ],
+    "purpose": "Build an external-heat engine that runs on temperature differences",
+    "description": "A Stirling engine uses cyclic heating and cooling of a working gas to produce continuous mechanical motion.",
+    "sciencePrinciple": "Closed-cycle heat engine: heat causes gas expansion and cooling causes contraction; pistons and linkages convert this into mechanical work.",
+    "funFacts": [
+      "Invented by Robert Stirling in 1816; used in some spacecraft applications"
+    ],
+    "warnings": "Be careful with heat sources and rotating parts",
+    "image": "/assets/images/stirling-engine.svg"
+  },
+  {
+    "id": "automated-greenhouse",
+    "title": "ระบบปลูกผักอัตโนมัติ (Automated Mini-Greenhouse)",
+    "category": "Engineering",
+    "difficulty": "Medium",
+    "time": "4-6 ชั่วโมง",
+    "materials": [
+      "บอร์ด Arduino",
+      "เซ็นเซอร์วัดความชื้นในดิน",
+      "เซ็นเซอร์วัดแสง (LDR)",
+      "ปั๊มน้ำขนาดเล็ก",
+      "รีเลย์",
+      "หลอดไฟ LED Grow Light",
+      "สายไฟ",
+      "กล่องพลาสติกใส",
+      "ท่อยาง",
+      "แหล่งจ่ายไฟ"
+    ],
+    "steps": [
+      "ประกอบโครงสร้างโรงเรือนขนาดเล็ก",
+      "ติดตั้งเซ็นเซอร์วัดความชื้นลงในดิน และเซ็นเซอร์วัดแสงในตำแหน่งที่เหมาะสม",
+      "ต่อวงจรอิเล็กทรอนิกส์ โดยให้ Arduino เป็นศูนย์กลางเชื่อมต่อระหว่างเซ็นเซอร์กับปั๊มน้ำและหลอดไฟ",
+      "เขียนโค้ดโปรแกรมเงื่อนไข เช่น ถ้าค่าความชื้นในดินต่ำกว่า 40% ให้สั่งเปิดปั๊มน้ำเป็นเวลา 5 วินาที",
+      "ทดสอบและปรับค่าต่างๆ ให้เหมาะสมกับพืชที่ปลูก"
+    ],
+    "purpose": "สร้างระบบที่สามารถดูแลต้นไม้แทนเรา (รดน้ำเมื่อดินแห้ง ให้แสงเมื่อมืด) ได้อย่างอัตโนมัติ",
+    "description": "ระบบนิเวศขนาดเล็กที่ดูแลตัวเองได้ เป็นการผสมผสานระหว่างธรรมชาติและเทคโนโลยีอย่างลงตัว และเป็นพื้นฐานสำคัญสู่ความเข้าใจในเรื่อง Internet of Things (IoT) และ Smart Farming",
+    "sciencePrinciple": "การสร้างระบบอัตโนมัติ (Automation System) โดยใช้ไมโครคอนโทรลเลอร์ (เช่น Arduino) เป็นสมอง อ่านค่าจากเซ็นเซอร์ (Sensors) แล้วสั่งการให้อุปกรณ์แอคชูเอเตอร์ (Actuators) ทำงานตามเงื่อนไขที่ตั้งโปรแกรมไว้",
+    "funFacts": [
+      "เทคโนโลยี Smart Farming สามารถเพิ่มผลผลิตได้ถึง 30%",
+      "ระบบอัตโนมัติช่วยประหยัดน้ำได้มากกว่า 50% เมื่อเทียบกับการรดน้ำด้วยมือ"
+    ],
+    "warnings": "ระวังไฟฟ้าลัดวงจร ตรวจสอบการต่อสายไฟให้ถูกต้อง ไม่ให้น้ำเข้าสัมผัสวงจรอิเล็กทรอนิกส์",
+    "image": "/assets/images/automated-greenhouse.svg"
+  },
+  {
+    "id": "newtonian-telescope",
+    "title": "Newtonian Telescope",
+    "category": "Astronomy",
+    "difficulty": "Hard",
+    "time": "8-12 ชั่วโมง",
+    "materials": [
+      "Primary concave mirror",
+      "Secondary flat mirror",
+      "Eyepiece",
+      "PVC tube",
+      "Wood for mount"
+    ],
+    "steps": [
+      "Mount mirrors precisely",
+      "Collimate and align optics",
+      "Aim at targets and observe through eyepiece"
+    ],
+    "purpose": "Build a reflector telescope to observe the Moon and planets",
+    "description": "A concave primary mirror collects light, a flat secondary mirror directs the image to an eyepiece for magnified viewing.",
+    "sciencePrinciple": "Reflecting optics concentrate light to form images; focal length and aperture determine resolution and brightness.",
+    "funFacts": [
+      "Newtonian design is popular among amateur telescope makers"
+    ],
+    "warnings": "Handle optics carefully to avoid scratches and misalignment",
+    "image": "/assets/images/newtonian-telescope.svg"
+  },
+  {
+    "id": "sundial",
+    "title": "Sundial",
+    "category": "Astronomy",
+    "difficulty": "Easy",
+    "time": "1 วัน (ทำเครื่องหมายทุกชั่วโมง)",
+    "materials": [
+      "Stick or pencil",
+      "Clay or base",
+      "Paper plate or cardboard"
+    ],
+    "steps": [
+      "Fix the gnomon upright in the base",
+      "Mark shadow positions each hour",
+      "Calibrate by comparing to a clock"
+    ],
+    "purpose": "Tell time using the sun's shadow",
+    "description": "Use a fixed gnomon and a marked base to track the sun's shadow movement during the day.",
+    "sciencePrinciple": "Earth's rotation changes the sun's apparent position, causing predictable shadow movement.",
+    "funFacts": [
+      "Sundials were among the earliest timekeeping devices"
+    ],
+    "warnings": "Only works in daylight and needs correct orientation",
+    "image": "/assets/images/sundial.svg"
+  },
+  {
+    "id": "periscope",
+    "title": "Periscope",
+    "category": "Optics",
+    "difficulty": "Easy",
+    "time": "30-45 นาที",
+    "materials": [
+      "Long cardboard box",
+      "Two small flat mirrors",
+      "Tape"
+    ],
+    "steps": [
+      "Cut viewing holes",
+      "Mount mirrors at 45°",
+      "Seal and test the view"
+    ],
+    "purpose": "See over obstacles using mirrors",
+    "description": "Two mirrors set at 45° in a tube redirect light so you can see over or around obstructions.",
+    "sciencePrinciple": "Law of reflection: incident angle equals reflection angle; two reflections redirect the line of sight.",
+    "funFacts": [
+      "Periscopes are used in submarines and observation posts"
+    ],
+    "warnings": "Be careful cutting the cardboard",
+    "image": "/assets/images/periscope.svg"
+  },
+  {
+    "id": "lemon-battery",
+    "title": "Lemon Battery",
+    "category": "Chemistry",
+    "difficulty": "Easy",
+    "time": "15-30 นาที",
+    "materials": [
+      "Lemon",
+      "Copper coin or wire",
+      "Zinc-plated nail",
+      "LED",
+      "Wires"
+    ],
+    "steps": [
+      "Insert metal electrodes into the lemon",
+      "Connect multiple lemons in series for higher voltage",
+      "Attach LED or meter"
+    ],
+    "purpose": "Generate an electric current from a fruit",
+    "description": "Insert two different metals into an acidic lemon to create an electrochemical cell that produces a small voltage.",
+    "sciencePrinciple": "Electrochemistry: an electrolyte (lemon juice) and two dissimilar metals create a chemical reaction that drives electron flow.",
+    "funFacts": [
+      "Many fruits can act as electrolytes; lemons are a classic example"
+    ],
+  "warnings": "Voltage is low but avoid short circuits and corrosion hazards",
+  "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%20role%3D%22img%22%20aria-label%3D%22Lemon%20Battery%22%3E%0A%09%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%09%3Cg%20transform%3D%22translate%28100%2C80%29%22%3E%0A%09%09%3Ccircle%20cx%3D%22160%22%20cy%3D%22160%22%20r%3D%22140%22%20fill%3D%22%23fde68a%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%226%22%2F%3E%0A%09%09%3Crect%20x%3D%22380%22%20y%3D%2290%22%20width%3D%22340%22%20height%3D%22150%22%20rx%3D%2220%22%20fill%3D%22%23fef3c7%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%226%22%20%2F%3E%0A%09%09%3Ctext%20x%3D%22560%22%20y%3D%22175%22%20text-anchor%3D%22middle%22%20fill%3D%22%230b1220%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%3ELemon%20Battery%3C%2Ftext%3E%0A%09%09%3Ctext%20x%3D%22560%22%20y%3D%22210%22%20text-anchor%3D%22middle%22%20fill%3D%22%2394a3b8%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2218%22%3EElectrolyte%20%E2%80%A2%20Zn%20%26%20Cu%20%E2%80%A2%20LED%3C%2Ftext%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E"
+  },
+  {
+    "id": "cartesian-diver",
+    "title": "Cartesian Diver",
+    "category": "Physics",
+    "difficulty": "Easy",
+    "time": "10-20 นาที",
+    "materials": [
+      "Clear plastic bottle",
+      "Eyedropper or small sealed object",
+      "Water"
+    ],
+    "steps": [
+      "Assemble the diver and place it in the filled bottle",
+      "Seal and squeeze to observe sinking and releasing to float"
+    ],
+    "purpose": "Make an object sink or float in a sealed bottle by squeezing",
+    "description": "A small diver with an air bubble compresses under external pressure, changing buoyancy so it sinks or floats.",
+    "sciencePrinciple": "Pascal's law and density changes: squeezing increases pressure transmitted to the diver, compressing its internal air and increasing its density.",
+    "funFacts": [
+      "It's a classic demonstration of pressure and buoyancy"
+    ],
+    "warnings": "Use a sturdy bottle and supervise young children",
+    "image": "/assets/images/cartesian-diver.svg"
+  },
+  {
+    "id": "camera-obscura",
+    "title": "Camera Obscura",
+    "category": "Optics",
+    "difficulty": "Easy",
+    "time": "30-60 นาที",
+    "materials": [
+      "Shoebox",
+      "Tracing paper",
+      "Pin",
+      "Black tape"
+    ],
+    "steps": [
+      "Make a pinhole and viewing screen",
+      "Close the box and point at a bright scene",
+      "Observe the inverted projection"
+    ],
+    "purpose": "Project an inverted image of the outside world into a dark box",
+    "description": "A small pinhole allows light to form a real, upside-down image on the opposite wall of a darkened box.",
+    "sciencePrinciple": "Light travels in straight lines and crossing rays through a small aperture form an image.",
+    "funFacts": [
+      "Camera obscura is the basis for all camera designs"
+    ],
+    "warnings": "Avoid porthole sun exposure directly to eyes",
+    "image": "/assets/images/camera-obscura.svg"
+  },
+  {
+    "id": "hydraulic-arm",
+    "title": "Hydraulic Arm",
+    "category": "Engineering",
+    "difficulty": "Medium",
+    "time": "3-5 ชั่วโมง",
+    "materials": [
+      "Cardboard or popsicle sticks",
+      "Syringes",
+      "Plastic tubing",
+      "Water"
+    ],
+    "steps": [
+      "Build arm structure",
+      "Connect syringes with tubing and fill with water",
+      "Operate to lift light objects"
+    ],
+    "purpose": "Build a working robotic arm powered by syringes and water",
+    "description": "Applying pressure to a fluid in syringes moves connected pistons, allowing controlled motion without electricity.",
+    "sciencePrinciple": "Pascal's principle: pressure applied to an enclosed fluid is transmitted equally throughout the fluid, producing force at the actuator.",
+    "funFacts": [
+      "Hydraulics power heavy machinery like excavators"
+    ],
+    "warnings": "Avoid air bubbles in tubing and do not pressurize beyond syringe limits",
+    "image": "/assets/images/hydraulic-arm.svg"
+  },
+  {
+    "id": "weather-station",
+    "title": "สถานีตรวจอากาศอนาล็อก (Analog Weather Station)",
+    "category": "Engineering",
+    "difficulty": "Medium",
+    "time": "2-4 ชั่วโมง",
+    "materials": [
+      "ขวดพลาสติก",
+      "ลูกปิงปอง",
+      "หลอด",
+      "ไม้",
+      "ตะปู",
+      "แก้วทรงกระบอก",
+      "ปากกากันน้ำ"
+    ],
+    "steps": [
+      "สร้าง Anemometer: ตัดลูกปิงปองครึ่งซีกแล้วนำมาติดที่ปลายไม้ 4 อันที่ทำเป็นกากบาท ให้หันไปทางเดียวกันทั้งหมด แล้วนำไปติดบนแกนที่หมุนได้",
+      "สร้าง Wind Vane: ตัดกระดาษแข็งเป็นรูปหัวลูกศรและหาง แล้วนำไปติดที่ปลายหลอดที่สมดุลบนแกนหมุน",
+      "สร้าง Rain Gauge: นำแก้วทรงกระบอกมาติดสเกลวัดปริมาตร (มิลลิเมตร) ไว้ข้างๆ",
+      "ประกอบทั้งสามส่วนเข้ากับฐานไม้เดียวกัน"
+    ],
+    "purpose": "สร้างชุดอุปกรณ์สำหรับวัดสภาพลมฟ้าอากาศเบื้องต้นโดยไม่ใช้อิเล็กทรอนิกส์",
+    "description": "ชุดสถานีตรวจอากาศที่สามารถบอกทิศทางลม ความเร็วลมโดยประมาณ และปริมาณน้ำฝนได้ เหมาะสำหรับเรียนรู้หลักการอุตุนิยมวิทยาเบื้องต้น",
+    "sciencePrinciple": "Anemometer ใช้หลักการต้านลม ถ้วยที่รับลมจะหมุนช้ากว่าด้านที่หันหลังให้ลม ทำให้เกิดการหมุน Wind Vane: ด้านหางที่มีพื้นที่มากกว่าจะถูกลมพัดแรงกว่า ทำให้หัวลูกศรชี้ไปยังทิศทางที่ลมพัดมา Rain Gauge: ใช้ภาชนะทรงกระบอกตรงเพื่อรวบรวมน้ำฝนและวัดปริมาตร",
+    "funFacts": [
+      "สถานีอากาศแห่งแรกของโลกถูกสร้างขึ้นในอิตาลีเมื่อปี 1654",
+      "Anemometer ถูกประดิษฐ์โดย Leon Battista Alberti ในปี 1450"
+    ],
+    "warnings": "ติดตั้งในที่โล่งและมั่นคง ห่างจากต้นไม้และอาคารที่อาจบังลม",
+    "image": "/assets/images/weather-station.svg"
+  },
+  {
+    "id": "gravity-racer",
+    "title": "Gravity Racer Go-Kart",
+    "category": "Mechanics",
+    "difficulty": "Hard",
+    "time": "1-2 สัปดาห์",
+    "materials": [
+      "Wooden planks",
+      "Wheels",
+      "Screws",
+      "Rope for steering"
+    ],
+    "steps": [
+      "Construct a sturdy chassis",
+      "Attach axles and wheels",
+      "Test on a gentle slope and tune steering"
+    ],
+    "purpose": "Build a downhill vehicle that runs on gravity alone",
+    "description": "A gravity racer converts potential energy from height into kinetic energy as it rolls downhill.",
+    "sciencePrinciple": "Conservation of energy: gravitational potential converts to kinetic energy and heat (friction).",
+    "funFacts": [
+      "Racing teaches design trade-offs between weight and aerodynamics"
+    ],
+    "warnings": "Use helmets and safety gear when testing with riders",
+    "image": "/assets/images/gravity-racer.svg"
+  },
+  {
+    "id": "crystal-radio",
+    "title": "Crystal Radio",
+    "category": "Electronics",
+    "difficulty": "Medium",
+    "time": "2-3 ชั่วโมง",
+    "materials": [
+      "Enameled copper wire",
+      "Cardboard tube",
+      "Germanium diode",
+      "Crystal earpiece"
+    ],
+    "steps": [
+      "Wind a tuning coil",
+      "Connect antenna and diode detector",
+      "Tune and listen with an earpiece"
+    ],
+    "purpose": "Receive AM radio broadcasts without batteries",
+    "description": "An antenna and tuned coil pick up radio waves; a diode detector extracts audio played through a high-impedance earpiece.",
+    "sciencePrinciple": "Resonant circuits and diode detection convert electromagnetic waves into audible signals.",
+    "funFacts": [
+      "Crystal radios require no external power, relying only on received wave energy"
+    ],
+    "warnings": "Be careful with long antennas and outdoor setups",
+    "image": "/assets/images/crystal-radio.svg"
+  },
+  {
+    "id": "cloud-chamber",
+    "title": "Cloud Chamber",
+    "category": "Particle Physics",
+    "difficulty": "Hard",
+    "time": "1-2 ชั่วโมง",
+    "materials": [
+      "Clear jar",
+      "Black plate",
+      "Dry ice",
+      "99% isopropyl alcohol",
+      "Sponge"
+    ],
+    "steps": [
+      "Prepare cold plate and saturate the chamber with alcohol vapor",
+      "Introduce particle source or wait for cosmic rays",
+      "Observe faint tracks under dark conditions"
+    ],
+    "purpose": "Visualize particle tracks using supersaturated vapor",
+    "description": "A cooled, supersaturated alcohol vapor condenses on ionization trails left by passing charged particles, making them visible as streaks.",
+    "sciencePrinciple": "High-energy particles ionize the vapor path, and condensation forms along these ions to reveal tracks.",
+    "funFacts": [
+      "Cloud chambers were used to discover subatomic particles historically"
+    ],
+    "warnings": "Dry ice and alcohol are hazardous; use ventilation and gloves",
+    "image": "/assets/images/cloud-chamber.svg"
+  },
+  {
+    "id": "aquaponics",
+    "title": "Aquaponics System",
+    "category": "Biology",
+    "difficulty": "Medium",
+    "time": "1-2 วัน (ตั้งระบบ)",
+    "materials": [
+      "Fish tank",
+      "Water pump",
+      "Grow bed",
+      "Clay pebbles (hydroton)",
+      "Fish",
+      "Plants"
+    ],
+    "steps": [
+      "Set up tank and cycle for beneficial bacteria",
+      "Place grow bed above tank with medium",
+      "Pump water through roots and back to tank",
+      "Plant seedlings and monitor water quality"
+    ],
+    "purpose": "Create a closed-loop system where fish and plants support each other",
+    "description": "Fish waste becomes nutrients for plants via bacterial nitrification; plants filter the water returned to the fish tank.",
+    "sciencePrinciple": "Nitrogen cycle: ammonia from fish is converted by bacteria into nitrites and then nitrates which plants use as fertilizer.",
+    "funFacts": [
+      "Aquaponics uses significantly less water than conventional agriculture"
+    ],
+    "warnings": "Monitor water parameters and avoid overstocking fish",
+    "image": "/assets/images/aquaponics.svg"
+  },
+  {
+    "id": "wind-turbine",
+    "title": "Wind Turbine Generator",
+    "category": "Energy",
+    "difficulty": "Hard",
+    "time": "6-10 ชั่วโมง",
+    "materials": [
+      "PVC for blades",
+      "Stepper motor generator",
+      "Wood for frame",
+      "Bridge rectifier"
+    ],
+    "steps": [
+      "Build blades and mount on generator",
+      "Connect rectifier and storage/load circuit",
+      "Test in wind and optimize blade pitch"
+    ],
+    "purpose": "Convert wind energy into electricity",
+    "description": "Aerodynamic blades turn a rotor which drives a generator to produce electrical power.",
+    "sciencePrinciple": "Aerodynamics and electromagnetic induction: moving magnets relative to coils generate current.",
+    "funFacts": [
+      "Small turbines can charge batteries for remote devices"
+    ],
+    "warnings": "Secure mounting and safety from moving blades",
+    "image": "/assets/images/wind-turbine.svg"
+  },
+  {
+    "id": "cnc-plotter",
+    "title": "CNC Plotter",
+    "category": "Engineering",
+    "difficulty": "Hard",
+    "time": "1-2 สัปดาห์",
+    "materials": [
+      "Old CD drives",
+      "Arduino",
+      "Stepper drivers",
+      "Micro servo"
+    ],
+    "steps": [
+      "Salvage motors and assemble XY stage",
+      "Wire controller and upload G-code runner",
+      "Test and calibrate movements"
+    ],
+    "purpose": "Draw vector graphics using recycled motors and controllers",
+    "description": "An Arduino-controlled system moves stepper motors in X/Y axes to position a pen for drawing based on G-code.",
+    "sciencePrinciple": "Closed-loop stepper control and coordinate motion translate digital commands into precise mechanical motion.",
+    "funFacts": [
+      "CNC basics scale from tiny plotters to industrial machines"
+    ],
+    "warnings": "Be mindful of electrical safety and proper driver wiring",
+    "image": "/assets/images/cnc-plotter.svg"
+  },
+  {
+    "id": "rube-goldberg",
+    "title": "Rube Goldberg Challenge",
+    "category": "Systems Engineering",
+    "difficulty": "Hard",
+    "time": "1-4 สัปดาห์",
+    "materials": [
+      "Assorted household items, toys, string, pulleys, marbles"
+    ],
+    "steps": [
+      "Plan a sequence of energy-transfer stages",
+      "Build and test each link until the chain works reliably"
+    ],
+    "purpose": "Design an elaborate chain-reaction device to perform a simple task",
+    "description": "Integrate mechanisms to pass energy and motion from one stage to the next until the final trivial action completes.",
+    "sciencePrinciple": "Energy transfer and sequencing: mechanical interactions pass stored and kinetic energy through stages to achieve the final result.",
+    "funFacts": [
+      "Rube Goldberg machines are excellent creative engineering projects"
+    ],
+    "warnings": "Ensure safety when using heavier or moving parts",
+    "image": "/assets/images/rube-goldberg.svg"
+  },
+  {
+    "id": "balloon-hovercraft",
+    "title": "Balloon Hovercraft",
+    "category": "Physics",
+    "purpose": "Make a coaster float on a cushion of air",
+    "description": "A balloon's escaping air creates a low-friction cushion under a compact platform like a CD, letting it glide.",
+    "sciencePrinciple": "Air cushion reduces friction by creating a thin, high-pressure layer that separates the craft from the surface.",
+    "materials": [
+      "Old CD or DVD",
+      "Balloon",
+      "Sport cap",
+      "Hot glue"
+    ],
+    "steps": [
+      "Attach the sport cap centrally to the CD",
+      "Glue balloon over the cap, inflate, and release to glide"
+    ],
+    "funFacts": [
+      "A simple model of hovercraft technology"
+    ],
+    "warnings": "Choking hazard for small parts; supervise children",
+    "image": "/assets/images/balloon-hovercraft.svg"
+  },
+  {
+    "id": "paper-bridge",
+    "title": "Paper Bridge Challenge",
+    "category": "Engineering",
+    "purpose": "Create the strongest bridge possible from one sheet of paper",
+    "description": "Fold and shape paper into structural forms (triangles, arches) to distribute loads and increase strength.",
+    "sciencePrinciple": "Geometry gives paper surprising strength: triangulation and corrugation manage compression and tension.",
+    "materials": [
+      "A4 paper",
+      "Weights (coins)",
+      "Supports like books"
+    ],
+    "steps": [
+      "Design folding pattern",
+      "Construct bridge across supports",
+      "Add weights to test capacity"
+    ],
+    "funFacts": [
+      "Paper engineering underpins many architectural models"
+    ],
+    "warnings": "Keep edges away from eyes when folding and cutting",
+    "image": "/assets/images/paper-bridge.svg"
+  },
+  {
+    "id": "magic-milk",
+    "title": "Magic Milk",
+    "category": "Chemistry",
+    "purpose": "Create swirling patterns in milk using soap and food dye",
+    "description": "Soap breaks surface tension and interacts with milk fats, causing color to move in dynamic patterns.",
+    "sciencePrinciple": "Surface tension and hydrophobic interactions between soap and fat molecules cause rapid motion.",
+    "materials": [
+      "Whole milk",
+      "Shallow plate",
+      "Food coloring",
+      "Dish soap",
+      "Cotton swab"
+    ],
+    "steps": [
+      "Pour milk into plate",
+      "Add drops of food coloring",
+      "Touch surface with soapy swab and watch patterns"
+    ],
+    "funFacts": [
+      "A beautiful demonstration of invisible molecular forces"
+    ],
+    "warnings": "Not a food activity; do not taste the mixture with soap",
+    "image": "/assets/images/magic-milk.svg"
+  },
+  {
+    "id": "rock-candy",
+    "title": "Rock Candy",
+    "category": "Chemistry",
+    "purpose": "Grow large sugar crystals by supersaturating a solution",
+    "description": "Dissolve sugar in hot water to make a supersaturated solution and let sugar crystallize onto a seed as it cools.",
+    "sciencePrinciple": "Supersaturation and nucleation: crystals form when excess solute organizes into a periodic lattice around a seed.",
+    "materials": [
+      "Sugar",
+      "Water",
+      "Jar",
+      "Wooden skewer",
+      "Clothespin"
+    ],
+    "steps": [
+      "Make a hot, saturated sugar solution",
+      "Suspend a skewer in the jar",
+      "Wait days for crystals to grow"
+    ],
+    "funFacts": [
+      "Crystals form more quickly with impurities or rough seed surfaces"
+    ],
+    "warnings": "Hot syrup can burn; supervise children",
+    "image": "/assets/images/rock-candy.svg"
+  },
+  {
+    "id": "string-telephone",
+    "title": "String Telephone",
+    "category": "Physics",
+    "purpose": "Send sound through a taut string between two cans",
+    "description": "Vibrations from the speaker can are transmitted along a taut string to the other can, recreating sound.",
+    "sciencePrinciple": "Mechanical wave propagation through a solid medium transmits vibrational energy as sound.",
+    "materials": [
+      "Two empty cans",
+      "Long string",
+      "Nail"
+    ],
+    "steps": [
+      "Make holes in can bottoms and thread string",
+      "Pull taut and speak into one can"
+    ],
+    "funFacts": [
+      "Solid mediums can transmit sound more effectively than air for short distances"
+    ],
+    "warnings": "Avoid sharp edges when making holes in cans",
+    "image": "/assets/images/string-telephone.svg"
+  },
+  {
+    "id": "baking-soda-volcano",
+    "title": "Baking Soda Volcano",
+    "category": "Chemistry",
+    "purpose": "Create an erupting model using an acid-base reaction",
+    "description": "Vinegar (acid) reacts with baking soda (base) to produce carbon dioxide gas and bubbling foam that mimics an eruption.",
+    "sciencePrinciple": "Acid–base reaction producing CO2 gas: NaHCO3 + CH3COOH → CO2 + H2O + CH3COONa.",
+    "materials": [
+      "Plastic bottle",
+      "Modeling clay",
+      "Baking soda",
+      "Vinegar",
+      "Food coloring",
+      "Dish soap"
+    ],
+    "steps": [
+      "Build a volcano around the bottle",
+      "Add baking soda mix and pour in vinegar to trigger eruption"
+    ],
+    "funFacts": [
+      "Popular classroom demo of rapid gas production"
+    ],
+    "warnings": "Do not ingest materials; protect surfaces from staining",
+    "image": "/assets/images/baking-soda-volcano.svg"
+  },
+  {
+    "id": "density-rainbow",
+    "title": "Density Rainbow",
+    "category": "Chemistry",
+    "purpose": "Stack colored liquids according to density",
+    "description": "Create sugar solutions of varying concentrations so each colored layer has a different density and remains separated.",
+    "sciencePrinciple": "Differences in density prevent mixing when carefully layered; denser liquids stay below lighter ones.",
+    "materials": [
+      "Tall glass",
+      "Sugar",
+      "Food coloring",
+      "Warm water"
+    ],
+    "steps": [
+      "Make solutions with increasing sugar concentrations and colors",
+      "Slowly layer from densest to least dense"
+    ],
+    "funFacts": [
+      "Layering can be used to model oceanic density gradients"
+    ],
+    "warnings": "Sticky sugar solutions can attract insects",
+    "image": "/assets/images/density-rainbow.svg"
+  },
+  {
+    "id": "simple-seismograph",
+    "title": "Simple Seismograph",
+    "category": "Geology",
+    "purpose": "Record ground vibrations using a suspended weight and pen",
+    "description": "A suspended mass holding a pen draws across moving paper; when the ground shakes, the frame moves and the pen traces vibrations.",
+    "sciencePrinciple": "Inertia causes the suspended mass to resist motion while the frame moves, producing relative motion recorded on paper.",
+    "materials": [
+      "Cardboard box",
+      "Heavy weight",
+      "String",
+      "Marker",
+      "Roll of paper"
+    ],
+    "steps": [
+      "Suspend weight and attach pen",
+      "Mount paper to move under the pen",
+      "Simulate vibrations and record traces"
+    ],
+    "funFacts": [
+      "Historic seismographs recorded earthquakes worldwide"
+    ],
+    "warnings": "Securely fasten components to avoid collapse",
+    "image": "/assets/images/simple-seismograph.svg"
+  },
+  {
+    "id": "analog-weather-station",
+    "title": "Analog Weather Station",
+    "category": "Meteorology",
+    "purpose": "Measure wind, rain, and direction using simple mechanical tools",
+    "description": "Combine an anemometer, wind vane, and rain gauge made from household items to track local weather.",
+    "sciencePrinciple": "Basic instruments convert physical phenomena (wind force, direction, precipitation) into measurable signals.",
+    "materials": [
+      "Plastic bottles",
+      "Ping pong balls",
+      "Straws",
+      "Dowels",
+      "Clear cylinder"
+    ],
+    "steps": [
+      "Assemble each instrument following measured templates",
+      "Calibrate and record observations over time"
+    ],
+    "funFacts": [
+      "Analog instruments remain valuable teaching tools"
+    ],
+    "warnings": "Mount securely outdoors and protect from extreme weather",
+    "image": "/assets/images/analog-weather-station.svg"
+  },
+  {
+    "id": "solar-oven",
+    "title": "Solar Oven",
+    "category": "Energy",
+    "purpose": "Cook food using only sunlight",
+    "description": "A box cooker traps solar energy inside and raises temperature using reflective panels and insulation.",
+    "sciencePrinciple": "Greenhouse effect and thermal insulation concentrate and retain solar heat.",
+    "materials": [
+      "Pizza box",
+      "Aluminum foil",
+      "Black paper",
+      "Clear plastic wrap"
+    ],
+    "steps": [
+      "Line box with reflective foil and black absorber",
+      "Cover with clear plastic and angle toward sun",
+      "Place food and monitor cooking progress"
+    ],
+    "funFacts": [
+      "Solar ovens are used in low-resource communities for safe cooking"
+    ],
+    "warnings": "Temperatures vary; consider food safety when cooking meats",
+    "image": "/assets/images/solar-oven.svg"
+  },
+  {
+    "id": "coin-sorting-machine",
+    "title": "Coin Sorting Machine",
+    "category": "Mechanical Engineering",
+    "purpose": "Automatically sort coins by size using a simple mechanical ramp",
+    "description": "Ramp and hole sizes direct coins into matching bins based on diameter.",
+    "sciencePrinciple": "Precision mechanical tolerances and gravity separate objects by size.",
+    "materials": [
+      "Cardboard",
+      "Hot glue",
+      "Utility knife",
+      "Ruler"
+    ],
+    "steps": [
+      "Build ramp with staggered holes",
+      "Test with mixed coins and adjust hole sizes"
+    ],
+    "funFacts": [
+      "Mechanical sorting is foundational to industrial automation"
+    ],
+    "warnings": "Use care with cutting tools",
+    "image": "/assets/images/coin-sorting-machine.svg"
+  },
+  {
+    "id": "mini-van-de-graaff",
+    "title": "Mini Van de Graaff Generator",
+    "category": "Electrostatics",
+    "purpose": "Generate static electricity and demonstrate high voltages and spark discharge",
+    "description": "A moving belt transports charge to a dome, accumulating high voltage and producing visible sparks.",
+    "sciencePrinciple": "Triboelectric charging and charge separation on conductive surfaces produce strong electric fields.",
+    "materials": [
+      "Aluminum can",
+      "Rubber band",
+      "Small DC motor",
+      "PVC pipe",
+      "Copper wire"
+    ],
+    "steps": [
+      "Assemble belt and dome system",
+      "Run motor to build charge",
+      "Observe hair-raising effects and sparks"
+    ],
+    "funFacts": [
+      "Van de Graaff generators inspired many public science demos"
+    ],
+    "warnings": "High voltages can be dangerous for electronics and people with medical implants",
+    "image": "/assets/images/mini-van-de-graaff.svg"
+  },
+  {
+    "id": "electromagnetic-speaker",
+    "title": "Electromagnetic Speaker",
+    "category": "Electromagnetism",
+    "purpose": "Convert electrical audio signals into sound using magnetic fields",
+    "description": "A coil driven by a signal produces a changing magnetic field that moves a diaphragm (paper plate) to create sound.",
+    "sciencePrinciple": "Electromagnetic induction and Lorentz forces cause motion in a coil near a permanent magnet.",
+    "materials": [
+      "Paper plate",
+      "Enameled copper wire",
+      "Neodymium magnet",
+      "Old headphone jack"
+    ],
+    "steps": [
+      "Wind a coil and attach to plate",
+      "Position magnet and connect audio source"
+    ],
+    "funFacts": [
+      "The same principles power full-size loudspeakers"
+    ],
+    "warnings": "Magnets are strong; keep away from credit cards and medical devices",
+    "image": "/assets/images/electromagnetic-speaker.svg"
+  },
+  {
+    "id": "simple-metal-detector",
+    "title": "Simple Metal Detector",
+    "category": "Electromagnetism",
+    "purpose": "Detect metal objects by changes in an oscillator circuit",
+    "description": "A locally generated magnetic field is disturbed by nearby metal, changing the oscillator's frequency and producing an audible change.",
+    "sciencePrinciple": "Metal alters inductance and electromagnetic coupling, affecting circuit oscillation frequency.",
+    "materials": [
+      "AM radio",
+      "Calculator",
+      "Tape"
+    ],
+    "steps": [
+      "Assemble circuit using radio and calculator components",
+      "Sweep near metal objects and listen for tone changes"
+    ],
+    "funFacts": [
+      "Hobbyists build practical detectors from simple electronics"
+    ],
+    "warnings": "Do not use near sensitive electronics or in restricted areas",
+    "image": "/assets/images/simple-metal-detector.svg"
+  },
+  {
+    "id": "wave-machine",
+    "title": "Wave Machine",
+    "category": "Physics",
+    "purpose": "Model transverse waves and energy transfer along a medium",
+    "description": "A series of linked elements show how energy travels through individual oscillators, creating a visible wave.",
+    "sciencePrinciple": "Energy propagation in a medium occurs via local oscillations transmitted to neighbors, producing wave motion.",
+    "materials": [
+      "Wooden skewers",
+      "Duct tape",
+      "Modeling clay",
+      "Two chairs"
+    ],
+    "steps": [
+      "Secure skewers and connect with clay",
+      "Initiate motion at one end and observe wave travel"
+    ],
+    "funFacts": [
+      "Wave machines illustrate properties like reflection and interference"
+    ],
+    "warnings": "Avoid eye-level demonstrations without protection",
+    "image": "/assets/images/wave-machine.svg"
+  },
+  {
+    "id": "trebuchet-catapult",
+    "title": "Trebuchet Catapult",
+    "category": "Mechanics",
+    "purpose": "Launch projectiles using a counterweight-powered arm",
+    "description": "A heavy counterweight falling transfers energy through leverage to fling a projectile far.",
+    "sciencePrinciple": "Leverage multiplies force; potential energy of the counterweight converts to kinetic energy of the projectile.",
+    "materials": [
+      "Popsicle sticks or wood",
+      "Dowels",
+      "String",
+      "Heavy weight like nuts/bolts"
+    ],
+    "steps": [
+      "Build frame and arm with pivot",
+      "Attach sling and counterweight",
+      "Test with light projectiles and adjust"
+    ],
+    "funFacts": [
+      "Trebuchets were medieval siege engines"
+    ],
+    "warnings": "Never aim at people; supervise launches and use safety zones",
+    "image": "/assets/images/trebuchet-catapult.svg"
+  },
+  {
+    "id": "automated-mini-greenhouse",
+    "title": "Automated Mini-Greenhouse",
+    "category": "Electronics",
+    "purpose": "Automate plant care with sensors and controllers",
+    "description": "A microcontroller reads sensors and controls pumps and lights to maintain plant conditions automatically.",
+    "sciencePrinciple": "Feedback control systems use sensor input to regulate actuators according to desired setpoints.",
+    "materials": [
+      "Microcontroller (Arduino)",
+      "Soil moisture sensor",
+      "Light sensor",
+      "Small pump",
+      "Relay module",
+      "LED grow light"
+    ],
+    "steps": [
+      "Assemble sensors and actuators",
+      "Program controller with thresholds",
+      "Test and tune automation"
+    ],
+    "funFacts": [
+      "Small-scale automation teaches IoT and control theory"
+    ],
+    "warnings": "Follow safe wiring practices and use low-voltage components",
+    "image": "/assets/images/automated-mini-greenhouse.svg"
+  }
+]

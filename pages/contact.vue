@@ -10,8 +10,8 @@
           </svg>
         </div>
         <div>
-          <h1 class="text-3xl font-extrabold">{{ t('contact.title') }}</h1>
-          <p class="text-slate-300 mt-1">{{ t('contact.subtitle') }}</p>
+          <h1 class="text-3xl font-extrabold">{{ safeT('contact.title') }}</h1>
+          <p class="text-slate-300 mt-1">{{ safeT('contact.subtitle') }}</p>
         </div>
       </div>
 
@@ -22,8 +22,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
           </svg>
           <div>
-            <h3 class="font-semibold text-lg">{{ t('contact.banner.title') }}</h3>
-            <p class="text-slate-300 text-sm mt-1">{{ t('contact.banner.description') }}</p>
+            <h3 class="font-semibold text-lg">{{ safeT('contact.banner.title') }}</h3>
+            <p class="text-slate-300 text-sm mt-1">{{ safeT('contact.banner.description') }}</p>
           </div>
         </div>
       </div>
@@ -39,19 +39,19 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h2 class="text-lg font-semibold">{{ t('contact.email.title') }}</h2>
+              <h2 class="text-lg font-semibold">{{ safeT('contact.email.title') }}</h2>
             </div>
             <div class="space-y-3">
               <div class="p-3 rounded-lg bg-blue-900/20 border border-blue-700/30">
-                <div class="text-xs text-slate-400 mb-1">{{ t('contact.email.general') }}</div>
+                <div class="text-xs text-slate-400 mb-1">{{ safeT('contact.email.general') }}</div>
                 <a href="mailto:contact@curiousforge.edu" class="text-blue-300 hover:text-blue-200">contact@curiousforge.edu</a>
               </div>
               <div class="p-3 rounded-lg bg-emerald-900/20 border border-emerald-700/30">
-                <div class="text-xs text-slate-400 mb-1">{{ t('contact.email.ideas') }}</div>
+                <div class="text-xs text-slate-400 mb-1">{{ safeT('contact.email.ideas') }}</div>
                 <a href="mailto:ideas@curiousforge.edu" class="text-emerald-300 hover:text-emerald-200">ideas@curiousforge.edu</a>
               </div>
               <div class="p-3 rounded-lg bg-purple-900/20 border border-purple-700/30">
-                <div class="text-xs text-slate-400 mb-1">{{ t('contact.email.partnership') }}</div>
+                <div class="text-xs text-slate-400 mb-1">{{ safeT('contact.email.partnership') }}</div>
                 <a href="mailto:partner@curiousforge.edu" class="text-purple-300 hover:text-purple-200">partner@curiousforge.edu</a>
               </div>
             </div>
@@ -66,18 +66,18 @@
                 </svg>
               </div>
               <div>
-                <h2 class="text-lg font-semibold">{{ t('contact.phone.title') }}</h2>
-                <p class="text-sm text-slate-400">{{ t('contact.phone.hours') }}</p>
+                <h2 class="text-lg font-semibold">{{ safeT('contact.phone.title') }}</h2>
+                <p class="text-sm text-slate-400">{{ safeT('contact.phone.hours') }}</p>
               </div>
             </div>
             <div class="space-y-3">
               <div class="p-3 rounded-lg bg-emerald-900/20 border border-emerald-700/30">
-                <div class="text-xs text-slate-400 mb-1">{{ t('contact.phone.domestic') }}</div>
-                <div class="text-emerald-300">02-xxx-xxxx</div>
+                <div class="text-xs text-slate-400 mb-1">{{ safeT('contact.phone.domestic') }}</div>
+                  <div class="text-emerald-300">02-xxx-xxxx</div>
               </div>
               <div class="p-3 rounded-lg bg-blue-900/20 border border-blue-700/30">
-                <div class="text-xs text-slate-400 mb-1">{{ t('contact.phone.education') }}</div>
-                <div class="text-blue-300">02-xxx-xxxx ต่อ 101</div>
+                <div class="text-xs text-slate-400 mb-1">{{ safeT('contact.phone.education') }}</div>
+                <div class="text-blue-300">02-xxx-xxxx ext. 101</div>
               </div>
             </div>
           </div>
@@ -92,16 +92,16 @@
                 </svg>
               </div>
               <div>
-                <h2 class="text-lg font-semibold">{{ t('contact.address.title') }}</h2>
-                <p class="text-sm text-slate-400">{{ t('contact.address.subtitle') }}</p>
+                <h2 class="text-lg font-semibold">{{ safeT('contact.address.title') }}</h2>
+                <p class="text-sm text-slate-400">{{ safeT('contact.address.subtitle') }}</p>
               </div>
             </div>
             <div class="p-4 rounded-lg bg-purple-900/20 border border-purple-700/30">
               <div class="font-semibold mb-2">The Curious Forge HQ</div>
               <div class="text-sm text-slate-300 space-y-1">
-                <div>123 ถนนวิทยาศาสตร์</div>
-                <div>แขวงนวัตกรรม เขตการศึกษา</div>
-                <div>กรุงเทพมหานคร 10120</div>
+                <div>123 Science Ave</div>
+                <div>Innovation Ward, Education District</div>
+                <div>Bangkok 10120</div>
               </div>
             </div>
           </div>
@@ -118,8 +118,8 @@
                 </svg>
               </div>
               <div>
-                <h2 class="text-lg font-semibold">{{ t('contact.form.title') }}</h2>
-                <p class="text-sm text-slate-400">{{ t('contact.form.subtitle') }}</p>
+                <h2 class="text-lg font-semibold">{{ safeT('contact.form.title') }}</h2>
+                <p class="text-sm text-slate-400">{{ safeT('contact.form.subtitle') }}</p>
               </div>
             </div>
 
@@ -127,36 +127,36 @@
               <div class="grid md:grid-cols-2 gap-4">
                 <InputField
                   id="contact-name"
-                  :label="t('contact.form.name')"
+                  :label="safeT('contact.form.name')"
                   v-model="form.name"
-                  :placeholder="t('contact.form.namePlaceholder')"
+                  :placeholder="safeT('contact.form.namePlaceholder')"
                 />
                 <InputField
                   id="contact-email"
-                  :label="t('contact.form.email')"
+                  :label="safeT('contact.form.email')"
                   type="email"
                   v-model="form.email"
-                  :placeholder="t('contact.form.emailPlaceholder')"
+                  :placeholder="safeT('contact.form.emailPlaceholder')"
                 />
               </div>
 
               <div class="space-y-2">
-                <label for="contact-topic" class="text-sm text-slate-300">{{ t('contact.form.topic') }}</label>
+                <label for="contact-topic" class="text-sm text-slate-300">{{ safeT('contact.form.topic') }}</label>
                 <input
                   id="contact-topic"
                   v-model="form.topic"
-                  :placeholder="t('contact.form.topicPlaceholder')"
+                  :placeholder="safeT('contact.form.topicPlaceholder')"
                   class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-violet-500 text-slate-100 placeholder-slate-400"
                 />
               </div>
 
               <div class="space-y-2">
-                <label for="contact-message" class="text-sm text-slate-300">{{ t('contact.form.message') }}</label>
+                <label for="contact-message" class="text-sm text-slate-300">{{ safeT('contact.form.message') }}</label>
                 <textarea
                   id="contact-message"
                   rows="4"
                   v-model="form.message"
-                  :placeholder="t('contact.form.messagePlaceholder')"
+                  :placeholder="safeT('contact.form.messagePlaceholder')"
                   class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-violet-500 text-slate-100 placeholder-slate-400"
                 />
               </div>
@@ -166,10 +166,10 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                   </svg>
-                  {{ t('contact.form.submit') }}
+                  {{ safeT('contact.form.submit') }}
                 </button>
                 <button type="button" @click="resetForm" class="btn-ghost">
-                  {{ t('contact.form.reset') }}
+                  {{ safeT('contact.form.reset') }}
                 </button>
               </div>
             </form>
@@ -184,25 +184,25 @@
                 </svg>
               </div>
               <div>
-                <h2 class="text-lg font-semibold">{{ t('contact.faq.title') }}</h2>
-                <p class="text-sm text-slate-400">{{ t('contact.faq.subtitle') }}</p>
+                <h2 class="text-lg font-semibold">{{ safeT('contact.faq.title') }}</h2>
+                <p class="text-sm text-slate-400">{{ safeT('contact.faq.subtitle') }}</p>
               </div>
             </div>
 
             <div class="space-y-4">
               <div class="p-4 rounded-lg bg-blue-900/30 border border-blue-700/30">
-                <h3 class="font-semibold text-blue-200 mb-2">{{ t('contact.faq.q1.question') }}</h3>
-                <p class="text-sm text-slate-300">{{ t('contact.faq.q1.answer') }}</p>
+                <h3 class="font-semibold text-blue-200 mb-2">{{ safeT('contact.faq.q1.question') }}</h3>
+                <p class="text-sm text-slate-300">{{ safeT('contact.faq.q1.answer') }}</p>
               </div>
 
               <div class="p-4 rounded-lg bg-emerald-900/30 border border-emerald-700/30">
-                <h3 class="font-semibold text-emerald-200 mb-2">{{ t('contact.faq.q2.question') }}</h3>
-                <p class="text-sm text-slate-300">{{ t('contact.faq.q2.answer') }}</p>
+                <h3 class="font-semibold text-emerald-200 mb-2">{{ safeT('contact.faq.q2.question') }}</h3>
+                <p class="text-sm text-slate-300">{{ safeT('contact.faq.q2.answer') }}</p>
               </div>
 
               <div class="p-4 rounded-lg bg-purple-900/30 border border-purple-700/30">
-                <h3 class="font-semibold text-purple-200 mb-2">{{ t('contact.faq.q3.question') }}</h3>
-                <p class="text-sm text-slate-300">{{ t('contact.faq.q3.answer') }}</p>
+                <h3 class="font-semibold text-purple-200 mb-2">{{ safeT('contact.faq.q3.question') }}</h3>
+                <p class="text-sm text-slate-300">{{ safeT('contact.faq.q3.answer') }}</p>
               </div>
             </div>
           </div>
@@ -225,6 +225,22 @@ import InputField from '~/components/InputField.vue'
 import Toast from '~/components/Toast.vue'
 
 const { t } = useI18n()
+
+// Safe translation helper: if a translation key is missing and i18n
+// returns the raw key (e.g. "contact.title"), convert dots to
+// spaces and title-case the result so the UI looks presentable.
+const safeT = (key: string) => {
+  try {
+    const v = t(key)
+    if (!v || v === key) {
+      // remove leading/trailing dots, replace dots with spaces, title-case
+      return key.replace(/^\.+|\.+$/g, '').split('.').join(' ').replace(/\b\w/g, (c: string) => c.toUpperCase())
+    }
+    return v
+  } catch (e) {
+    return key.split('.').join(' ').replace(/\b\w/g, (c: string) => c.toUpperCase())
+  }
+}
 
 const form = reactive({
   name: '',
