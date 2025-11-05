@@ -28,7 +28,8 @@ jobs:
         run: npm run build
 
       - name: Optional: Import blueprints (requires SUPABASE_SERVICE_KEY)
-        if: ${{ secrets.SUPABASE_SERVICE_KEY != '' }}
+        # use a simple truthy check for the secret to avoid YAML/expression parsing issues
+        if: ${{ secrets.SUPABASE_SERVICE_KEY }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

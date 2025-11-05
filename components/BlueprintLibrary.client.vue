@@ -145,13 +145,12 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import BlueprintCard from '~/components/BlueprintCard.vue'
 import type { Blueprint } from '~/types/blueprint'
 import blueprintsData from '@/assets/data/blueprints.en'
 import { useSaved } from '~/composables/useSaved'
 import { useAuth } from '~/composables/useAuth'
-import { useRouter } from 'vue-router'
 
 const isDev = import.meta.env.DEV
 const q = ref('')
@@ -263,16 +262,21 @@ function nextPage() {
   if (page.value < totalPages.value) page.value++
 }
 
-// Return the image URL to use for a blueprint. Add a cache-busting query for lemon-battery
+// Return the image URL to use for a blueprint.
+// Special-case lemon-battery: we used to append a `?v=2` cache-bust for it,
+// but appending a query to a data: URI (inline SVG) corrupts rendering.
+// Avoid modifying data: URIs — only add the cache-bust for normal URLs.
 const imageFor = (bp: Blueprint) => {
   if (!bp || !bp.image) return undefined
   try {
-    if (bp.id === 'lemon-battery') {
-      // prefer explicit cache-busted path if not already present
-      return bp.image.includes('?') ? bp.image : `${bp.image}?v=2`
+    // If the stored image is a data: URI (inline SVG), return it unchanged.
+    if (bp.image.startsWith && bp.image.startsWith('data:')) {
+      return bp.image
     }
+
+    // Return the stored image path unchanged for normal URLs
     return bp.image
-  } catch (e) {
+  } catch {
     return bp.image
   }
 }
@@ -325,7 +329,7 @@ onMounted(() => {
     if (p && Number.isFinite(p) && p >= 1) {
       page.value = Math.min(p, totalPages.value)
     }
-  } catch (e) {
+  } catch {
     // ignore if router unavailable
   }
 })

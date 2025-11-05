@@ -1,0 +1,12 @@
+# Mapping CSV: source_path,dest_basename
+# Lines starting with # are ignored
+# Paths with commas are not supported; enclose full path exactly as-is
+~/Downloads/"จรวดน้ำ (Water Rocket).jpg",water-rocket-photo
+~/Downloads/"พลาสติกจากนมข้น (Casein Plastic).jpg",casein-plastic-photo
+~/Downloads/"ตู้เย็นดิน (Zeer Pot).jpg",zeer-pot-photo
+~/Downloads/"นาฬิกาแดดโบราณ (Sundial).jpg",sundial-photo
+~/Downloads/"กล้องโทรทรรศน์แบบนิวตัน (The Newtonian Telescope).jpg",newtonian-telescope-photo
+~/Downloads/"ระบบปลูกผักอัตโนมัติ (Automated Mini-Greenhouse).jpg",automated-mini-greenhouse-photo
+~/Downloads/"เครื่องยนต์สเตอร์ลิง (The Stirling Engine).jpg",stirling-engine-photo
+~/Downloads/"โรงหล่อโลหะฉบับหลังบ้าน (The Backyard Foundry).jpg",backyard-foundry-photo
+~/Downloads/"สเปรย์ไล่แมลงสมุนไพร (Herb Bug Spray).jpg",herb-bug-spray-photo

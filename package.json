@@ -4,11 +4,16 @@
   "version": "0.1.0",
   "scripts": {
     "build": "nuxt build",
+    "prebuild": "node scripts/link-photos.js",
     "dev": "nuxt dev",
+    "predev": "node scripts/link-photos.js",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "prepreview": "node scripts/link-photos.js",
     "postinstall": "nuxt prepare",
-    "import:blueprints": "node scripts/import-blueprints.mjs"
+    "import:blueprints": "node scripts/import-blueprints.mjs",
+    "link-photos": "node scripts/link-photos.js",
+    "convert-images": "node scripts/convert-to-webp.js scripts/mapping.json"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0",

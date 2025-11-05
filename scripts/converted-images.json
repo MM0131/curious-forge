@@ -1,0 +1,47 @@
+[
+  {
+    "id": "weather-station",
+    "dest": "/assets/images/weather-station-photo.webp",
+    "alt": null
+  },
+  {
+    "id": "hydraulic-arm",
+    "dest": "/assets/images/hydraulic-arm-photo.webp",
+    "alt": null
+  },
+  {
+    "id": "camera-obscura",
+    "dest": "/assets/images/camera-obscura-photo.webp",
+    "alt": null
+  },
+  {
+    "id": "cartesian-diver",
+    "dest": "/assets/images/cartesian-diver-photo.webp",
+    "alt": null
+  },
+  {
+    "id": "periscope",
+    "dest": "/assets/images/periscope-photo.webp",
+    "alt": null
+  },
+  {
+    "id": "aquaponics",
+    "dest": "/assets/images/aquaponics-photo.webp",
+    "alt": null
+  },
+  {
+    "id": "cloud-chamber",
+    "dest": "/assets/images/cloud-chamber-photo.webp",
+    "alt": null
+  },
+  {
+    "id": "crystal-radio",
+    "dest": "/assets/images/crystal-radio-photo.webp",
+    "alt": null
+  },
+  {
+    "id": "gravity-racer",
+    "dest": "/assets/images/gravity-racer-photo.webp",
+    "alt": null
+  }
+]

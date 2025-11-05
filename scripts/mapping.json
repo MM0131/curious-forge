@@ -1,0 +1,20 @@
+[
+  {
+    "id": "solar-still",
+    "src": "scripts/originals/เครื่องกลั่นน้ำพลังงานแสงอาทิตย์ (Solar Still).jpg",
+    "alt": "เครื่องกลั่นน้ำพลังงานแสงอาทิตย์แบบโดมพลาสติก",
+    "quality": 80
+  },
+  {
+    "id": "microbial-fuel-cell",
+    "src": "scripts/originals/แบตเตอรี่ชีวภาพจากเซลล์ (Microbial Fuel Cell).jpg",
+    "alt": "แบตเตอรี่ชีวภาพที่ผลิตไฟฟ้าจากปฏิกิริยาของจุลินทรีย์",
+    "quality": 80
+  },
+  {
+    "id": "seismograph",
+    "src": "scripts/originals/เครื่องวัดแผ่นดินไหวง่ายๆ (Seismograph).png",
+    "alt": "เครื่องวัดแรงสั่นสะเทือนของพื้นดินแบบจำลองง่าย",
+    "quality": 80
+  }
+]

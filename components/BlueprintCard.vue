@@ -3,7 +3,8 @@
     <div class="image-wrapper overflow-hidden rounded-xl mb-4">
       <!-- Always render an <img> so we can reliably replace failed loads with an inline fallback.
            Use the provided cover if available, otherwise use the fallback data URI. -->
-      <img :src="cover || fallbackDataUri" alt="" ref="imgRef" @error="onError" class="w-full h-44 object-cover transition-transform duration-500 hover:scale-110" />
+  <img :src="cover || fallbackDataUri" alt="" ref="imgRef" @error="onError" class="w-full h-44 object-cover transition-transform duration-500 hover:scale-110" />
+      <!-- debug info removed: do not display file paths or debug text in the UI -->
     </div>
     <h3 class="text-lg font-semibold leading-snug">{{ title }}</h3>
     <p class="mt-1 text-sm text-slate-300 line-clamp-2">{{ subtitle }}</p>
@@ -23,8 +24,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import formatTimeEnglish from '~/utils/formatTime'
+
 
 const props = defineProps<{
   title: string
@@ -45,6 +47,17 @@ const imgRef = ref<HTMLImageElement | null>(null)
 // Present a normalized English-friendly time label for the UI
 const displayTime = computed(() => formatTimeEnglish(props.time || '—'))
 
+// Diagnostics: log the cover value at mount so we can see what src each card is using
+onMounted(() => {
+  try {
+    // eslint-disable-next-line no-console
+    console.log('DEBUG: BlueprintCard cover=', props.cover, 'title=', props.title)
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.warn('DEBUG: BlueprintCard log error', e)
+  }
+})
+
 function onError(e: Event) {
   try {
     const target = e.target as HTMLImageElement
@@ -57,7 +70,10 @@ function onError(e: Event) {
     console.warn('img onError handler error', err)
   }
 }
+
+// We no longer expose a visible load-debug state; keep a minimal onError handler only
 </script>
+
 
 <style scoped>
 .blueprint-card {
