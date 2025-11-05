@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675"><defs><linearGradient id="g15" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#064e3b"/><stop offset="100%" stop-color="#0f766e"/></linearGradient></defs><rect width="1200" height="675" fill="url(#g15)"/><g fill="#86efac" opacity="0.2"><circle cx="220" cy="150" r="110"/><circle cx="980" cy="520" r="140"/></g><text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" fill="#ecfdf5" font-family="Inter, system-ui" font-size="54" font-weight="700">Aquaponics</text><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#d1fae5" font-family="Inter, system-ui" font-size="22">Fish • Plants • Cycle</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+	<defs>
+		<linearGradient id="g15" x1="0" x2="1" y1="0" y2="1">
+			<stop offset="0%" stop-color="#064e3b"/>
+			<stop offset="100%" stop-color="#0f766e"/>
+		</linearGradient>
+	</defs>
+	<rect width="1200" height="675" fill="url(#g15)"/>
+	<g fill="#86efac" opacity="0.2">
+		<circle cx="220" cy="150" r="110"/>
+		<circle cx="980" cy="520" r="140"/>
+	</g>
+	<text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" fill="#ecfdf5" font-family="Inter, system-ui" font-size="54" font-weight="700">Aquaponics</text>
+	<text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#d1fae5" font-family="Inter, system-ui" font-size="22">Fish • Plants • Cycle</text>
+	<text x="50%" y="64%" dominant-baseline="middle" text-anchor="middle" fill="#86efac" font-family="Inter, system-ui" font-size="22">ระบบเกษตรผสมผสาน (Aquaponics System)</text>
+</svg>

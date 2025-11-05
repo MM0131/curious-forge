@@ -105,7 +105,8 @@
       "A solar still can be a crucial survival technique"
     ],
     "warnings": "Production is slow; do not assume water is safe without proper testing in non-emergency settings",
-    "image": "/assets/images/solar-still.svg"
+    "image": "/assets/images/solar-still-photo.webp",
+    "imageAlt": "เครื่องกลั่นน้ำพลังงานแสงอาทิตย์แบบโดมพลาสติก"
   },
   {
     "id": "microbial-fuel-cell",
@@ -133,7 +134,8 @@
       "Researchers explore MFCs for wastewater energy recovery"
     ],
     "warnings": "Handle environmental samples carefully and wash hands afterward",
-    "image": "/assets/images/microbial-fuel-cell.svg"
+    "image": "/assets/images/microbial-fuel-cell-photo.webp",
+    "imageAlt": "แบตเตอรี่ชีวภาพที่ผลิตไฟฟ้าจากปฏิกิริยาของจุลินทรีย์"
   },
   {
     "id": "seismograph",
@@ -157,7 +159,8 @@
     ],
     "purpose": "บันทึกรูปแบบการสั่นสะเทือนของพื้นดินโดยใช้หลักความเฉื่อย",
     "warnings": "ติดตั้งให้มั่นคงและไม่ใช้แรงเกินที่อุปกรณ์รับได้",
-    "image": "/assets/images/seismograph.svg"
+    "image": "/assets/images/seismograph-photo.webp",
+    "imageAlt": "เครื่องวัดแรงสั่นสะเทือนของพื้นดินแบบจำลองง่าย"
   },
   {
     "id": "casein-plastic",
@@ -180,7 +183,7 @@
     ],
     "purpose": "Turn milk protein into a biodegradable plastic-like material",
     "warnings": "Handle hot liquids carefully",
-    "image": "/assets/images/casein-plastic.svg",
+  "image": "/assets/images/casein-plastic-photo.webp",
     "description": "Heat milk and add acid to precipitate casein, then press and dry the curds to form a hard, moldable material.",
     "sciencePrinciple": "Acid-induced protein coagulation: casein proteins link into long chains when acid is added, forming a polymeric solid.",
     "funFacts": [
@@ -206,7 +209,7 @@
     ],
     "purpose": "Keep food cool and extend freshness without electricity",
     "warnings": "Keep sand moist; not effective in very humid climates",
-    "image": "/assets/images/zeer-pot.svg",
+  "image": "/assets/images/zeer-pot-photo.webp",
     "description": "Two unglazed pots with wet sand between them use evaporative cooling to lower the inner pot's temperature.",
     "sciencePrinciple": "Evaporative cooling: evaporation requires energy removal from the surroundings, lowering temperature.",
     "funFacts": [
@@ -232,7 +235,7 @@
     ],
     "purpose": "Launch a rocket using pressurized air and water",
     "warnings": "Use safety distance and wear eye protection; never launch toward people",
-    "image": "/assets/images/water-rocket.svg",
+  "image": "/assets/images/water-rocket-photo.webp",
     "description": "A pressurized bottle ejects water and air downward, propelling the bottle upward by reaction force.",
     "sciencePrinciple": "Newton's third law: action (ejecting water) produces an equal and opposite reaction (rocket thrust).",
     "funFacts": [
@@ -258,7 +261,7 @@
     ],
     "purpose": "Make a safe insect repellent from plants",
     "warnings": "Patch test on skin first; avoid spraying near eyes or wounds",
-    "image": "/assets/images/herb-bug-spray.svg",
+  "image": "/assets/images/herb-bug-spray-photo.webp",
     "description": "Infuse aromatic herbs in alcohol or hot water to extract essential oils and strain into a spray bottle.",
     "sciencePrinciple": "Many plants produce essential oils that repel insects; extraction concentrates these compounds.",
     "funFacts": [
@@ -292,7 +295,7 @@
       "Foundry work is an ancient craft used for tools and art"
     ],
     "warnings": "Requires strict safety gear and precautions; molten metal is extremely dangerous",
-    "image": "/assets/images/backyard-foundry.svg"
+  "image": "/assets/images/backyard-foundry-photo.webp"
   },
   {
     "id": "stirling-engine",
@@ -321,7 +324,7 @@
       "Invented by Robert Stirling in 1816; used in some spacecraft applications"
     ],
     "warnings": "Be careful with heat sources and rotating parts",
-    "image": "/assets/images/stirling-engine.svg"
+  "image": "/assets/images/stirling-engine-photo.webp"
   },
   {
     "id": "automated-greenhouse",
@@ -356,7 +359,7 @@
       "ระบบอัตโนมัติช่วยประหยัดน้ำได้มากกว่า 50% เมื่อเทียบกับการรดน้ำด้วยมือ"
     ],
     "warnings": "ระวังไฟฟ้าลัดวงจร ตรวจสอบการต่อสายไฟให้ถูกต้อง ไม่ให้น้ำเข้าสัมผัสวงจรอิเล็กทรอนิกส์",
-    "image": "/assets/images/automated-greenhouse.svg"
+  "image": "/assets/images/automated-mini-greenhouse-photo.webp"
   },
   {
     "id": "newtonian-telescope",
@@ -383,7 +386,7 @@
       "Newtonian design is popular among amateur telescope makers"
     ],
     "warnings": "Handle optics carefully to avoid scratches and misalignment",
-    "image": "/assets/images/newtonian-telescope.svg"
+  "image": "/assets/images/newtonian-telescope-photo.webp"
   },
   {
     "id": "sundial",
@@ -408,7 +411,7 @@
       "Sundials were among the earliest timekeeping devices"
     ],
     "warnings": "Only works in daylight and needs correct orientation",
-    "image": "/assets/images/sundial.svg"
+  "image": "/assets/images/sundial-photo.webp"
   },
   {
     "id": "periscope",
@@ -460,7 +463,8 @@
       "Many fruits can act as electrolytes; lemons are a classic example"
     ],
   "warnings": "Voltage is low but avoid short circuits and corrosion hazards",
-  "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%20role%3D%22img%22%20aria-label%3D%22Lemon%20Battery%22%3E%0A%09%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%09%3Cg%20transform%3D%22translate%28100%2C80%29%22%3E%0A%09%09%3Ccircle%20cx%3D%22160%22%20cy%3D%22160%22%20r%3D%22140%22%20fill%3D%22%23fde68a%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%226%22%2F%3E%0A%09%09%3Crect%20x%3D%22380%22%20y%3D%2290%22%20width%3D%22340%22%20height%3D%22150%22%20rx%3D%2220%22%20fill%3D%22%23fef3c7%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%226%22%20%2F%3E%0A%09%09%3Ctext%20x%3D%22560%22%20y%3D%22175%22%20text-anchor%3D%22middle%22%20fill%3D%22%230b1220%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%3ELemon%20Battery%3C%2Ftext%3E%0A%09%09%3Ctext%20x%3D%22560%22%20y%3D%22210%22%20text-anchor%3D%22middle%22%20fill%3D%22%2394a3b8%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2218%22%3EElectrolyte%20%E2%80%A2%20Zn%20%26%20Cu%20%E2%80%A2%20LED%3C%2Ftext%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E"
+  "image": "/assets/images/lemon-battery-photo.webp",
+  "imageAlt": "Lemon Battery illustration"
   },
   {
     "id": "cartesian-diver",

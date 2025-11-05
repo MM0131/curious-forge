@@ -1,0 +1,12 @@
+[
+  { "id": "weather-station", "src": "public/assets/images/weather-station.svg" },
+  { "id": "hydraulic-arm", "src": "public/assets/images/hydraulic-arm.svg" },
+  { "id": "camera-obscura", "src": "public/assets/images/camera-obscura.svg" },
+  { "id": "cartesian-diver", "src": "public/assets/images/cartesian-diver.svg" },
+  { "id": "lemon-battery", "src": "public/assets/images/lemon-battery.svg" },
+  { "id": "periscope", "src": "public/assets/images/periscope.svg" },
+  { "id": "aquaponics", "src": "public/assets/images/aquaponics.svg" },
+  { "id": "cloud-chamber", "src": "public/assets/images/cloud-chamber.svg" },
+  { "id": "crystal-radio", "src": "public/assets/images/crystal-radio.svg" },
+  { "id": "gravity-racer", "src": "public/assets/images/gravity-racer.svg" }
+]
