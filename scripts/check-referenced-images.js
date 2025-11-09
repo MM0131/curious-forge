@@ -1,5 +1,6 @@
-const fs = require('fs')
-const path = require('path')
+/* eslint-disable */
+const fs = require('node:fs')
+const path = require('node:path')
 
 function readJson(p) {
   try {
