@@ -5,8 +5,9 @@ module.exports = {
     browser: true,
     es2022: true
   },
-  parser: '@typescript-eslint/parser',
+  parser: 'vue-eslint-parser',
   parserOptions: {
+    parser: '@typescript-eslint/parser',
     ecmaVersion: 2020,
     sourceType: 'module',
     project: './tsconfig.json',
@@ -29,6 +30,15 @@ module.exports = {
       files: ['tests/**/*.ts', 'tests/**/*.js'],
       rules: {
         '@typescript-eslint/ban-ts-comment': 'off'
+      }
+    }
+    ,
+    {
+      files: ['scripts/**/*.js', 'scripts/**/*.mjs'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        'unicorn/prefer-top-level-await': 'off',
+        'sonarjs/cognitive-complexity': 'off'
       }
     }
   ]
