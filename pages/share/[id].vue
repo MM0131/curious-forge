@@ -6,7 +6,7 @@
       <div v-if="error" class="p-3 bg-red-600/10 border border-red-600 rounded mb-4 text-red-300">{{ error }}</div>
       <div v-if="bpUrl" class="space-y-3">
         <a :href="bpUrl" class="btn-primary">Open project</a>
-        <button @click="notifyOwner" v-if="canNotify" class="btn-primary bg-white/6">Notify owner</button>
+        <button v-if="canNotify" class="btn-primary bg-white/6" @click="notifyOwner">Notify owner</button>
       </div>
       <div v-else class="text-slate-400">Loading…</div>
     </div>

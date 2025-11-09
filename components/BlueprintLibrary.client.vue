@@ -19,8 +19,8 @@
         />
         <button
           v-if="q"
-          @click="q = ''"
           class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-white transition"
+          @click="q = ''"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -76,8 +76,8 @@
         </p>
           <button
           v-if="q || cat || difficulty || sortBy !== 'default'"
-          @click="resetFilters"
           class="text-violet-400 hover:text-violet-300 transition flex items-center gap-1"
+          @click="resetFilters"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
@@ -100,9 +100,9 @@
         >
         <button
           class="absolute top-3 right-3 z-10 rounded-lg border border-white/10 bg-black/30 backdrop-blur px-2 py-1 text-xs hover:bg-black/50"
-          @click.stop="onToggle(bp.id)"
           :aria-pressed="isSaved(bp.id)"
           :title="isSaved(bp.id) ? 'Remove from saved' : 'Save project'"
+          @click.stop="onToggle(bp.id)"
         >
           {{ isSaved(bp.id) ? 'Saved' : 'Save' }}
         </button>
@@ -136,7 +136,7 @@
       <div>cat: <span class="font-mono">{{ cat }}</span></div>
       <div>count: <span class="font-mono">{{ filteredBlueprints.length }}</span></div>
       <div class="pt-1 flex items-center gap-2">
-        <button @click="n++" class="px-2 py-1 rounded bg-white/10 hover:bg-white/20">debug +1</button>
+        <button class="px-2 py-1 rounded bg-white/10 hover:bg-white/20" @click="n++">debug +1</button>
         <span class="font-mono">n: {{ n }}</span>
       </div>
     </div>

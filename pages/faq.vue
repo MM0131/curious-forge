@@ -17,8 +17,8 @@
         <!-- FAQ 1 -->
         <div class="card hover:bg-white/7 transition">
           <button
-            @click="toggleFaq(1)"
             class="w-full text-left flex items-start justify-between gap-4"
+            @click="toggleFaq(1)"
           >
             <div>
               <h3 class="font-semibold text-lg mb-2">What is The Curious Forge?</h3>
@@ -41,8 +41,8 @@
         <!-- FAQ 2 -->
         <div class="card hover:bg-white/7 transition">
           <button
-            @click="toggleFaq(2)"
             class="w-full text-left flex items-start justify-between gap-4"
+            @click="toggleFaq(2)"
           >
             <div>
               <h3 class="font-semibold text-lg mb-2">Who are these projects for?</h3>
@@ -65,8 +65,8 @@
         <!-- FAQ 3 -->
         <div class="card hover:bg-white/7 transition">
           <button
-            @click="toggleFaq(3)"
             class="w-full text-left flex items-start justify-between gap-4"
+            @click="toggleFaq(3)"
           >
             <div>
               <h3 class="font-semibold text-lg mb-2">Are the materials easy to find?</h3>
@@ -89,8 +89,8 @@
         <!-- FAQ 4 -->
         <div class="card hover:bg-white/7 transition">
           <button
-            @click="toggleFaq(4)"
             class="w-full text-left flex items-start justify-between gap-4"
+            @click="toggleFaq(4)"
           >
             <div>
               <h3 class="font-semibold text-lg mb-2">Are these projects safe?</h3>
@@ -113,8 +113,8 @@
         <!-- FAQ 5 -->
         <div class="card hover:bg-white/7 transition">
           <button
-            @click="toggleFaq(5)"
             class="w-full text-left flex items-start justify-between gap-4"
+            @click="toggleFaq(5)"
           >
             <div>
               <h3 class="font-semibold text-lg mb-2">Can I submit project ideas?</h3>
@@ -137,8 +137,8 @@
         <!-- FAQ 6 -->
         <div class="card hover:bg-white/7 transition">
           <button
-            @click="toggleFaq(6)"
             class="w-full text-left flex items-start justify-between gap-4"
+            @click="toggleFaq(6)"
           >
             <div>
               <h3 class="font-semibold text-lg mb-2">Is there a cost?</h3>
