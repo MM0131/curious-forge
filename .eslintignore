@@ -3,4 +3,4 @@ node_modules
 .output
 dist
 public/assets/data/*.json
-scripts
+# scripts were previously ignored; we're re-introducing them and adding per-file ESLint headers

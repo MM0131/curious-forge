@@ -9,6 +9,7 @@
 // The script downloads each URL and saves it to public/assets/images/<id>-photo.<ext>
 // Then it runs the link-photos script to update blueprint JSON files.
 
+/* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
