@@ -3,7 +3,7 @@ import type { Blueprint } from '~/types/blueprint'
 import blueprintsData from '@/assets/data/blueprints.en'
 
 // A small helper to detect Supabase configuration presence
-function isSupabaseConfigured() {
+export function isSupabaseConfigured() {
   const config = useRuntimeConfig()
   const url = (config.public as any).supabaseUrl as string | undefined
   const key = (config.public as any).supabaseKey as string | undefined
@@ -33,8 +33,12 @@ export function useSaved() {
         savedIds.value = (data || []).map((row: any) => row.blueprint_id as string)
       } else {
         // Fallback to localStorage (guest mode)
-        const raw = localStorage.getItem('saved')
-        savedIds.value = raw ? JSON.parse(raw) : []
+        // Use per-user key when a mock / local user exists, otherwise fall back to global 'saved'
+        const localKey = user.value && user.value.id ? `cf:saved:${user.value.id}` : 'saved'
+        const raw = localStorage.getItem(localKey)
+        // Backwards-compatibility: if per-user key not found, try legacy 'saved'
+        const fallback = !raw ? localStorage.getItem('saved') : raw
+        savedIds.value = fallback ? JSON.parse(fallback) : []
       }
     } catch (e) {
       console.error('Failed to load saved items:', e)
@@ -47,6 +51,14 @@ export function useSaved() {
   // Persist guest saved ids into localStorage only when not authenticated
   watch(savedIds, (ids) => {
     if (!import.meta.client) return
+    // If Supabase isn't configured, persist to a local per-user key (or guest key)
+    if (!isSupabaseConfigured()) {
+      const key = user.value && user.value.id ? `cf:saved:${user.value.id}` : 'saved'
+      localStorage.setItem(key, JSON.stringify(ids))
+      return
+    }
+
+    // When Supabase is configured, only persist to localStorage for unauthenticated guests
     if (!isAuthenticated.value) {
       localStorage.setItem('saved', JSON.stringify(ids))
     }

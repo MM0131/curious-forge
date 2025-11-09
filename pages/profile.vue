@@ -51,6 +51,8 @@
 
             <div v-else class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div v-for="bp in savedBlueprints" :key="bp.id" class="relative group">
+                <!-- Green "Saved" badge shown on saved items -->
+                <span class="absolute top-3 left-3 z-20 px-2 py-1 text-xs font-semibold rounded-full bg-emerald-600 text-emerald-100 border border-emerald-500/40">Saved</span>
                 <NuxtLink :to="`/blueprints/${bp.id}`" class="block">
                   <div class="card hover:bg-white/7 transition">
                     <img v-if="bp.image" :src="bp.image" :alt="bp.title" class="w-full h-44 object-cover rounded-xl mb-4" />
@@ -87,10 +89,19 @@
 import StatCard from '~/components/StatCard.vue'
 import { useSaved } from '~/composables/useSaved'
 import { useBlueprints } from '~/composables/useBlueprints'
-import { onMounted } from 'vue'
+import blueprintsData from '@/assets/data/blueprints.en'
+import { onMounted, computed } from 'vue'
 
-const { load } = useBlueprints()
-const { savedBlueprints, count: savedCount, remove } = useSaved()
+const { load, list: loadedList } = useBlueprints()
+const { savedIds, count: savedCount, remove, loadSaved } = useSaved()
+
+// Map saved ids to blueprint objects immediately (robust to load timing)
+const savedBlueprints = computed(() => {
+  const all = (loadedList?.value && loadedList.value.length > 0)
+    ? loadedList.value
+    : (blueprintsData as any)
+  return savedIds.value.map(id => all.find((b: any) => b.id === id)).filter(Boolean)
+})
 
 // ยังไม่มีการเก็บสถิติจริงสำหรับ 2 ค่าแรก/สุดท้าย จึงใส่ 0 ไว้ก่อน
 const viewCount = 0
@@ -106,8 +117,14 @@ function clearNotifications() {
   console.log('clearNotifications called')
 }
 
-onMounted(() => {
-  // Ensure blueprints are loaded so saved list can map from DB
-  load()
+onMounted(async () => {
+  // Ensure both blueprints and saved ids are loaded so saved list maps reliably
+  try {
+    await Promise.all([load(), loadSaved()])
+  } catch (e) {
+    // swallow – UI will fallback to local dataset
+    // eslint-disable-next-line no-console
+    console.error('Profile load error', e)
+  }
 })
 </script>

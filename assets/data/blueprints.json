@@ -358,7 +358,7 @@
       "ระบบอัตโนมัติช่วยประหยัดน้ำได้มากกว่า 50% เมื่อเทียบกับการรดน้ำด้วยมือ"
     ],
     "warnings": "ระวังไฟฟ้าลัดวงจร ตรวจสอบการต่อสายไฟให้ถูกต้อง ไม่ให้น้ำเข้าสัมผัสวงจรอิเล็กทรอนิกส์",
-    "image": "/assets/images/automated-greenhouse.svg"
+    "image": "/assets/images/automated-greenhouse-photo.webp"
   },
   {
     "id": "newtonian-telescope",
