@@ -19,6 +19,35 @@ jobs:
         run: npm ci
       - name: Run unit tests
         run: npm run test -- --run
+  
+      lint_changed:
+        runs-on: ubuntu-latest
+        name: Lint changed files
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+            with:
+              fetch-depth: 0
+
+          - name: Use Node.js
+            uses: actions/setup-node@v4
+            with:
+              node-version: '18'
+
+          - name: Install dependencies
+            run: npm ci
+
+          - name: Run ESLint on changed files
+            run: |
+              # fetch main to compare changed files
+              git fetch origin main --depth=1 || true
+              FILES=$(git diff --name-only origin/main...HEAD | grep -E '\.(js|ts|vue)$' || true)
+              if [ -n "$FILES" ]; then
+                echo "Running eslint on: $FILES"
+                npx eslint $FILES --cache
+              else
+                echo "No JS/TS/Vue files changed. Skipping eslint."
+              fi
 name: CI
 
 on:
