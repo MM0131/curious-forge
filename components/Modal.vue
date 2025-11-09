@@ -20,8 +20,8 @@
               <h3 class="text-2xl font-bold">{{ title }}</h3>
             </slot>
             <button
-              @click="close"
               class="flex-shrink-0 w-8 h-8 rounded-lg hover:bg-white/10 transition flex items-center justify-center"
+              @click="close"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>

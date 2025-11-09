@@ -1,0 +1,75 @@
+
+> curious-forge@0.1.0 predev
+> node scripts/link-photos.js
+
+Found photo files: [
+  'aquaponics-photo.webp',
+  'automated-greenhouse-photo.webp',
+  'automated-mini-greenhouse-photo.webp',
+  'backyard-foundry-photo.webp',
+  'camera-obscura-photo.webp',
+  'cartesian-diver-photo.webp',
+  'casein-plastic-photo.webp',
+  'cloud-chamber-photo.webp',
+  'crystal-radio-photo.webp',
+  'gravity-racer-photo.webp',
+  'herb-bug-spray-photo.webp',
+  'hydraulic-arm-photo.webp',
+  'lemon-battery-photo.webp',
+  'microbial-fuel-cell-photo.webp',
+  'newtonian-telescope-photo.webp',
+  'periscope-photo.webp',
+  'seismograph-photo.webp',
+  'solar-still-photo.webp',
+  'stirling-engine-photo.webp',
+  'sundial-photo.webp',
+  'water-rocket-photo.webp',
+  'weather-station-photo.webp',
+  'zeer-pot-photo.webp'
+]
+No blueprint with id='automated-mini-greenhouse' found in either JSON. Skipping automated-mini-greenhouse-photo.webp
+Backed up JSON files to .bak
+Updated JSON files successfully.
+Summary of changes:
+- aquaponics-photo.webp {"assets":null,"public":{"id":"aquaponics","missing":true}}
+- automated-greenhouse-photo.webp {"assets":null,"public":{"id":"automated-greenhouse","missing":true}}
+- backyard-foundry-photo.webp {"assets":null,"public":{"id":"backyard-foundry","missing":true}}
+- camera-obscura-photo.webp {"assets":null,"public":{"id":"camera-obscura","missing":true}}
+- cartesian-diver-photo.webp {"assets":null,"public":{"id":"cartesian-diver","missing":true}}
+- casein-plastic-photo.webp {"assets":null,"public":null}
+- cloud-chamber-photo.webp {"assets":null,"public":{"id":"cloud-chamber","missing":true}}
+- crystal-radio-photo.webp {"assets":null,"public":{"id":"crystal-radio","missing":true}}
+- gravity-racer-photo.webp {"assets":null,"public":{"id":"gravity-racer","missing":true}}
+- herb-bug-spray-photo.webp {"assets":null,"public":null}
+- hydraulic-arm-photo.webp {"assets":null,"public":{"id":"hydraulic-arm","missing":true}}
+- lemon-battery-photo.webp {"assets":null,"public":{"id":"lemon-battery","missing":true}}
+- microbial-fuel-cell-photo.webp {"assets":null,"public":null}
+- newtonian-telescope-photo.webp {"assets":null,"public":{"id":"newtonian-telescope","missing":true}}
+- periscope-photo.webp {"assets":null,"public":{"id":"periscope","missing":true}}
+- seismograph-photo.webp {"assets":null,"public":null}
+- solar-still-photo.webp {"assets":null,"public":null}
+- stirling-engine-photo.webp {"assets":null,"public":{"id":"stirling-engine","missing":true}}
+- sundial-photo.webp {"assets":null,"public":{"id":"sundial","missing":true}}
+- water-rocket-photo.webp {"assets":null,"public":null}
+- weather-station-photo.webp {"assets":null,"public":{"id":"weather-station","missing":true}}
+- zeer-pot-photo.webp {"assets":null,"public":null}
+
+Done. Now make sure the files are present in public/assets/images/ (they should be). Restart dev server or hard-refresh the page to see changes.
+
+> curious-forge@0.1.0 dev
+> nuxt dev
+
+[nuxi] Nuxt 3.19.3 (with Nitro 2.12.8, Vite 6.4.1 and Vue 3.5.22)
+
+  ➜ Local:    http://localhost:3000/
+  ➜ Network:  use --host to expose
+
+[nuxt:tailwindcss] ℹ Using Tailwind CSS from ~/assets/css/tailwind.css
+  ➜ DevTools: press Shift + Option + D in the browser (v2.6.5)
+
+✔ Vite client built in 24ms
+✔ Vite server built in 513ms
+[nitro] ✔ Nuxt Nitro server built in 453ms
+ℹ Vite client warmed up in 1ms
+ℹ Vite server warmed up in 817ms
+[nitro] ✔ Nuxt Nitro server built in 537ms
