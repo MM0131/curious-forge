@@ -11,13 +11,52 @@
 // OAuth callback handler
 const router = useRouter()
 const route = useRoute()
+const config = useRuntimeConfig()
+
+const getRedirectTarget = () => {
+  const nextFromQuery = route.query.next
+
+  if (typeof nextFromQuery !== 'string' || !nextFromQuery.startsWith('/')) {
+    return '/'
+  }
+
+  return nextFromQuery
+}
 
 onMounted(async () => {
-  // Wait a bit for auth state to update
-  await new Promise(resolve => setTimeout(resolve, 1000))
-  
-  // Redirect to home or original destination
-  const redirect = route.query.redirect as string || '/'
-  router.push(redirect)
+  try {
+    const providerError = route.query.error
+    if (typeof providerError === 'string') {
+      const code = providerError === 'access_denied' ? 'oauth_access_denied' : 'oauth_callback_failed'
+      return router.replace(`/login?error=${encodeURIComponent(code)}`)
+    }
+
+    if (!(config.public as any).supabaseUrl || !(config.public as any).supabaseKey) {
+      return router.replace('/login?error=supabase_not_configured')
+    }
+
+    const supabase = useSupabase()
+    const hashParams = new URLSearchParams(globalThis.location.hash.replace(/^#/, ''))
+    const hasHashSession = hashParams.has('access_token')
+    const authCode = route.query.code
+
+    if (typeof authCode === 'string') {
+      const { error } = await supabase.auth.exchangeCodeForSession(authCode)
+      if (error) throw error
+    }
+
+    if (!hasHashSession) {
+      const { data, error } = await supabase.auth.getSession()
+      if (error) throw error
+
+      if (!data.session) {
+        return router.replace('/login?error=oauth_callback_failed')
+      }
+    }
+
+    return router.replace(getRedirectTarget())
+  } catch (error) {
+    return router.replace('/login?error=oauth_callback_failed')
+  }
 })
 </script>

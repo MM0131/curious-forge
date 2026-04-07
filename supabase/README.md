@@ -42,6 +42,7 @@ This will create:
    ```env
    SUPABASE_URL=https://your-project-ref.supabase.co
    SUPABASE_KEY=your-anon-public-key-here
+   # Optional for local development; if omitted, the app uses the current browser origin
    NUXT_PUBLIC_SITE_URL=http://localhost:3000
    ```
 
@@ -55,12 +56,14 @@ No additional setup needed.
 2. Enable Google provider
 3. Follow instructions to create OAuth credentials in Google Cloud Console
 4. Add credentials to Supabase
+5. Make sure the Supabase redirect URL includes `/auth/callback` for your app origin
 
 ### GitHub OAuth
 1. Go to **Authentication** → **Providers** → **GitHub**
 2. Enable GitHub provider
 3. Create OAuth App in GitHub Settings
 4. Add credentials to Supabase
+5. Make sure the Supabase redirect URL includes `/auth/callback` for your app origin
 
 ## 6. Migrate Existing Blueprints Data
 

@@ -119,6 +119,7 @@
         <button
           @click="handleOAuthSignIn('google')"
           type="button"
+          :disabled="loading"
           class="w-full py-3 bg-white hover:bg-gray-100 text-gray-800 font-semibold rounded-lg transition-all duration-200 flex items-center justify-center space-x-2"
         >
           <svg class="w-5 h-5" viewBox="0 0 24 24">
@@ -133,6 +134,7 @@
         <button
           @click="handleOAuthSignIn('github')"
           type="button"
+          :disabled="loading"
           class="w-full py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-all duration-200 flex items-center justify-center space-x-2"
         >
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -196,6 +198,21 @@ const loading = ref(false)
 const errorMessage = ref('')
 const successMessage = ref('')
 
+onMounted(() => {
+  const error = route.query.error as string | undefined
+  if (!error) return
+
+  if (error === 'oauth_callback_failed') {
+    errorMessage.value = safeT('auth.errors.oauthCallbackFailed', 'OAuth sign in failed. Please try again.')
+  } else if (error === 'access_denied' || error === 'oauth_access_denied') {
+    errorMessage.value = safeT('auth.errors.oauthAccessDenied', 'OAuth sign in was canceled or denied.')
+  } else if (error === 'supabase_not_configured') {
+    errorMessage.value = safeT('auth.errors.supabaseNotConfigured', 'Supabase is not configured yet. Please contact the administrator.')
+  } else {
+    errorMessage.value = safeT('auth.errors.oauthSignInFailed', 'OAuth sign in failed')
+  }
+})
+
 const toggleMode = () => {
   isSignUp.value = !isSignUp.value
   errorMessage.value = ''
@@ -229,10 +246,17 @@ const handleSubmit = async () => {
 }
 
 const handleOAuthSignIn = async (provider: 'google' | 'github') => {
+  loading.value = true
+  errorMessage.value = ''
+  successMessage.value = ''
+
   try {
-    await signInWithOAuth(provider)
+    const redirect = route.query.redirect as string || '/'
+    await signInWithOAuth(provider, redirect)
   } catch (error: any) {
-    errorMessage.value = error.message || 'OAuth sign in failed'
+    errorMessage.value = error?.message || safeT('auth.errors.oauthSignInFailed', 'OAuth sign in failed')
+  } finally {
+    loading.value = false
   }
 }
 </script>

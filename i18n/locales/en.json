@@ -203,6 +203,12 @@
     "dontHaveAccount": "Don't have an account?",
     "forgotPassword": "Forgot password?",
     "resetPassword": "Reset Password",
-    "sendResetLink": "Send reset link"
+    "sendResetLink": "Send reset link",
+    "errors": {
+      "oauthSignInFailed": "OAuth sign in failed",
+      "oauthCallbackFailed": "OAuth sign in failed. Please try again.",
+      "oauthAccessDenied": "OAuth sign in was canceled or denied.",
+      "supabaseNotConfigured": "Supabase is not configured yet. Please contact the administrator."
+    }
   }
 }

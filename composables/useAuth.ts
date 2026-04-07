@@ -132,16 +132,25 @@ export const useAuth = () => {
   }
 
   // Sign in with OAuth (Google, GitHub, etc.)
-  const signInWithOAuth = async (provider: 'google' | 'github') => {
+  const signInWithOAuth = async (provider: 'google' | 'github', redirectPath = '/') => {
     if (supabase) {
+      const callbackBase = (config.public as any).siteUrl || globalThis.location.origin
+      const callbackUrl = new URL('/auth/callback', callbackBase)
+      callbackUrl.searchParams.set('next', redirectPath)
+
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider,
         options: {
-          redirectTo: `${globalThis.location.origin}/auth/callback`
+          redirectTo: callbackUrl.toString()
         }
       })
 
       if (error) throw error
+
+      if (data?.url && !import.meta.env.SSR) {
+        globalThis.location.assign(data.url)
+      }
+
       return data
     }
 
