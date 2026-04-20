@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+/* eslint-disable @typescript-eslint/no-var-requires */
 // scripts/link-photos.js
 // Scan public/assets/images for files named like <id>-photo.jpg and update
 // assets/data/blueprints.json and public/assets/data/blueprints.json to point to them.

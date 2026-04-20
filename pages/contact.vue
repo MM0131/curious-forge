@@ -123,19 +123,19 @@
               </div>
             </div>
 
-            <form @submit.prevent="handleSubmit" class="space-y-4">
+            <form class="space-y-4" @submit.prevent="handleSubmit">
               <div class="grid md:grid-cols-2 gap-4">
                 <InputField
                   id="contact-name"
-                  :label="safeT('contact.form.name')"
                   v-model="form.name"
+                  :label="safeT('contact.form.name')"
                   :placeholder="safeT('contact.form.namePlaceholder')"
                 />
                 <InputField
                   id="contact-email"
+                  v-model="form.email"
                   :label="safeT('contact.form.email')"
                   type="email"
-                  v-model="form.email"
                   :placeholder="safeT('contact.form.emailPlaceholder')"
                 />
               </div>
@@ -154,8 +154,8 @@
                 <label for="contact-message" class="text-sm text-slate-300">{{ safeT('contact.form.message') }}</label>
                 <textarea
                   id="contact-message"
-                  rows="4"
                   v-model="form.message"
+                  rows="4"
                   :placeholder="safeT('contact.form.messagePlaceholder')"
                   class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-violet-500 text-slate-100 placeholder-slate-400"
                 />
@@ -168,7 +168,7 @@
                   </svg>
                   {{ safeT('contact.form.submit') }}
                 </button>
-                <button type="button" @click="resetForm" class="btn-ghost">
+                <button type="button" class="btn-ghost" @click="resetForm">
                   {{ safeT('contact.form.reset') }}
                 </button>
               </div>

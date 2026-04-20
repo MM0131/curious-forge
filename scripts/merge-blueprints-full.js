@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require('fs');
 const basePath = 'assets/data/blueprints.json';
 const fullPath = 'assets/data/blueprints.en.full.json';

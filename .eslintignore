@@ -1,0 +1,6 @@
+node_modules
+.nuxt
+.output
+dist
+public/assets/data/*.json
+# scripts were previously ignored; we're re-introducing them and adding per-file ESLint headers

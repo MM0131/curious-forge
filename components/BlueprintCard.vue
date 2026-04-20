@@ -3,7 +3,7 @@
     <div class="image-wrapper overflow-hidden rounded-xl mb-4">
       <!-- Always render an <img> so we can reliably replace failed loads with an inline fallback.
            Use the provided cover if available, otherwise use the fallback data URI. -->
-  <img :src="cover || fallbackDataUri" alt="" ref="imgRef" @error="onError" class="w-full h-44 object-cover transition-transform duration-500 hover:scale-110" />
+  <img ref="imgRef" :src="cover || fallbackDataUri" alt="" class="w-full h-44 object-cover transition-transform duration-500 hover:scale-110" @error="onError" />
       <!-- debug info removed: do not display file paths or debug text in the UI -->
     </div>
     <h3 class="text-lg font-semibold leading-snug">{{ title }}</h3>

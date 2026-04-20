@@ -11,6 +11,10 @@
     "preview": "nuxt preview",
     "prepreview": "node scripts/link-photos.js",
     "postinstall": "nuxt prepare",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+  "lint": "eslint --ext .ts,.js,.vue .",
+  "lint:fix": "eslint --ext .ts,.js,.vue . --fix",
     "import:blueprints": "node scripts/import-blueprints.mjs",
     "link-photos": "node scripts/link-photos.js",
     "convert-images": "node scripts/convert-to-webp.js scripts/mapping.json"
@@ -22,7 +26,16 @@
     "nuxt": "^3.8.0",
     "sharp": "^0.34.4",
     "typescript": "^5.2.2",
-    "vue-tsc": "^3.1.1"
+    "vue-tsc": "^3.1.1",
+    "vitest": "^1.0.0",
+    "@vue/test-utils": "^2.1.0",
+    "jsdom": "^22.1.0",
+    "eslint": "^8.50.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "eslint-plugin-vue": "^9.19.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.0"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^10.1.2",

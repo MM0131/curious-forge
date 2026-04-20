@@ -9,8 +9,8 @@
           :label="translateOr('submit.form.name', 'Your name')"
           :value="form.name"
           :placeholder="translateOr('submit.form.namePlaceholder', 'Full name')"
-          @input="(e: Event) => form.name = (e.target as HTMLInputElement).value"
           :error="nameError as any"
+          @input="(e: Event) => form.name = (e.target as HTMLInputElement).value"
         />
         <InputField
           id="email"
@@ -18,16 +18,16 @@
           type="email"
           :value="form.email"
           :placeholder="translateOr('submit.form.emailPlaceholder', 'name@example.com')"
-          @input="(e: Event) => form.email = (e.target as HTMLInputElement).value"
           :error="emailError as any"
+          @input="(e: Event) => form.email = (e.target as HTMLInputElement).value"
         />
         <InputField
           id="projectTitle"
           :label="translateOr('submit.form.projectTitle', 'Project title')"
           :value="form.title"
           :placeholder="translateOr('submit.form.projectTitlePlaceholder', 'Short, descriptive title')"
-          @input="(e: Event) => form.title = (e.target as HTMLInputElement).value"
           :error="titleError as any"
+          @input="(e: Event) => form.title = (e.target as HTMLInputElement).value"
         />
 
         <div class="grid md:grid-cols-2 gap-4">
@@ -64,9 +64,9 @@
             id="steps"
             rows="4"
             :value="form.steps"
-            @input="(e: Event) => form.steps = (e.target as HTMLTextAreaElement).value"
             :placeholder="translateOr('submit.form.stepsPlaceholder', 'Write step-by-step instructions')"
             class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-violet-500 text-slate-100 placeholder-slate-400 caret-violet-400"
+            @input="(e: Event) => form.steps = (e.target as HTMLTextAreaElement).value"
           />
         </div>
 
@@ -76,9 +76,9 @@
             id="materials"
             rows="3"
             :value="form.materials"
-            @input="(e: Event) => form.materials = (e.target as HTMLTextAreaElement).value"
             :placeholder="translateOr('submit.form.materialsPlaceholder', 'List materials, one per line')"
             class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-violet-500 text-slate-100 placeholder-slate-400 caret-violet-400"
+            @input="(e: Event) => form.materials = (e.target as HTMLTextAreaElement).value"
           />
         </div>
 

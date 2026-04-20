@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unused-vars */
 const sharp = require('sharp');
 const path = require('path');
 const inPath = path.join(process.cwd(), 'public', 'assets', 'images', 'lemon-battery-photo.svg');

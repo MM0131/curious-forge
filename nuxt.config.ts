@@ -11,6 +11,8 @@ export default defineNuxtConfig({
       supabaseUrl: process.env.SUPABASE_URL || '',
       supabaseKey: process.env.SUPABASE_KEY || ''
     }
+    // Server-only runtime config values (don't expose to client)
+    , supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY || ''
   },
 
   typescript: {

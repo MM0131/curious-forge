@@ -1,4 +1,7 @@
-const fs = require('fs');
+/* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unused-vars */
+const fs = require('node:fs')
+const path = require('node:path')
+
 const full = JSON.parse(fs.readFileSync('assets/data/blueprints.en.full.json','utf8'));
 for (const b of full) {
   if (b.image) {
